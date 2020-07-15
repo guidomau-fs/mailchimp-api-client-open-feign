@@ -1,8 +1,8 @@
 package sample.github;
 
 public class Contributor {
-    String login;
-    int contributions;
+    private String login;
+    private int contributions;
 
     public String getLogin() {
         return login;

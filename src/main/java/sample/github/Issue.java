@@ -3,11 +3,11 @@ package sample.github;
 import java.util.List;
 
 public class Issue {
-    String title;
-    String body;
-    List<String> assignees;
-    int milestone;
-    List<String> labels;
+    private String title;
+    private String body;
+    private List<String> assignees;
+    private int milestone;
+    private List<String> labels;
 
     public String getTitle() {
         return title;

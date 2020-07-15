@@ -30,7 +30,7 @@ public class Main {
         // Fetch and print a list of the contributors to this library.
         List<Contributor> contributors = github.contributors("OpenFeign", "feign");
         for (Contributor contributor : contributors) {
-            System.out.println(contributor.login + " (" + contributor.contributions + ")");
+            System.out.println(contributor.getLogin() + " (" + contributor.getContributions() + ")");
         }
     }
 }
