@@ -1,7 +1,7 @@
 
 package com.brightmarket.mailchimp.api.ecommerce;
 
-import com.brightmarket.mailchimp.api.Link;
+import com.brightmarket.mailchimp.api.root.Link;
 import com.fasterxml.jackson.annotation.*;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
