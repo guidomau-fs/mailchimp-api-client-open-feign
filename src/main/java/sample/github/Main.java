@@ -1,7 +1,10 @@
 package sample.github;
 
 import feign.Feign;
-import feign.gson.GsonDecoder;
+import feign.Logger.Level;
+import feign.jackson.JacksonDecoder;
+import feign.jackson.JacksonEncoder;
+import feign.slf4j.Slf4jLogger;
 
 import java.util.List;
 
@@ -10,7 +13,10 @@ public class Main {
     public static void main(String[] args) {
 
         GitHub github = Feign.builder()
-                .decoder(new GsonDecoder())
+                .encoder(new JacksonEncoder())
+                .decoder(new JacksonDecoder())
+                .logger(new Slf4jLogger())
+                .logLevel(Level.FULL)
                 .target(GitHub.class, "https://api.github.com");
 
         // Fetch and print a list of the contributors to this library.
