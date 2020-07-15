@@ -1,24 +1,19 @@
 
-package com.brightmarket.mailchimp.api.ecommerce.store;
+package com.brightmarket.mailchimp.api.ecommerce;
+
+import com.fasterxml.jackson.annotation.*;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 
 /**
  * Address
  * <p>
- * The store address.
+ * The address associated with an ecommerce customer.
  *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -30,112 +25,92 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
     "province_code",
     "postal_code",
     "country",
-    "country_code",
-    "longitude",
-    "latitude"
+    "country_code"
 })
-public class Address implements Serializable
+public class OrderAddress implements Serializable
 {
 
     /**
      * Address Field 1
      * <p>
-     * The store's mailing address.
+     * The mailing address of the customer.
      *
      */
     @JsonProperty("address1")
-    @JsonPropertyDescription("The store's mailing address.")
+    @JsonPropertyDescription("The mailing address of the customer.")
     private String address1;
     /**
      * Address Field 2
      * <p>
-     * An additional field for the store's mailing address.
+     * An additional field for the customer's mailing address.
      *
      */
     @JsonProperty("address2")
-    @JsonPropertyDescription("An additional field for the store's mailing address.")
+    @JsonPropertyDescription("An additional field for the customer's mailing address.")
     private String address2;
     /**
      * City
      * <p>
-     * The city the store is located in.
+     * The city the customer is located in.
      *
      */
     @JsonProperty("city")
-    @JsonPropertyDescription("The city the store is located in.")
+    @JsonPropertyDescription("The city the customer is located in.")
     private String city;
     /**
      * Province
      * <p>
-     * The store's state name or normalized province.
+     * The customer's state name or normalized province.
      *
      */
     @JsonProperty("province")
-    @JsonPropertyDescription("The store's state name or normalized province.")
+    @JsonPropertyDescription("The customer's state name or normalized province.")
     private String province;
     /**
      * Province Code
      * <p>
-     * The two-letter code for the store's province or state.
+     * The two-letter code for the customer's province or state.
      *
      */
     @JsonProperty("province_code")
-    @JsonPropertyDescription("The two-letter code for the store's province or state.")
+    @JsonPropertyDescription("The two-letter code for the customer's province or state.")
     private String provinceCode;
     /**
      * Postal Code
      * <p>
-     * The store's postal or zip code.
+     * The customer's postal or zip code.
      *
      */
     @JsonProperty("postal_code")
-    @JsonPropertyDescription("The store's postal or zip code.")
+    @JsonPropertyDescription("The customer's postal or zip code.")
     private String postalCode;
     /**
      * Country Code
      * <p>
-     * The store's country.
+     * The customer's country.
      *
      */
     @JsonProperty("country")
-    @JsonPropertyDescription("The store's country.")
+    @JsonPropertyDescription("The customer's country.")
     private String country;
     /**
      * Country Code
      * <p>
-     * The two-letter code for to the store's country.
+     * The two-letter code for the customer's country.
      *
      */
     @JsonProperty("country_code")
-    @JsonPropertyDescription("The two-letter code for to the store's country.")
+    @JsonPropertyDescription("The two-letter code for the customer's country.")
     private String countryCode;
-    /**
-     * Longitude
-     * <p>
-     * The longitude of the store location.
-     *
-     */
-    @JsonProperty("longitude")
-    @JsonPropertyDescription("The longitude of the store location.")
-    private Double longitude;
-    /**
-     * Latitude
-     * <p>
-     * The latitude of the store location.
-     *
-     */
-    @JsonProperty("latitude")
-    @JsonPropertyDescription("The latitude of the store location.")
-    private Double latitude;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 6261187921696991677L;
+    private final static long serialVersionUID = -4020414898731344257L;
 
     /**
      * No args constructor for use in serialization
      *
      */
-    public Address() {
+    public OrderAddress() {
     }
 
     /**
@@ -148,10 +123,8 @@ public class Address implements Serializable
      * @param provinceCode
      * @param countryCode
      * @param postalCode
-     * @param latitude
-     * @param longitude
      */
-    public Address(String address1, String address2, String city, String province, String provinceCode, String postalCode, String country, String countryCode, Double longitude, Double latitude) {
+    public OrderAddress(String address1, String address2, String city, String province, String provinceCode, String postalCode, String country, String countryCode) {
         super();
         this.address1 = address1;
         this.address2 = address2;
@@ -161,14 +134,12 @@ public class Address implements Serializable
         this.postalCode = postalCode;
         this.country = country;
         this.countryCode = countryCode;
-        this.longitude = longitude;
-        this.latitude = latitude;
     }
 
     /**
      * Address Field 1
      * <p>
-     * The store's mailing address.
+     * The mailing address of the customer.
      *
      */
     @JsonProperty("address1")
@@ -179,7 +150,7 @@ public class Address implements Serializable
     /**
      * Address Field 1
      * <p>
-     * The store's mailing address.
+     * The mailing address of the customer.
      *
      */
     @JsonProperty("address1")
@@ -187,7 +158,7 @@ public class Address implements Serializable
         this.address1 = address1;
     }
 
-    public Address withAddress1(String address1) {
+    public OrderAddress withAddress1(String address1) {
         this.address1 = address1;
         return this;
     }
@@ -195,7 +166,7 @@ public class Address implements Serializable
     /**
      * Address Field 2
      * <p>
-     * An additional field for the store's mailing address.
+     * An additional field for the customer's mailing address.
      *
      */
     @JsonProperty("address2")
@@ -206,7 +177,7 @@ public class Address implements Serializable
     /**
      * Address Field 2
      * <p>
-     * An additional field for the store's mailing address.
+     * An additional field for the customer's mailing address.
      *
      */
     @JsonProperty("address2")
@@ -214,7 +185,7 @@ public class Address implements Serializable
         this.address2 = address2;
     }
 
-    public Address withAddress2(String address2) {
+    public OrderAddress withAddress2(String address2) {
         this.address2 = address2;
         return this;
     }
@@ -222,7 +193,7 @@ public class Address implements Serializable
     /**
      * City
      * <p>
-     * The city the store is located in.
+     * The city the customer is located in.
      *
      */
     @JsonProperty("city")
@@ -233,7 +204,7 @@ public class Address implements Serializable
     /**
      * City
      * <p>
-     * The city the store is located in.
+     * The city the customer is located in.
      *
      */
     @JsonProperty("city")
@@ -241,7 +212,7 @@ public class Address implements Serializable
         this.city = city;
     }
 
-    public Address withCity(String city) {
+    public OrderAddress withCity(String city) {
         this.city = city;
         return this;
     }
@@ -249,7 +220,7 @@ public class Address implements Serializable
     /**
      * Province
      * <p>
-     * The store's state name or normalized province.
+     * The customer's state name or normalized province.
      *
      */
     @JsonProperty("province")
@@ -260,7 +231,7 @@ public class Address implements Serializable
     /**
      * Province
      * <p>
-     * The store's state name or normalized province.
+     * The customer's state name or normalized province.
      *
      */
     @JsonProperty("province")
@@ -268,7 +239,7 @@ public class Address implements Serializable
         this.province = province;
     }
 
-    public Address withProvince(String province) {
+    public OrderAddress withProvince(String province) {
         this.province = province;
         return this;
     }
@@ -276,7 +247,7 @@ public class Address implements Serializable
     /**
      * Province Code
      * <p>
-     * The two-letter code for the store's province or state.
+     * The two-letter code for the customer's province or state.
      *
      */
     @JsonProperty("province_code")
@@ -287,7 +258,7 @@ public class Address implements Serializable
     /**
      * Province Code
      * <p>
-     * The two-letter code for the store's province or state.
+     * The two-letter code for the customer's province or state.
      *
      */
     @JsonProperty("province_code")
@@ -295,7 +266,7 @@ public class Address implements Serializable
         this.provinceCode = provinceCode;
     }
 
-    public Address withProvinceCode(String provinceCode) {
+    public OrderAddress withProvinceCode(String provinceCode) {
         this.provinceCode = provinceCode;
         return this;
     }
@@ -303,7 +274,7 @@ public class Address implements Serializable
     /**
      * Postal Code
      * <p>
-     * The store's postal or zip code.
+     * The customer's postal or zip code.
      *
      */
     @JsonProperty("postal_code")
@@ -314,7 +285,7 @@ public class Address implements Serializable
     /**
      * Postal Code
      * <p>
-     * The store's postal or zip code.
+     * The customer's postal or zip code.
      *
      */
     @JsonProperty("postal_code")
@@ -322,7 +293,7 @@ public class Address implements Serializable
         this.postalCode = postalCode;
     }
 
-    public Address withPostalCode(String postalCode) {
+    public OrderAddress withPostalCode(String postalCode) {
         this.postalCode = postalCode;
         return this;
     }
@@ -330,7 +301,7 @@ public class Address implements Serializable
     /**
      * Country Code
      * <p>
-     * The store's country.
+     * The customer's country.
      *
      */
     @JsonProperty("country")
@@ -341,7 +312,7 @@ public class Address implements Serializable
     /**
      * Country Code
      * <p>
-     * The store's country.
+     * The customer's country.
      *
      */
     @JsonProperty("country")
@@ -349,7 +320,7 @@ public class Address implements Serializable
         this.country = country;
     }
 
-    public Address withCountry(String country) {
+    public OrderAddress withCountry(String country) {
         this.country = country;
         return this;
     }
@@ -357,7 +328,7 @@ public class Address implements Serializable
     /**
      * Country Code
      * <p>
-     * The two-letter code for to the store's country.
+     * The two-letter code for the customer's country.
      *
      */
     @JsonProperty("country_code")
@@ -368,7 +339,7 @@ public class Address implements Serializable
     /**
      * Country Code
      * <p>
-     * The two-letter code for to the store's country.
+     * The two-letter code for the customer's country.
      *
      */
     @JsonProperty("country_code")
@@ -376,62 +347,8 @@ public class Address implements Serializable
         this.countryCode = countryCode;
     }
 
-    public Address withCountryCode(String countryCode) {
+    public OrderAddress withCountryCode(String countryCode) {
         this.countryCode = countryCode;
-        return this;
-    }
-
-    /**
-     * Longitude
-     * <p>
-     * The longitude of the store location.
-     *
-     */
-    @JsonProperty("longitude")
-    public Double getLongitude() {
-        return longitude;
-    }
-
-    /**
-     * Longitude
-     * <p>
-     * The longitude of the store location.
-     *
-     */
-    @JsonProperty("longitude")
-    public void setLongitude(Double longitude) {
-        this.longitude = longitude;
-    }
-
-    public Address withLongitude(Double longitude) {
-        this.longitude = longitude;
-        return this;
-    }
-
-    /**
-     * Latitude
-     * <p>
-     * The latitude of the store location.
-     *
-     */
-    @JsonProperty("latitude")
-    public Double getLatitude() {
-        return latitude;
-    }
-
-    /**
-     * Latitude
-     * <p>
-     * The latitude of the store location.
-     *
-     */
-    @JsonProperty("latitude")
-    public void setLatitude(Double latitude) {
-        this.latitude = latitude;
-    }
-
-    public Address withLatitude(Double latitude) {
-        this.latitude = latitude;
         return this;
     }
 
@@ -445,14 +362,14 @@ public class Address implements Serializable
         this.additionalProperties.put(name, value);
     }
 
-    public Address withAdditionalProperty(String name, Object value) {
+    public OrderAddress withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(country).append(province).append(address2).append(city).append(address1).append(provinceCode).append(countryCode).append(postalCode).append(latitude).append(additionalProperties).append(longitude).toHashCode();
+        return new HashCodeBuilder().append(country).append(province).append(address2).append(city).append(address1).append(provinceCode).append(countryCode).append(postalCode).append(additionalProperties).toHashCode();
     }
 
     @Override
@@ -460,11 +377,11 @@ public class Address implements Serializable
         if (other == this) {
             return true;
         }
-        if ((other instanceof Address) == false) {
+        if ((other instanceof OrderAddress) == false) {
             return false;
         }
-        Address rhs = ((Address) other);
-        return new EqualsBuilder().append(country, rhs.country).append(province, rhs.province).append(address2, rhs.address2).append(city, rhs.city).append(address1, rhs.address1).append(provinceCode, rhs.provinceCode).append(countryCode, rhs.countryCode).append(postalCode, rhs.postalCode).append(latitude, rhs.latitude).append(additionalProperties, rhs.additionalProperties).append(longitude, rhs.longitude).isEquals();
+        OrderAddress rhs = ((OrderAddress) other);
+        return new EqualsBuilder().append(country, rhs.country).append(province, rhs.province).append(address2, rhs.address2).append(city, rhs.city).append(address1, rhs.address1).append(provinceCode, rhs.provinceCode).append(countryCode, rhs.countryCode).append(postalCode, rhs.postalCode).append(additionalProperties, rhs.additionalProperties).isEquals();
     }
 
 }

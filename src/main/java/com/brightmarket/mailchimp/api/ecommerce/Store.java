@@ -1,22 +1,16 @@
 
-package com.brightmarket.mailchimp.api.ecommerce.store;
+package com.brightmarket.mailchimp.api.ecommerce;
+
+import com.brightmarket.mailchimp.api.Link;
+import com.fasterxml.jackson.annotation.*;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.brightmarket.mailchimp.api.Link;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 
 /**
@@ -170,7 +164,7 @@ public class Store implements Serializable
      */
     @JsonProperty("address")
     @JsonPropertyDescription("The store address.")
-    private Address address;
+    private StoreAddress address;
     /**
      * Connected Site
      * <p>
@@ -258,7 +252,7 @@ public class Store implements Serializable
      * @param connectedSite
      * @param updatedAt
      */
-    public Store(String id, String listId, String name, String platform, String domain, Boolean isSyncing, String emailAddress, String currencyCode, String moneyFormat, String primaryLocale, String timezone, String phone, Address address, ConnectedSite connectedSite, Automations automations, Boolean listIsActive, Date createdAt, Date updatedAt, List<Link> links) {
+    public Store(String id, String listId, String name, String platform, String domain, Boolean isSyncing, String emailAddress, String currencyCode, String moneyFormat, String primaryLocale, String timezone, String phone, StoreAddress address, ConnectedSite connectedSite, Automations automations, Boolean listIsActive, Date createdAt, Date updatedAt, List<Link> links) {
         super();
         this.id = id;
         this.listId = listId;
@@ -620,7 +614,7 @@ public class Store implements Serializable
      *
      */
     @JsonProperty("address")
-    public Address getAddress() {
+    public StoreAddress getAddress() {
         return address;
     }
 
@@ -631,11 +625,11 @@ public class Store implements Serializable
      *
      */
     @JsonProperty("address")
-    public void setAddress(Address address) {
+    public void setAddress(StoreAddress address) {
         this.address = address;
     }
 
-    public Store withAddress(Address address) {
+    public Store withAddress(StoreAddress address) {
         this.address = address;
         return this;
     }

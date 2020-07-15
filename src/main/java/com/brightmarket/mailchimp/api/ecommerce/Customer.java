@@ -1,22 +1,16 @@
 
-package com.brightmarket.mailchimp.api.ecommerce.order;
+package com.brightmarket.mailchimp.api.ecommerce;
+
+import com.brightmarket.mailchimp.api.Link;
+import com.fasterxml.jackson.annotation.*;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import com.brightmarket.mailchimp.api.Link;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 
 /**
@@ -124,7 +118,7 @@ public class Customer implements Serializable
      */
     @JsonProperty("address")
     @JsonPropertyDescription("The address associated with an ecommerce customer.")
-    private Address address;
+    private OrderAddress address;
     /**
      * Creation Time
      * <p>
@@ -178,7 +172,7 @@ public class Customer implements Serializable
      * @param id
      * @param updatedAt
      */
-    public Customer(String id, String emailAddress, Boolean optInStatus, String company, String firstName, String lastName, Long ordersCount, Double totalSpent, Address address, Date createdAt, Date updatedAt, List<Link> links) {
+    public Customer(String id, String emailAddress, Boolean optInStatus, String company, String firstName, String lastName, Long ordersCount, Double totalSpent, OrderAddress address, Date createdAt, Date updatedAt, List<Link> links) {
         super();
         this.id = id;
         this.emailAddress = emailAddress;
@@ -419,7 +413,7 @@ public class Customer implements Serializable
      *
      */
     @JsonProperty("address")
-    public Address getAddress() {
+    public OrderAddress getAddress() {
         return address;
     }
 
@@ -430,11 +424,11 @@ public class Customer implements Serializable
      *
      */
     @JsonProperty("address")
-    public void setAddress(Address address) {
+    public void setAddress(OrderAddress address) {
         this.address = address;
     }
 
-    public Customer withAddress(Address address) {
+    public Customer withAddress(OrderAddress address) {
         this.address = address;
         return this;
     }

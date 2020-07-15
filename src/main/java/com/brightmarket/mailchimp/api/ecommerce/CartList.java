@@ -1,37 +1,31 @@
 
-package com.brightmarket.mailchimp.api.ecommerce.order;
+package com.brightmarket.mailchimp.api.ecommerce;
+
+import com.brightmarket.mailchimp.api.Link;
+import com.fasterxml.jackson.annotation.*;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.brightmarket.mailchimp.api.Link;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyDescription;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
-
 
 /**
- * Ecommerce Customers
+ * Ecommerce Carts
  * <p>
- * A list of an account's ecommerce customers.
+ * A list of an account's ecommerce carts.
  *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
     "store_id",
-    "customers",
+    "carts",
     "total_items",
     "_links"
 })
-public class CustomerList implements Serializable
+public class CartList implements Serializable
 {
 
     /**
@@ -44,14 +38,14 @@ public class CustomerList implements Serializable
     @JsonPropertyDescription("A unique identifier for the store.")
     private String storeId;
     /**
-     * Customers
+     * Checkouts
      * <p>
-     * An array of objects, each representing a customer resource.
+     * An array of objects, each representing a cart resource.
      *
      */
-    @JsonProperty("customers")
-    @JsonPropertyDescription("An array of objects, each representing a customer resource.")
-    private List<Customer> customers = null;
+    @JsonProperty("carts")
+    @JsonPropertyDescription("An array of objects, each representing a cart resource.")
+    private List<Cart> carts = null;
     /**
      * Item Count
      * <p>
@@ -72,26 +66,26 @@ public class CustomerList implements Serializable
     private List<Link> links = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 7602424643202516477L;
+    private final static long serialVersionUID = 6386577205739415857L;
 
     /**
      * No args constructor for use in serialization
      *
      */
-    public CustomerList() {
+    public CartList() {
     }
 
     /**
      *
      * @param totalItems
+     * @param carts
      * @param links
-     * @param customers
      * @param storeId
      */
-    public CustomerList(String storeId, List<Customer> customers, Long totalItems, List<Link> links) {
+    public CartList(String storeId, List<Cart> carts, Long totalItems, List<Link> links) {
         super();
         this.storeId = storeId;
-        this.customers = customers;
+        this.carts = carts;
         this.totalItems = totalItems;
         this.links = links;
     }
@@ -118,35 +112,35 @@ public class CustomerList implements Serializable
         this.storeId = storeId;
     }
 
-    public CustomerList withStoreId(String storeId) {
+    public CartList withStoreId(String storeId) {
         this.storeId = storeId;
         return this;
     }
 
     /**
-     * Customers
+     * Checkouts
      * <p>
-     * An array of objects, each representing a customer resource.
+     * An array of objects, each representing a cart resource.
      *
      */
-    @JsonProperty("customers")
-    public List<Customer> getCustomers() {
-        return customers;
+    @JsonProperty("carts")
+    public List<Cart> getCarts() {
+        return carts;
     }
 
     /**
-     * Customers
+     * Checkouts
      * <p>
-     * An array of objects, each representing a customer resource.
+     * An array of objects, each representing a cart resource.
      *
      */
-    @JsonProperty("customers")
-    public void setCustomers(List<Customer> customers) {
-        this.customers = customers;
+    @JsonProperty("carts")
+    public void setCarts(List<Cart> carts) {
+        this.carts = carts;
     }
 
-    public CustomerList withCustomers(List<Customer> customers) {
-        this.customers = customers;
+    public CartList withCarts(List<Cart> carts) {
+        this.carts = carts;
         return this;
     }
 
@@ -172,7 +166,7 @@ public class CustomerList implements Serializable
         this.totalItems = totalItems;
     }
 
-    public CustomerList withTotalItems(Long totalItems) {
+    public CartList withTotalItems(Long totalItems) {
         this.totalItems = totalItems;
         return this;
     }
@@ -199,7 +193,7 @@ public class CustomerList implements Serializable
         this.links = links;
     }
 
-    public CustomerList withLinks(List<Link> links) {
+    public CartList withLinks(List<Link> links) {
         this.links = links;
         return this;
     }
@@ -214,14 +208,14 @@ public class CustomerList implements Serializable
         this.additionalProperties.put(name, value);
     }
 
-    public CustomerList withAdditionalProperty(String name, Object value) {
+    public CartList withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(totalItems).append(links).append(customers).append(additionalProperties).append(storeId).toHashCode();
+        return new HashCodeBuilder().append(totalItems).append(links).append(carts).append(additionalProperties).append(storeId).toHashCode();
     }
 
     @Override
@@ -229,11 +223,11 @@ public class CustomerList implements Serializable
         if (other == this) {
             return true;
         }
-        if ((other instanceof CustomerList) == false) {
+        if ((other instanceof CartList) == false) {
             return false;
         }
-        CustomerList rhs = ((CustomerList) other);
-        return new EqualsBuilder().append(totalItems, rhs.totalItems).append(links, rhs.links).append(customers, rhs.customers).append(additionalProperties, rhs.additionalProperties).append(storeId, rhs.storeId).isEquals();
+        CartList rhs = ((CartList) other);
+        return new EqualsBuilder().append(totalItems, rhs.totalItems).append(links, rhs.links).append(carts, rhs.carts).append(additionalProperties, rhs.additionalProperties).append(storeId, rhs.storeId).isEquals();
     }
 
 }
