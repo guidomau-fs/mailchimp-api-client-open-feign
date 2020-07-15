@@ -36,7 +36,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
     "discount",
     "_links"
 })
-public class Line implements Serializable
+public class OrderLine implements Serializable
 {
 
     /**
@@ -133,7 +133,7 @@ public class Line implements Serializable
      * No args constructor for use in serialization
      *
      */
-    public Line() {
+    public OrderLine() {
     }
 
     /**
@@ -148,7 +148,7 @@ public class Line implements Serializable
      * @param id
      * @param productVariantTitle
      */
-    public Line(String id, String productId, String productTitle, String productVariantId, String productVariantTitle, Long quantity, Double price, Double discount, List<Link> links) {
+    public OrderLine(String id, String productId, String productTitle, String productVariantId, String productVariantTitle, Long quantity, Double price, Double discount, List<Link> links) {
         super();
         this.id = id;
         this.productId = productId;
@@ -185,7 +185,7 @@ public class Line implements Serializable
         this.id = id;
     }
 
-    public Line withId(String id) {
+    public OrderLine withId(String id) {
         this.id = id;
         return this;
     }
@@ -214,7 +214,7 @@ public class Line implements Serializable
         this.productId = productId;
     }
 
-    public Line withProductId(String productId) {
+    public OrderLine withProductId(String productId) {
         this.productId = productId;
         return this;
     }
@@ -241,7 +241,7 @@ public class Line implements Serializable
         this.productTitle = productTitle;
     }
 
-    public Line withProductTitle(String productTitle) {
+    public OrderLine withProductTitle(String productTitle) {
         this.productTitle = productTitle;
         return this;
     }
@@ -270,7 +270,7 @@ public class Line implements Serializable
         this.productVariantId = productVariantId;
     }
 
-    public Line withProductVariantId(String productVariantId) {
+    public OrderLine withProductVariantId(String productVariantId) {
         this.productVariantId = productVariantId;
         return this;
     }
@@ -297,7 +297,7 @@ public class Line implements Serializable
         this.productVariantTitle = productVariantTitle;
     }
 
-    public Line withProductVariantTitle(String productVariantTitle) {
+    public OrderLine withProductVariantTitle(String productVariantTitle) {
         this.productVariantTitle = productVariantTitle;
         return this;
     }
@@ -326,7 +326,7 @@ public class Line implements Serializable
         this.quantity = quantity;
     }
 
-    public Line withQuantity(Long quantity) {
+    public OrderLine withQuantity(Long quantity) {
         this.quantity = quantity;
         return this;
     }
@@ -355,7 +355,7 @@ public class Line implements Serializable
         this.price = price;
     }
 
-    public Line withPrice(Double price) {
+    public OrderLine withPrice(Double price) {
         this.price = price;
         return this;
     }
@@ -382,7 +382,7 @@ public class Line implements Serializable
         this.discount = discount;
     }
 
-    public Line withDiscount(Double discount) {
+    public OrderLine withDiscount(Double discount) {
         this.discount = discount;
         return this;
     }
@@ -409,7 +409,7 @@ public class Line implements Serializable
         this.links = links;
     }
 
-    public Line withLinks(List<Link> links) {
+    public OrderLine withLinks(List<Link> links) {
         this.links = links;
         return this;
     }
@@ -424,7 +424,7 @@ public class Line implements Serializable
         this.additionalProperties.put(name, value);
     }
 
-    public Line withAdditionalProperty(String name, Object value) {
+    public OrderLine withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
     }
@@ -439,10 +439,10 @@ public class Line implements Serializable
         if (other == this) {
             return true;
         }
-        if ((other instanceof Line) == false) {
+        if ((other instanceof OrderLine) == false) {
             return false;
         }
-        Line rhs = ((Line) other);
+        OrderLine rhs = ((OrderLine) other);
         return new EqualsBuilder().append(productTitle, rhs.productTitle).append(quantity, rhs.quantity).append(productId, rhs.productId).append(productVariantId, rhs.productVariantId).append(price, rhs.price).append(discount, rhs.discount).append(links, rhs.links).append(id, rhs.id).append(additionalProperties, rhs.additionalProperties).append(productVariantTitle, rhs.productVariantTitle).isEquals();
     }
 

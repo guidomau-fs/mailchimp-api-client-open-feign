@@ -1,5 +1,5 @@
 
-package com.brightmarket.mailchimp.api.ecommerce.order.cart;
+package com.brightmarket.mailchimp.api.ecommerce.order;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.brightmarket.mailchimp.api.Link;
-import com.brightmarket.mailchimp.api.ecommerce.order.Customer;
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -119,7 +118,7 @@ public class Cart implements Serializable
      */
     @JsonProperty("lines")
     @JsonPropertyDescription("An array of the cart's line items.")
-    private List<Line> lines = null;
+    private List<CartLine> lines = null;
     /**
      * Creation Time
      * <p>
@@ -172,7 +171,7 @@ public class Cart implements Serializable
      * @param checkoutUrl
      * @param updatedAt
      */
-    public Cart(String id, Customer customer, String campaignId, String checkoutUrl, String currencyCode, Double orderTotal, Double taxTotal, List<Line> lines, Date createdAt, Date updatedAt, List<Link> links) {
+    public Cart(String id, Customer customer, String campaignId, String checkoutUrl, String currencyCode, Double orderTotal, Double taxTotal, List<CartLine> lines, Date createdAt, Date updatedAt, List<Link> links) {
         super();
         this.id = id;
         this.customer = customer;
@@ -392,7 +391,7 @@ public class Cart implements Serializable
      *
      */
     @JsonProperty("lines")
-    public List<Line> getLines() {
+    public List<CartLine> getLines() {
         return lines;
     }
 
@@ -404,11 +403,11 @@ public class Cart implements Serializable
      *
      */
     @JsonProperty("lines")
-    public void setLines(List<Line> lines) {
+    public void setLines(List<CartLine> lines) {
         this.lines = lines;
     }
 
-    public Cart withLines(List<Line> lines) {
+    public Cart withLines(List<CartLine> lines) {
         this.lines = lines;
         return this;
     }

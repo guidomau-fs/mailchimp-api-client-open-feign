@@ -239,7 +239,7 @@ public class Order implements Serializable
      */
     @JsonProperty("lines")
     @JsonPropertyDescription("An array of the order's line items.")
-    private List<Line> lines = null;
+    private List<OrderLine> lines = null;
     /**
      * Outreach
      * <p>
@@ -294,7 +294,7 @@ public class Order implements Serializable
      * @param customer
      * @param cancelledAtForeign
      */
-    public Order(String id, Customer customer, String campaignId, String landingSite, String financialStatus, String fulfillmentStatus, String currencyCode, Double orderTotal, String orderUrl, Double discountTotal, Double taxTotal, Double shippingTotal, Order.TrackingCode trackingCode, Date processedAtForeign, Date cancelledAtForeign, Date updatedAtForeign, ShippingAddress shippingAddress, BillingAddress billingAddress, List<Promo> promos, List<Line> lines, Outreach outreach, List<Link> links) {
+    public Order(String id, Customer customer, String campaignId, String landingSite, String financialStatus, String fulfillmentStatus, String currencyCode, Double orderTotal, String orderUrl, Double discountTotal, Double taxTotal, Double shippingTotal, Order.TrackingCode trackingCode, Date processedAtForeign, Date cancelledAtForeign, Date updatedAtForeign, ShippingAddress shippingAddress, BillingAddress billingAddress, List<Promo> promos, List<OrderLine> lines, Outreach outreach, List<Link> links) {
         super();
         this.id = id;
         this.customer = customer;
@@ -849,7 +849,7 @@ public class Order implements Serializable
      *
      */
     @JsonProperty("lines")
-    public List<Line> getLines() {
+    public List<OrderLine> getLines() {
         return lines;
     }
 
@@ -861,11 +861,11 @@ public class Order implements Serializable
      *
      */
     @JsonProperty("lines")
-    public void setLines(List<Line> lines) {
+    public void setLines(List<OrderLine> lines) {
         this.lines = lines;
     }
 
-    public Order withLines(List<Line> lines) {
+    public Order withLines(List<OrderLine> lines) {
         this.lines = lines;
         return this;
     }

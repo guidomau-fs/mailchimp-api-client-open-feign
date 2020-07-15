@@ -1,5 +1,5 @@
 
-package com.brightmarket.mailchimp.api.ecommerce.order.cart;
+package com.brightmarket.mailchimp.api.ecommerce.order;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -31,7 +31,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
     "quantity",
     "price"
 })
-public class Line implements Serializable
+public class CartLine implements Serializable
 {
 
     /**
@@ -110,7 +110,7 @@ public class Line implements Serializable
      * No args constructor for use in serialization
      *
      */
-    public Line() {
+    public CartLine() {
     }
 
     /**
@@ -123,7 +123,7 @@ public class Line implements Serializable
      * @param id
      * @param productVariantTitle
      */
-    public Line(String id, String productId, String productTitle, String productVariantId, String productVariantTitle, Long quantity, Double price) {
+    public CartLine(String id, String productId, String productTitle, String productVariantId, String productVariantTitle, Long quantity, Double price) {
         super();
         this.id = id;
         this.productId = productId;
@@ -158,7 +158,7 @@ public class Line implements Serializable
         this.id = id;
     }
 
-    public Line withId(String id) {
+    public CartLine withId(String id) {
         this.id = id;
         return this;
     }
@@ -187,7 +187,7 @@ public class Line implements Serializable
         this.productId = productId;
     }
 
-    public Line withProductId(String productId) {
+    public CartLine withProductId(String productId) {
         this.productId = productId;
         return this;
     }
@@ -214,7 +214,7 @@ public class Line implements Serializable
         this.productTitle = productTitle;
     }
 
-    public Line withProductTitle(String productTitle) {
+    public CartLine withProductTitle(String productTitle) {
         this.productTitle = productTitle;
         return this;
     }
@@ -243,7 +243,7 @@ public class Line implements Serializable
         this.productVariantId = productVariantId;
     }
 
-    public Line withProductVariantId(String productVariantId) {
+    public CartLine withProductVariantId(String productVariantId) {
         this.productVariantId = productVariantId;
         return this;
     }
@@ -270,7 +270,7 @@ public class Line implements Serializable
         this.productVariantTitle = productVariantTitle;
     }
 
-    public Line withProductVariantTitle(String productVariantTitle) {
+    public CartLine withProductVariantTitle(String productVariantTitle) {
         this.productVariantTitle = productVariantTitle;
         return this;
     }
@@ -299,7 +299,7 @@ public class Line implements Serializable
         this.quantity = quantity;
     }
 
-    public Line withQuantity(Long quantity) {
+    public CartLine withQuantity(Long quantity) {
         this.quantity = quantity;
         return this;
     }
@@ -328,7 +328,7 @@ public class Line implements Serializable
         this.price = price;
     }
 
-    public Line withPrice(Double price) {
+    public CartLine withPrice(Double price) {
         this.price = price;
         return this;
     }
@@ -343,7 +343,7 @@ public class Line implements Serializable
         this.additionalProperties.put(name, value);
     }
 
-    public Line withAdditionalProperty(String name, Object value) {
+    public CartLine withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
     }
@@ -358,10 +358,10 @@ public class Line implements Serializable
         if (other == this) {
             return true;
         }
-        if ((other instanceof Line) == false) {
+        if ((other instanceof CartLine) == false) {
             return false;
         }
-        Line rhs = ((Line) other);
+        CartLine rhs = ((CartLine) other);
         return new EqualsBuilder().append(productTitle, rhs.productTitle).append(quantity, rhs.quantity).append(productId, rhs.productId).append(productVariantId, rhs.productVariantId).append(price, rhs.price).append(id, rhs.id).append(additionalProperties, rhs.additionalProperties).append(productVariantTitle, rhs.productVariantTitle).isEquals();
     }
 
