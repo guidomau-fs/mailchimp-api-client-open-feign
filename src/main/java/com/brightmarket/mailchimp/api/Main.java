@@ -1,6 +1,5 @@
 package com.brightmarket.mailchimp.api;
 
-import com.brightmarket.mailchimp.api.codec.DefaultErrorDecoder;
 import com.brightmarket.mailchimp.api.model.ecommerce.*;
 import com.brightmarket.mailchimp.api.model.error.CustomException;
 import com.brightmarket.mailchimp.api.stub.CartsStub;
@@ -9,13 +8,6 @@ import com.brightmarket.mailchimp.api.stub.StoresStub;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import feign.Feign;
-import feign.Logger.Level;
-import feign.http2client.Http2Client;
-import feign.jackson.JacksonDecoder;
-import feign.jackson.JacksonEncoder;
-import feign.micrometer.MicrometerCapability;
-import feign.slf4j.Slf4jLogger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
