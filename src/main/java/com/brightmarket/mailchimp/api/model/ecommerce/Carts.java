@@ -13,29 +13,39 @@ import java.util.Map;
 
 
 /**
- * Ecommerce Orders
+ * Ecommerce Carts
  * <p>
- * A list of an account's ecommerce orders.
+ * A list of an account's ecommerce carts.
  *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "orders",
+    "store_id",
+    "carts",
     "total_items",
     "_links"
 })
-public class OrderList implements Serializable
+public class Carts implements Serializable
 {
 
     /**
-     * Orders
+     * Store Foreign ID
      * <p>
-     * An array of objects, each representing an order resource.
+     * A unique identifier for the store.
      *
      */
-    @JsonProperty("orders")
-    @JsonPropertyDescription("An array of objects, each representing an order resource.")
-    private List<Order> orders = null;
+    @JsonProperty("store_id")
+    @JsonPropertyDescription("A unique identifier for the store.")
+    private String storeId;
+    /**
+     * Checkouts
+     * <p>
+     * An array of objects, each representing a cart resource.
+     *
+     */
+    @JsonProperty("carts")
+    @JsonPropertyDescription("An array of objects, each representing a cart resource.")
+    private List<Cart> carts = null;
     /**
      * Item Count
      * <p>
@@ -56,52 +66,81 @@ public class OrderList implements Serializable
     private List<Link> links = null;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-    private final static long serialVersionUID = 9014372077236215461L;
+    private final static long serialVersionUID = 6386577205739415857L;
 
     /**
      * No args constructor for use in serialization
      *
      */
-    public OrderList() {
+    public Carts() {
     }
 
     /**
      *
      * @param totalItems
-     * @param orders
+     * @param carts
      * @param links
+     * @param storeId
      */
-    public OrderList(List<Order> orders, Long totalItems, List<Link> links) {
+    public Carts(String storeId, List<Cart> carts, Long totalItems, List<Link> links) {
         super();
-        this.orders = orders;
+        this.storeId = storeId;
+        this.carts = carts;
         this.totalItems = totalItems;
         this.links = links;
     }
 
     /**
-     * Orders
+     * Store Foreign ID
      * <p>
-     * An array of objects, each representing an order resource.
+     * A unique identifier for the store.
      *
      */
-    @JsonProperty("orders")
-    public List<Order> getOrders() {
-        return orders;
+    @JsonProperty("store_id")
+    public String getStoreId() {
+        return storeId;
     }
 
     /**
-     * Orders
+     * Store Foreign ID
      * <p>
-     * An array of objects, each representing an order resource.
+     * A unique identifier for the store.
      *
      */
-    @JsonProperty("orders")
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
+    @JsonProperty("store_id")
+    public void setStoreId(String storeId) {
+        this.storeId = storeId;
     }
 
-    public OrderList withOrders(List<Order> orders) {
-        this.orders = orders;
+    public Carts withStoreId(String storeId) {
+        this.storeId = storeId;
+        return this;
+    }
+
+    /**
+     * Checkouts
+     * <p>
+     * An array of objects, each representing a cart resource.
+     *
+     */
+    @JsonProperty("carts")
+    public List<Cart> getCarts() {
+        return carts;
+    }
+
+    /**
+     * Checkouts
+     * <p>
+     * An array of objects, each representing a cart resource.
+     *
+     */
+    @JsonProperty("carts")
+    public void setCarts(List<Cart> carts) {
+        this.carts = carts;
+    }
+
+    public Carts withCarts(List<Cart> carts) {
+        this.carts = carts;
         return this;
     }
 
@@ -127,7 +166,7 @@ public class OrderList implements Serializable
         this.totalItems = totalItems;
     }
 
-    public OrderList withTotalItems(Long totalItems) {
+    public Carts withTotalItems(Long totalItems) {
         this.totalItems = totalItems;
         return this;
     }
@@ -154,7 +193,7 @@ public class OrderList implements Serializable
         this.links = links;
     }
 
-    public OrderList withLinks(List<Link> links) {
+    public Carts withLinks(List<Link> links) {
         this.links = links;
         return this;
     }
@@ -169,14 +208,14 @@ public class OrderList implements Serializable
         this.additionalProperties.put(name, value);
     }
 
-    public OrderList withAdditionalProperty(String name, Object value) {
+    public Carts withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(orders).append(totalItems).append(links).append(additionalProperties).toHashCode();
+        return new HashCodeBuilder().append(totalItems).append(links).append(carts).append(additionalProperties).append(storeId).toHashCode();
     }
 
     @Override
@@ -184,11 +223,11 @@ public class OrderList implements Serializable
         if (other == this) {
             return true;
         }
-        if ((other instanceof OrderList) == false) {
+        if ((other instanceof Carts) == false) {
             return false;
         }
-        OrderList rhs = ((OrderList) other);
-        return new EqualsBuilder().append(orders, rhs.orders).append(totalItems, rhs.totalItems).append(links, rhs.links).append(additionalProperties, rhs.additionalProperties).isEquals();
+        Carts rhs = ((Carts) other);
+        return new EqualsBuilder().append(totalItems, rhs.totalItems).append(links, rhs.links).append(carts, rhs.carts).append(additionalProperties, rhs.additionalProperties).append(storeId, rhs.storeId).isEquals();
     }
 
 }
