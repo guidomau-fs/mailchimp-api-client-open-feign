@@ -20,4 +20,26 @@ public class EntityFactory {
 
         return cart;
     }
+
+    public static Customer createCustomer() {
+        Customer customer = new Customer();
+        OrderAddress address = new OrderAddress();
+
+        address.setAddress1("2728  Clair Street");
+        address.setCity("Waco");
+        address.setProvince("Texas");
+        address.setProvinceCode("TX");
+        address.setCountryCode("US");
+        address.setPostalCode("76710");
+
+        customer.setId("1");
+        customer.setFirstName("Ruth");
+        customer.setLastName("Cramer");
+        customer.setEmailAddress("nw3rwdionck@temporary-mail.net");
+        customer.setOptInStatus(true);
+        customer.setCompany("Lafayette Radio");
+        customer.setAddress(address);
+
+        return customer;
+    }
 }
