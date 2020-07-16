@@ -26,7 +26,6 @@ public class Main {
 
     private static Logger logger = LoggerFactory.getLogger(Main.class);
 
-
     public static void main(String[] args) throws JsonProcessingException {
 
         ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
