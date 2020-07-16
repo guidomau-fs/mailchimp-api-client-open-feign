@@ -36,7 +36,7 @@ public class Main {
 
             // RETRIEVING THE CARTS LIST BY STORE 123
             CartsStub cartsStub = StubFactory.createCartsStub();
-            Carts carts = cartsStub.retrieveCartsFromStore("123");
+            Carts carts = cartsStub.retrieveCartsFromStore(stores.getStores().get(0).getId());
             //System.out.println(objectMapper.writeValueAsString(carts));
 
 
@@ -44,12 +44,13 @@ public class Main {
             Customer customer = customers.getCustomers().get(0);
             customer.setCreatedAt(null);
             customer.setUpdatedAt(null);
+            customer.setLinks(null);
             List<CartLine> lines = new ArrayList<>();
 
             Cart cart2save = EntityFactory.createCart(customer, lines);
             System.out.println(objectMapper.writeValueAsString(cart2save));
 
-            Cart cartSaved = cartsStub.addCartToStore("123", cart2save);
+            Cart cartSaved = cartsStub.addCartToStore(stores.getStores().get(0).getId(), cart2save);
             System.out.println(objectMapper.writeValueAsString(cartSaved));
 
         } catch (CustomException e) {
