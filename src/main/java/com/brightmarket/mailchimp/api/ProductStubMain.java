@@ -29,19 +29,16 @@ public class ProductStubMain {
 
             //RETRIEVING THE STORE FROM THE SERVER
             Store store = storesStub.retrieveStore(apiKey, store_id);
-            System.out.println(objectMapper.writeValueAsString(store));
 
-            //CREATING THE PRODUCT INTO THE STORE
+            System.out.println("\n//------------- CREATING THE PRODUCT INTO THE STORE -------------//");
             Product productToSave = EntityFactory.createProduct();
             Product productSaved = productsStub.addProductToStore(apiKey, store.getId(), productToSave);
-            System.out.println("PRODUCT SAVED");
             System.out.println(objectMapper.writeValueAsString(productSaved));
 
-            //ADDING A NEW VARIANT TO THE PRODUCT
+            System.out.println("\n//------------- ADDING A NEW VARIANT TO THE PRODUCT -------------//");
             Variant variantToAdd = EntityFactory.createProductVariant();
             Variant variantAdded = productsStub.addProductVariantToStore(apiKey, store_id,
                     productSaved.getId(), variantToAdd);
-            System.out.println("VARIANT ADDED");
             System.out.println(objectMapper.writeValueAsString(variantAdded));
 
         } catch (CustomException exception) {

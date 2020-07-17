@@ -5,8 +5,8 @@ import com.brightmarket.mailchimp.api.factory.EntityFactory;
 import com.brightmarket.mailchimp.api.factory.StubFactory;
 import com.brightmarket.mailchimp.api.model.ecommerce.*;
 import com.brightmarket.mailchimp.api.model.error.CustomException;
-import com.brightmarket.mailchimp.api.stub.CartsStub;
 import com.brightmarket.mailchimp.api.stub.CustomersStub;
+import com.brightmarket.mailchimp.api.stub.OrdersStub;
 import com.brightmarket.mailchimp.api.stub.ProductsStub;
 import com.brightmarket.mailchimp.api.stub.StoresStub;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -16,7 +16,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartStubMain {
+public class OrderStubMain {
 
     public static void main(String[] args) throws JsonProcessingException {
 
@@ -30,8 +30,8 @@ public class CartStubMain {
         try {
 
             StoresStub storesStub = StubFactory.createStoresStub();
+            OrdersStub ordersStub = StubFactory.createOrdersStub();
             CustomersStub customersStub = StubFactory.createCustomersStub();
-            CartsStub cartsStub = StubFactory.createCartsStub();
             ProductsStub productsStub = StubFactory.createProductsStub();
 
             // RETRIEVING THE STORE FROM THE SERVER
@@ -43,28 +43,22 @@ public class CartStubMain {
             customer.setUpdatedAt(null);
 
             Product product = productsStub.retrieveProductFromStore(apiKey, store.getId(), product_id);
-            CartLine cartLine = EntityFactory.createCartLine(product);
-            List<CartLine> lines = new ArrayList<>();
-            lines.add(cartLine);
+            OrderLine orderLine = EntityFactory.createOrderLine(product);
+            List<OrderLine> lines = new ArrayList<>();
+            lines.add(orderLine);
 
-            // CREATING THE CART INTO THE STORE
-            Cart cart2save = EntityFactory.createCart(customer, lines);
-            cart2save.setCreatedAt(null);
-            cart2save.setUpdatedAt(null);
-
-            System.out.println("\n//------------- CREATING THE CART INTO THE STORE -------------//");
-            Cart cartSaved = cartsStub.addCartToStore(apiKey, store.getId(), cart2save);
-            cartSaved.setCampaignId(null);
-            cartSaved.setCreatedAt(null);
-            cartSaved.setUpdatedAt(null);
-            cartSaved.getCustomer().setCreatedAt(null);
-            cartSaved.getCustomer().setUpdatedAt(null);
-            System.out.println(objectMapper.writeValueAsString(cartSaved));
+            System.out.println("\n//------------- CREATING THE ORDER INTO THE STORE -------------//");
+            Order order2save = EntityFactory.createOrder(customer, lines);
+            Order orderSaved = ordersStub.addOrderToStore(apiKey, store.getId(), order2save);
+            orderSaved.setCampaignId(null);
+            orderSaved.getCustomer().setCreatedAt(null);
+            orderSaved.getCustomer().setUpdatedAt(null);
+            System.out.println(objectMapper.writeValueAsString(orderSaved));
 
             // DELETING THE CART INTO THE STORE
-            cartsStub.deleteCartFromStore(apiKey, store.getId(), cartSaved.getId());
-            System.out.println(objectMapper.writeValueAsString(cartSaved));
-            System.out.println("\n//------------- DELETING THE CART INTO THE STORE -------------//");
+            ordersStub.deleteOrderFromStore(apiKey, store.getId(), orderSaved.getId());
+            System.out.println(objectMapper.writeValueAsString(orderSaved));
+            System.out.println("\n//------------- DELETING THE ORDER INTO THE STORE -------------//");
 
         } catch (CustomException exception) {
             System.out.println(objectMapper.writeValueAsString(exception.getError()));

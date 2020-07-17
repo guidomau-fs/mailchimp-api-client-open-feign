@@ -1,12 +1,39 @@
 package com.brightmarket.mailchimp.api.factory;
 
 import com.brightmarket.mailchimp.api.model.ecommerce.*;
+import com.brightmarket.mailchimp.api.model.ecommerce.Order.TrackingCode;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class EntityFactory {
+
+    public static OrderLine createOrderLine(Product product) {
+        OrderLine orderLine = new OrderLine();
+        orderLine.setId(getARandomId());
+        orderLine.setDiscount(1D);
+        orderLine.setPrice(100d);
+        orderLine.setProductId(product.getId());
+        orderLine.setProductTitle(product.getTitle());
+        orderLine.setProductVariantId(product.getVariants().get(0).getId());
+        orderLine.setProductVariantTitle(product.getVariants().get(0).getTitle());
+        orderLine.setQuantity(100l);
+        return orderLine;
+    }
+
+    public static Order createOrder(Customer customer, List<OrderLine> lines) {
+
+        Order order = new Order();
+        order.setId(getARandomId());
+        order.setCustomer(customer);
+        order.setCurrencyCode("COP");
+        order.setOrderTotal(10D);
+        order.setLines(lines);
+        order.setTrackingCode(TrackingCode.PREC);
+
+        return order;
+    }
 
     public static Cart createCart(Customer customer, List<CartLine> lines) {
 

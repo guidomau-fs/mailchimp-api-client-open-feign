@@ -29,12 +29,12 @@ public class CustomerStubMain {
             // RETRIEVING THE STORE FROM THE SERVER
             Store store = storesStub.retrieveStore(apiKey, store_id);
 
-            // CREATING THE CUSTOMER INTO THE STORE
+            System.out.println("\n//------------- CREATING THE CUSTOMER INTO THE STORE -------------//");
             Customer customerToSave = EntityFactory.createCustomer();
             Customer customerSaved = customersStub.addCustomerToStore(apiKey, store.getId(), customerToSave);
             System.out.println(objectMapper.writeValueAsString(customerSaved));
 
-            // UPDATING THE CUSTOMER INTO THE STORE
+            System.out.println("\n//------------- UPDATING THE CUSTOMER INTO THE STORE -------------//");
             customerSaved.setFirstName(customerSaved.getFirstName() + " UPDATED");
             customerSaved.setCreatedAt(null);
             customerSaved.setUpdatedAt(null);
