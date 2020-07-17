@@ -1,9 +1,11 @@
 package com.brightmarket.mailchimp.api;
 
 import com.brightmarket.mailchimp.api.factory.ApiKeyFactory;
-import com.brightmarket.mailchimp.api.factory.EntityFactory;
 import com.brightmarket.mailchimp.api.factory.StubFactory;
-import com.brightmarket.mailchimp.api.model.ecommerce.*;
+import com.brightmarket.mailchimp.api.model.ecommerce.Carts;
+import com.brightmarket.mailchimp.api.model.ecommerce.Customers;
+import com.brightmarket.mailchimp.api.model.ecommerce.Store;
+import com.brightmarket.mailchimp.api.model.ecommerce.Stores;
 import com.brightmarket.mailchimp.api.model.error.CustomException;
 import com.brightmarket.mailchimp.api.stub.CartsStub;
 import com.brightmarket.mailchimp.api.stub.CustomersStub;
@@ -13,9 +15,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
 
@@ -28,34 +27,28 @@ public class Main {
 
         try {
 
-            // RETRIEVING THE STORES LIST
             StoresStub storesStub = StubFactory.createStoresStub();
-            Stores stores = storesStub.retrieveStores(apiKey);
-            //System.out.println(objectMapper.writeValueAsString(stores));
-
-            // RETRIEVING THE CUSTOMERS LIST BY STORE 123
             CustomersStub customersStub = StubFactory.createCustomersStub();
-            Customers customers = customersStub.retrieveCustomersFromStore(apiKey, stores.getStores().get(0).getId());
-            //System.out.println(objectMapper.writeValueAsString(customers));
-
-            // RETRIEVING THE CARTS LIST BY STORE 123
             CartsStub cartsStub = StubFactory.createCartsStub();
-            Carts carts = cartsStub.retrieveCartsFromStore(apiKey, stores.getStores().get(0).getId());
-            //System.out.println(objectMapper.writeValueAsString(carts));
 
+            System.out.println("\n//------------- RETRIEVING THE STORES LIST -------------//");
+            Stores stores = storesStub.retrieveStores(apiKey);
+            System.out.println(objectMapper.writeValueAsString(stores));
 
-            // SAVING A CART IN THE STORE 123
-            Customer customer = customers.getCustomers().get(0);
-            customer.setCreatedAt(null);
-            customer.setUpdatedAt(null);
-            customer.setLinks(null);
-            List<CartLine> lines = new ArrayList<>();
+            System.out.println("\n//------------- RETRIEVING THE CUSTOMERS LIST BY STORE -------------//");
+            for (Store store : stores.getStores()) {
 
-            Cart cart2save = EntityFactory.createCart(customer, lines);
-            System.out.println(objectMapper.writeValueAsString(cart2save));
+                Customers customers = customersStub.retrieveCustomersFromStore(apiKey, store.getId());
+                System.out.println(objectMapper.writeValueAsString(customers));
+            }
 
-            Cart cartSaved = cartsStub.addCartToStore(apiKey, stores.getStores().get(0).getId(), cart2save);
-            System.out.println(objectMapper.writeValueAsString(cartSaved));
+            System.out.println("\n//------------- RETRIEVING THE CARTS LIST BY STORE -------------//");
+            for (Store store : stores.getStores()) {
+
+                Carts carts = cartsStub.retrieveCartsFromStore(apiKey, store.getId());
+                System.out.println(objectMapper.writeValueAsString(carts));
+            }
+
 
         } catch (CustomException e) {
             System.out.println(objectMapper.writeValueAsString(e.getError()));
