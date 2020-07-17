@@ -1,11 +1,10 @@
 package com.brightmarket.mailchimp.api.factory;
 
-import com.brightmarket.mailchimp.api.model.ecommerce.Cart;
-import com.brightmarket.mailchimp.api.model.ecommerce.CartLine;
-import com.brightmarket.mailchimp.api.model.ecommerce.Customer;
-import com.brightmarket.mailchimp.api.model.ecommerce.OrderAddress;
+import com.brightmarket.mailchimp.api.model.ecommerce.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class EntityFactory {
 
@@ -32,7 +31,7 @@ public class EntityFactory {
         address.setCountryCode("US");
         address.setPostalCode("76710");
 
-        customer.setId("1");
+        customer.setId(getARandomId());
         customer.setFirstName("Ruth");
         customer.setLastName("Cramer");
         customer.setEmailAddress("nw3rwdionck@temporary-mail.net");
@@ -42,4 +41,39 @@ public class EntityFactory {
 
         return customer;
     }
+
+    public static Product createProduct() {
+        Product product = new Product();
+        Variant variant = new Variant();
+        List<Variant> variants = new ArrayList<>();
+        String productId = getARandomId();
+
+        product.setId(productId);
+        product.setTitle("product " + productId + " title");
+        product.setDescription("product " + productId + " description");
+
+        variant.setId(product.getId());
+        variant.setTitle(product.getTitle());
+
+        variants.add(variant);
+
+        product.setVariants(variants);
+
+        return product;
+    }
+
+    public static Variant createProductVariant() {
+        Variant variant = new Variant();
+        String variantId = getARandomId();
+
+        variant.setId(variantId);
+        variant.setTitle("Variant " + variantId + " title");
+
+        return variant;
+    }
+
+    private static String getARandomId() {
+        return Integer.toString((int) (Math.random() * (700 - 1 + 1) + 1));
+    }
+
 }
