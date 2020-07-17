@@ -14,19 +14,21 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class ProductStubMain {
+
     public static void main(String[] args) throws JsonProcessingException {
+
         String apiKey = ApiKeyFactory.retrieveApiKey();
         String store_id = "123";
 
         ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
         try {
+
             StoresStub storesStub = StubFactory.createStoresStub();
             ProductsStub productsStub = StubFactory.createProductsStub();
 
             //RETRIEVING THE STORE FROM THE SERVER
             Store store = storesStub.retrieveStore(apiKey, store_id);
-
             System.out.println(objectMapper.writeValueAsString(store));
 
             //CREATING THE PRODUCT INTO THE STORE
@@ -41,6 +43,7 @@ public class ProductStubMain {
                     productSaved.getId(), variantToAdd);
             System.out.println("VARIANT ADDED");
             System.out.println(objectMapper.writeValueAsString(variantAdded));
+
         } catch (CustomException exception) {
             System.out.println(objectMapper.writeValueAsString(exception.getError()));
         } catch (Exception exception) {

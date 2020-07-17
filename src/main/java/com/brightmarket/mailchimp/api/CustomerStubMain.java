@@ -36,6 +36,8 @@ public class CustomerStubMain {
 
             // UPDATING THE CUSTOMER INTO THE STORE
             customerSaved.setFirstName(customerSaved.getFirstName() + " UPDATED");
+            customerSaved.setCreatedAt(null);
+            customerSaved.setUpdatedAt(null);
             Customer customerUpdated = customersStub.addOrUpdateCustomerFromStore(apiKey, store.getId(), customerSaved.getId(), customerSaved);
             System.out.println(objectMapper.writeValueAsString(customerUpdated));
 

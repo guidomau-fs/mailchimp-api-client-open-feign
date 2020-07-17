@@ -11,13 +11,25 @@ public class EntityFactory {
     public static Cart createCart(Customer customer, List<CartLine> lines) {
 
         Cart cart = new Cart();
-        cart.setId("1");
+        cart.setId(getARandomId());
         cart.setCustomer(customer);
         cart.setCurrencyCode("COP");
         cart.setOrderTotal(20D);
         cart.setLines(lines);
 
         return cart;
+    }
+
+    public static CartLine createCartLine(Product product) {
+        CartLine cartLine = new CartLine();
+        cartLine.setId(getARandomId());
+        cartLine.setPrice(10D);
+        cartLine.setProductId(product.getId());
+        cartLine.setProductTitle(product.getTitle());
+        cartLine.setProductVariantId(product.getVariants().get(0).getId());
+        cartLine.setProductVariantTitle(product.getVariants().get(0).getTitle());
+        cartLine.setQuantity(8L);
+        return cartLine;
     }
 
     public static Customer createCustomer() {

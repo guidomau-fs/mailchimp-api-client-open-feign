@@ -18,6 +18,6 @@ public interface StoresStub {
     @Headers({
             "Authorization: {token}"
     })
-    @RequestLine("GET /ecommerce/stores/store_id")
+    @RequestLine("GET /ecommerce/stores/{store_id}")
     Store retrieveStore(@Param("token") String token, @Param("store_id") String storeId);
 }
