@@ -1,5 +1,7 @@
 package com.brightmarket.mailchimp.api;
 
+import com.brightmarket.mailchimp.api.factory.ApiKeyFactory;
+import com.brightmarket.mailchimp.api.factory.StubFactory;
 import com.brightmarket.mailchimp.api.model.ecommerce.Carts;
 import com.brightmarket.mailchimp.api.model.ecommerce.Customers;
 import com.brightmarket.mailchimp.api.model.ecommerce.Store;
@@ -20,6 +22,7 @@ public class GETMain {
 
     public static void main(String[] args) throws JsonProcessingException {
 
+        String apiKey = ApiKeyFactory.retrieveApiKey();
         ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
         try {
@@ -29,20 +32,20 @@ public class GETMain {
             CartsStub cartsStub = StubFactory.createCartsStub();
 
             System.out.println("\n//------------- RETRIEVING THE STORES LIST -------------//");
-            Stores stores = storesStub.retrieveStores();
+            Stores stores = storesStub.retrieveStores(apiKey);
             System.out.println(objectMapper.writeValueAsString(stores));
 
             System.out.println("\n//------------- RETRIEVING THE CUSTOMERS LIST BY STORE -------------//");
             for (Store store : stores.getStores()) {
 
-                Customers customers = customersStub.retrieveCustomersFromStore(store.getId());
+                Customers customers = customersStub.retrieveCustomersFromStore(apiKey, store.getId());
                 System.out.println(objectMapper.writeValueAsString(customers));
             }
 
             System.out.println("\n//------------- RETRIEVING THE CARTS LIST BY STORE -------------//");
             for (Store store : stores.getStores()) {
 
-                Carts carts = cartsStub.retrieveCartsFromStore(store.getId());
+                Carts carts = cartsStub.retrieveCartsFromStore(apiKey, store.getId());
                 System.out.println(objectMapper.writeValueAsString(carts));
             }
 

@@ -9,14 +9,45 @@ import feign.RequestLine;
 public interface CustomersStub {
 
     @Headers({
-            "Authorization: apikey a5c1547d8b131702938b148efd8b47ff-us10"
-    })
-    @RequestLine("POST /ecommerce/stores/{store_id}/customers")
-    Customer addCustomerToStore(@Param("store_id") String storeId, Customer customer);
-
-    @Headers({
-            "Authorization: apikey 52ee054d9d087df9c66cbf656aa6b8f3-us10"
+            "Authorization: {token}"
     })
     @RequestLine("GET /ecommerce/stores/{store_id}/customers")
-    Customers retrieveCustomersFromStore(@Param("store_id") String storeId);
+    Customers retrieveCustomersFromStore(@Param("token") String token,
+                                         @Param("store_id") String storeId);
+
+    @Headers({
+            "Authorization: {token}"
+    })
+    @RequestLine("POST /ecommerce/stores/{store_id}/customers")
+    Customer addCustomerToStore(@Param("token") String token,
+                                @Param("store_id") String storeId, Customer customer);
+
+    @Headers({
+            "Authorization: {token}"
+    })
+    @RequestLine("GET /ecommerce/stores/{store_id}/customers/{customer_id}")
+    Customer retrieveCustomerFromStore(@Param("token") String token,
+                                       @Param("store_id") String storeId, @Param("customer_id") String customerId);
+
+    @Headers({
+            "Authorization: {token}"
+    })
+    @RequestLine("DELETE /ecommerce/stores/{store_id}/customers/{customer_id}")
+    void deleteCustomerFromStore(@Param("token") String token,
+                                 @Param("store_id") String storeId, @Param("customer_id") String customerId);
+
+    @Headers({
+            "Authorization: {token}"
+    })
+    @RequestLine("PUT /ecommerce/stores/{store_id}/customers/{customer_id}")
+    Customer addOrUpdateCustomerFromStore(@Param("token") String token,
+                                          @Param("store_id") String storeId, @Param("customer_id") String customerId, Customer customer);
+
+    @Headers({
+            "Authorization: {token}"
+    })
+    @RequestLine("PATCH /ecommerce/stores/{store_id}/customers/{customer_id}")
+    Customer updateCustomerFromStore(@Param("token") String token,
+                                     @Param("store_id") String storeId, @Param("customer_id") String customerId, Customer customer);
+
 }

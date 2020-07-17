@@ -1,4 +1,4 @@
-package com.brightmarket.mailchimp.api;
+package com.brightmarket.mailchimp.api.factory;
 
 import com.brightmarket.mailchimp.api.model.ecommerce.Cart;
 import com.brightmarket.mailchimp.api.model.ecommerce.CartLine;

@@ -9,14 +9,14 @@ import feign.RequestLine;
 public interface CartsStub {
 
     @Headers({
-            "Authorization: apikey 52ee054d9d087df9c66cbf656aa6b8f3-us10"
+            "Authorization: {token}"
     })
     @RequestLine("POST /ecommerce/stores/{store_id}/carts")
-    Cart addCartToStore(@Param("store_id") String storeId, Cart cart);
+    Cart addCartToStore(@Param("token") String token, @Param("store_id") String storeId, Cart cart);
 
     @Headers({
-            "Authorization: apikey 52ee054d9d087df9c66cbf656aa6b8f3-us10"
+            "Authorization: {token}"
     })
     @RequestLine("GET /ecommerce/stores/{store_id}/carts")
-    Carts retrieveCartsFromStore(@Param("store_id") String storeId);
+    Carts retrieveCartsFromStore(@Param("token") String token, @Param("store_id") String storeId);
 }

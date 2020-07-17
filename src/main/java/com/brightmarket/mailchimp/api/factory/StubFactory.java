@@ -1,4 +1,4 @@
-package com.brightmarket.mailchimp.api;
+package com.brightmarket.mailchimp.api.factory;
 
 import com.brightmarket.mailchimp.api.codec.DefaultErrorDecoder;
 import com.brightmarket.mailchimp.api.stub.CartsStub;

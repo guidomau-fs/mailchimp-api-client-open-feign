@@ -1,5 +1,8 @@
 package com.brightmarket.mailchimp.api;
 
+import com.brightmarket.mailchimp.api.factory.ApiKeyFactory;
+import com.brightmarket.mailchimp.api.factory.EntityFactory;
+import com.brightmarket.mailchimp.api.factory.StubFactory;
 import com.brightmarket.mailchimp.api.model.ecommerce.*;
 import com.brightmarket.mailchimp.api.model.error.CustomException;
 import com.brightmarket.mailchimp.api.stub.CartsStub;
@@ -20,23 +23,24 @@ public class Main {
 
     public static void main(String[] args) throws JsonProcessingException {
 
+        String apiKey = ApiKeyFactory.retrieveApiKey();
         ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
         try {
 
             // RETRIEVING THE STORES LIST
             StoresStub storesStub = StubFactory.createStoresStub();
-            Stores stores = storesStub.retrieveStores();
+            Stores stores = storesStub.retrieveStores(apiKey);
             //System.out.println(objectMapper.writeValueAsString(stores));
 
             // RETRIEVING THE CUSTOMERS LIST BY STORE 123
             CustomersStub customersStub = StubFactory.createCustomersStub();
-            Customers customers = customersStub.retrieveCustomersFromStore(stores.getStores().get(0).getId());
+            Customers customers = customersStub.retrieveCustomersFromStore(apiKey, stores.getStores().get(0).getId());
             //System.out.println(objectMapper.writeValueAsString(customers));
 
             // RETRIEVING THE CARTS LIST BY STORE 123
             CartsStub cartsStub = StubFactory.createCartsStub();
-            Carts carts = cartsStub.retrieveCartsFromStore(stores.getStores().get(0).getId());
+            Carts carts = cartsStub.retrieveCartsFromStore(apiKey, stores.getStores().get(0).getId());
             //System.out.println(objectMapper.writeValueAsString(carts));
 
 
@@ -50,7 +54,7 @@ public class Main {
             Cart cart2save = EntityFactory.createCart(customer, lines);
             System.out.println(objectMapper.writeValueAsString(cart2save));
 
-            Cart cartSaved = cartsStub.addCartToStore(stores.getStores().get(0).getId(), cart2save);
+            Cart cartSaved = cartsStub.addCartToStore(apiKey, stores.getStores().get(0).getId(), cart2save);
             System.out.println(objectMapper.writeValueAsString(cartSaved));
 
         } catch (CustomException e) {

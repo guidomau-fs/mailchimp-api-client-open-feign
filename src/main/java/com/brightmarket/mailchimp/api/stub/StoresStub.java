@@ -1,14 +1,23 @@
 package com.brightmarket.mailchimp.api.stub;
 
+import com.brightmarket.mailchimp.api.model.ecommerce.Store;
 import com.brightmarket.mailchimp.api.model.ecommerce.Stores;
 import feign.Headers;
+import feign.Param;
 import feign.RequestLine;
 
 public interface StoresStub {
 
     @Headers({
-            "Authorization: apikey a5c1547d8b131702938b148efd8b47ff-us10"
+            "Authorization: {token}"
     })
     @RequestLine("GET /ecommerce/stores/")
-    Stores retrieveStores();
+    Stores retrieveStores(@Param("token") String token);
+
+
+    @Headers({
+            "Authorization: {token}"
+    })
+    @RequestLine("GET /ecommerce/stores/store_id")
+    Store retrieveStore(@Param("token") String token, @Param("store_id") String storeId);
 }
