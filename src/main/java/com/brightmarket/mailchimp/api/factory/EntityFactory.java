@@ -2,12 +2,62 @@ package com.brightmarket.mailchimp.api.factory;
 
 import com.brightmarket.mailchimp.api.model.ecommerce.*;
 import com.brightmarket.mailchimp.api.model.ecommerce.Order.TrackingCode;
+import com.brightmarket.mailchimp.api.model.lists.CampaignDefaults;
+import com.brightmarket.mailchimp.api.model.lists.Contact;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
 
 public class EntityFactory {
+
+    public static com.brightmarket.mailchimp.api.model.lists.List createList() {
+        com.brightmarket.mailchimp.api.model.lists.List list
+                = new com.brightmarket.mailchimp.api.model.lists.List();
+
+        list.setId(getARandomId());
+        list.setBeamerAddress("No se");
+        list.setEmailTypeOption(false);
+        list.setDoubleOptin(false);
+        list.setHasWelcome(false);
+        list.setName("MyList");
+        list.setPermissionReminder("sas");
+
+        Contact contact = new Contact();
+        contact.setAddress1("122");
+        contact.setAddress2("23");
+        contact.setCity("BOG");
+        contact.setCompany("HOME");
+        contact.setCountry("CO");
+        contact.setPhone("5555555");
+        contact.setState("NY");
+        contact.setZip("0000000");
+        list.setContact(contact);
+
+        CampaignDefaults campaignDefaults = new CampaignDefaults();
+        campaignDefaults.setFromEmail("nose@yah.com");
+        campaignDefaults.setFromName("No se");
+        campaignDefaults.setLanguage("Es");
+        campaignDefaults.setSubject("Ola");
+        list.setCampaignDefaults(campaignDefaults);
+
+        return list;
+    }
+
+    public static Store createStore(com.brightmarket.mailchimp.api.model.lists.List list) {
+        Store store = new Store();
+        store.setId(getARandomId());
+        store.setCurrencyCode("COP");
+        store.setDomain("hola.com");
+        store.setEmailAddress("guido@hola.com");
+        store.setIsSyncing(true);
+        store.setListId(list.getId());
+        store.setListIsActive(false);
+        store.setName("Guido");
+        store.setPhone("3002851254");
+
+        return store;
+    }
 
     public static OrderLine createOrderLine(Product product) {
         OrderLine orderLine = new OrderLine();

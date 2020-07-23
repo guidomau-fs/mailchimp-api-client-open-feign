@@ -1,10 +1,10 @@
 package com.brightmarket.mailchimp.api;
 
-import com.brightmarket.mailchimp.api.factory.ApiKeyFactory;
+import com.brightmarket.mailchimp.api.exception.MailChimpAPIException;
+import com.brightmarket.mailchimp.api.factory.AuthFactory;
 import com.brightmarket.mailchimp.api.factory.EntityFactory;
 import com.brightmarket.mailchimp.api.factory.StubFactory;
 import com.brightmarket.mailchimp.api.model.ecommerce.*;
-import com.brightmarket.mailchimp.api.model.error.CustomException;
 import com.brightmarket.mailchimp.api.stub.CustomersStub;
 import com.brightmarket.mailchimp.api.stub.OrdersStub;
 import com.brightmarket.mailchimp.api.stub.ProductsStub;
@@ -20,7 +20,7 @@ public class OrderStubMain {
 
     public static void main(String[] args) throws JsonProcessingException {
 
-        String apiKey = ApiKeyFactory.retrieveApiKey();
+        String apiKey = AuthFactory.retrieveAuth();
         String store_id = "123";
         String customer_id = "661";
         String product_id = "123";
@@ -29,10 +29,10 @@ public class OrderStubMain {
 
         try {
 
-            StoresStub storesStub = StubFactory.createStoresStub();
-            OrdersStub ordersStub = StubFactory.createOrdersStub();
-            CustomersStub customersStub = StubFactory.createCustomersStub();
-            ProductsStub productsStub = StubFactory.createProductsStub();
+            StoresStub storesStub = StubFactory.createStub(StoresStub.class);
+            OrdersStub ordersStub = StubFactory.createStub(OrdersStub.class);
+            CustomersStub customersStub = StubFactory.createStub(CustomersStub.class);
+            ProductsStub productsStub = StubFactory.createStub(ProductsStub.class);
 
             // RETRIEVING THE STORE FROM THE SERVER
             Store store = storesStub.retrieveStore(apiKey, store_id);
@@ -60,7 +60,7 @@ public class OrderStubMain {
             System.out.println(objectMapper.writeValueAsString(orderSaved));
             System.out.println("\n//------------- DELETING THE ORDER INTO THE STORE -------------//");
 
-        } catch (CustomException exception) {
+        } catch (MailChimpAPIException exception) {
             System.out.println(objectMapper.writeValueAsString(exception.getError()));
         } catch (Exception exception) {
             exception.printStackTrace(System.out);

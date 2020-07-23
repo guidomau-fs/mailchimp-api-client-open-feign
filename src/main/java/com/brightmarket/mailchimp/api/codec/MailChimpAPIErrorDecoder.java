@@ -1,7 +1,7 @@
 package com.brightmarket.mailchimp.api.codec;
 
-import com.brightmarket.mailchimp.api.model.error.CustomException;
-import com.brightmarket.mailchimp.api.model.error.Error;
+import com.brightmarket.mailchimp.api.exception.MailChimpAPIException;
+import com.brightmarket.mailchimp.api.model.Error;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.Response;
 import feign.codec.ErrorDecoder;
@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.stream.Collectors;
 
-public class DefaultErrorDecoder implements ErrorDecoder {
+public class MailChimpAPIErrorDecoder implements ErrorDecoder {
 
     @Override
     public Exception decode(String methodKey, Response response) {
@@ -24,7 +24,7 @@ public class DefaultErrorDecoder implements ErrorDecoder {
 
             ObjectMapper objectMapper = new ObjectMapper();
             Error error = objectMapper.readValue(text, Error.class);
-            return new CustomException(error);
+            return new MailChimpAPIException(error);
 
         } catch (IOException e) {
             return e;

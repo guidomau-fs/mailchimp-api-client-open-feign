@@ -1,7 +1,5 @@
 package com.brightmarket.mailchimp.api.stub;
 
-import com.brightmarket.mailchimp.api.model.ecommerce.Cart;
-import com.brightmarket.mailchimp.api.model.ecommerce.Carts;
 import com.brightmarket.mailchimp.api.model.ecommerce.Order;
 import com.brightmarket.mailchimp.api.model.ecommerce.Orders;
 import feign.Headers;

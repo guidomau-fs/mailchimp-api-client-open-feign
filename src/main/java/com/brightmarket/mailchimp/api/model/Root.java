@@ -126,7 +126,7 @@ public class Root implements Serializable
      *
      */
     @JsonProperty("contact")
-    private Contact contact;
+    private AccountContact contact;
     /**
      *
      * <p>
@@ -200,7 +200,7 @@ public class Root implements Serializable
      * @param email
      * @param username
      */
-    public Root(String accountId, String loginId, String accountName, String email, String firstName, String lastName, String username, String avatarUrl, String role, Contact contact, Boolean proEnabled, Date lastLogin, Long totalSubscribers, IndustryStats industryStats, List<Link> links) {
+    public Root(String accountId, String loginId, String accountName, String email, String firstName, String lastName, String username, String avatarUrl, String role, AccountContact contact, Boolean proEnabled, Date lastLogin, Long totalSubscribers, IndustryStats industryStats, List<Link> links) {
         super();
         this.accountId = accountId;
         this.loginId = loginId;
@@ -469,7 +469,7 @@ public class Root implements Serializable
      *
      */
     @JsonProperty("contact")
-    public Contact getContact() {
+    public AccountContact getContact() {
         return contact;
     }
 
@@ -480,11 +480,11 @@ public class Root implements Serializable
      *
      */
     @JsonProperty("contact")
-    public void setContact(Contact contact) {
+    public void setContact(AccountContact contact) {
         this.contact = contact;
     }
 
-    public Root withContact(Contact contact) {
+    public Root withContact(AccountContact contact) {
         this.contact = contact;
         return this;
     }

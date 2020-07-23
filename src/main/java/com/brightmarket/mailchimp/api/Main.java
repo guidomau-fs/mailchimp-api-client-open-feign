@@ -1,12 +1,12 @@
 package com.brightmarket.mailchimp.api;
 
-import com.brightmarket.mailchimp.api.factory.ApiKeyFactory;
+import com.brightmarket.mailchimp.api.exception.MailChimpAPIException;
+import com.brightmarket.mailchimp.api.factory.AuthFactory;
 import com.brightmarket.mailchimp.api.factory.StubFactory;
 import com.brightmarket.mailchimp.api.model.ecommerce.Carts;
 import com.brightmarket.mailchimp.api.model.ecommerce.Customers;
 import com.brightmarket.mailchimp.api.model.ecommerce.Store;
 import com.brightmarket.mailchimp.api.model.ecommerce.Stores;
-import com.brightmarket.mailchimp.api.model.error.CustomException;
 import com.brightmarket.mailchimp.api.stub.CartsStub;
 import com.brightmarket.mailchimp.api.stub.CustomersStub;
 import com.brightmarket.mailchimp.api.stub.StoresStub;
@@ -22,14 +22,14 @@ public class Main {
 
     public static void main(String[] args) throws JsonProcessingException {
 
-        String apiKey = ApiKeyFactory.retrieveApiKey();
+        String apiKey = AuthFactory.retrieveAuth();
         ObjectMapper objectMapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
         try {
 
-            StoresStub storesStub = StubFactory.createStoresStub();
-            CustomersStub customersStub = StubFactory.createCustomersStub();
-            CartsStub cartsStub = StubFactory.createCartsStub();
+            StoresStub storesStub = StubFactory.createStub(StoresStub.class);
+            CustomersStub customersStub = StubFactory.createStub(CustomersStub.class);
+            CartsStub cartsStub = StubFactory.createStub(CartsStub.class);
 
             System.out.println("\n//------------- RETRIEVING THE STORES LIST -------------//");
             Stores stores = storesStub.retrieveStores(apiKey);
@@ -50,7 +50,7 @@ public class Main {
             }
 
 
-        } catch (CustomException e) {
+        } catch (MailChimpAPIException e) {
             System.out.println(objectMapper.writeValueAsString(e.getError()));
         } catch (Exception e) {
             e.printStackTrace(System.out);

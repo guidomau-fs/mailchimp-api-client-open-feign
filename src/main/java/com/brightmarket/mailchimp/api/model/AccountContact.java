@@ -25,7 +25,7 @@ import java.util.Map;
     "zip",
     "country"
 })
-public class Contact implements Serializable
+public class AccountContact implements Serializable
 {
 
     /**
@@ -99,7 +99,7 @@ public class Contact implements Serializable
      * No args constructor for use in serialization
      *
      */
-    public Contact() {
+    public AccountContact() {
     }
 
     /**
@@ -112,7 +112,7 @@ public class Contact implements Serializable
      * @param company
      * @param state
      */
-    public Contact(String company, String addr1, String addr2, String city, String state, String zip, String country) {
+    public AccountContact(String company, String addr1, String addr2, String city, String state, String zip, String country) {
         super();
         this.company = company;
         this.addr1 = addr1;
@@ -145,7 +145,7 @@ public class Contact implements Serializable
         this.company = company;
     }
 
-    public Contact withCompany(String company) {
+    public AccountContact withCompany(String company) {
         this.company = company;
         return this;
     }
@@ -172,7 +172,7 @@ public class Contact implements Serializable
         this.addr1 = addr1;
     }
 
-    public Contact withAddr1(String addr1) {
+    public AccountContact withAddr1(String addr1) {
         this.addr1 = addr1;
         return this;
     }
@@ -199,7 +199,7 @@ public class Contact implements Serializable
         this.addr2 = addr2;
     }
 
-    public Contact withAddr2(String addr2) {
+    public AccountContact withAddr2(String addr2) {
         this.addr2 = addr2;
         return this;
     }
@@ -226,7 +226,7 @@ public class Contact implements Serializable
         this.city = city;
     }
 
-    public Contact withCity(String city) {
+    public AccountContact withCity(String city) {
         this.city = city;
         return this;
     }
@@ -253,7 +253,7 @@ public class Contact implements Serializable
         this.state = state;
     }
 
-    public Contact withState(String state) {
+    public AccountContact withState(String state) {
         this.state = state;
         return this;
     }
@@ -280,7 +280,7 @@ public class Contact implements Serializable
         this.zip = zip;
     }
 
-    public Contact withZip(String zip) {
+    public AccountContact withZip(String zip) {
         this.zip = zip;
         return this;
     }
@@ -307,7 +307,7 @@ public class Contact implements Serializable
         this.country = country;
     }
 
-    public Contact withCountry(String country) {
+    public AccountContact withCountry(String country) {
         this.country = country;
         return this;
     }
@@ -322,7 +322,7 @@ public class Contact implements Serializable
         this.additionalProperties.put(name, value);
     }
 
-    public Contact withAdditionalProperty(String name, Object value) {
+    public AccountContact withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
     }
@@ -337,10 +337,10 @@ public class Contact implements Serializable
         if (other == this) {
             return true;
         }
-        if ((other instanceof Contact) == false) {
+        if ((other instanceof AccountContact) == false) {
             return false;
         }
-        Contact rhs = ((Contact) other);
+        AccountContact rhs = ((AccountContact) other);
         return new EqualsBuilder().append(zip, rhs.zip).append(country, rhs.country).append(addr2, rhs.addr2).append(addr1, rhs.addr1).append(city, rhs.city).append(company, rhs.company).append(state, rhs.state).append(additionalProperties, rhs.additionalProperties).isEquals();
     }
 

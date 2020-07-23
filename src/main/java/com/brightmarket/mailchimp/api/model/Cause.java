@@ -1,4 +1,4 @@
-package com.brightmarket.mailchimp.api.model.error;
+package com.brightmarket.mailchimp.api.model;
 
 import com.fasterxml.jackson.annotation.*;
 import org.apache.commons.lang3.builder.EqualsBuilder;
