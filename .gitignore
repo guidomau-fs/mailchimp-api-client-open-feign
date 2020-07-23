@@ -24,3 +24,5 @@ hs_err_pid*
 
 .idea/*
 target/*
+
+src/main/java/com/brightmarket/mailchimp/api/factory/AuthFactory.java
