@@ -1,5 +1,6 @@
 package com.brightmarket.mailchimp.api.stub;
 
+import com.brightmarket.mailchimp.api.model.ecommerce.Cart;
 import com.brightmarket.mailchimp.api.model.ecommerce.Product;
 import com.brightmarket.mailchimp.api.model.ecommerce.Products;
 import com.brightmarket.mailchimp.api.model.ecommerce.Variant;
@@ -27,6 +28,17 @@ public interface ProductsStub {
     @RequestLine("GET /ecommerce/stores/{store_id}/products/{product_id}")
     Product retrieveProductFromStore(@Param("token") String token,
                                      @Param("store_id") String storeId, @Param("product_id") String productId);
+
+    @RequestLine("PATCH /ecommerce/stores/{store_id}/products/{product_id}")
+    Product updateProductFromStore(@Param("token") String token,
+                                   @Param("store_id") String storeId, @Param("product_id") String productId, Product product);
+
+    @Headers({
+            "Authorization: {token}"
+    })
+    @RequestLine("DELETE /ecommerce/stores/{store_id}/products/{product_id}")
+    void deleteProductFromStore(@Param("token") String token,
+                                @Param("store_id") String storeId, @Param("product_id") String productId);
 
     @Headers({
             "Authorization: {token}"
