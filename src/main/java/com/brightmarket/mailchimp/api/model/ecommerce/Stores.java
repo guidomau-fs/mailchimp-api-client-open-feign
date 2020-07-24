@@ -16,22 +16,19 @@ import java.util.Map;
  * Ecommerce Stores
  * <p>
  * A list of an account's ecommerce stores.
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "stores",
-    "total_items",
-    "_links"
+        "stores",
+        "total_items",
+        "_links"
 })
-public class Stores implements Serializable
-{
+public class Stores implements Serializable {
 
     /**
      * Stores
      * <p>
      * An array of objects, each representing a store resource.
-     *
      */
     @JsonProperty("stores")
     @JsonPropertyDescription("An array of objects, each representing a store resource.")
@@ -40,7 +37,6 @@ public class Stores implements Serializable
      * Item Count
      * <p>
      * The total number of items matching the query, irrespective of pagination.
-     *
      */
     @JsonProperty("total_items")
     @JsonPropertyDescription("The total number of items matching the query, irrespective of pagination.")
@@ -48,8 +44,6 @@ public class Stores implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     @JsonPropertyDescription("")
@@ -60,13 +54,11 @@ public class Stores implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Stores() {
     }
 
     /**
-     *
      * @param totalItems
      * @param stores
      * @param links
@@ -82,7 +74,6 @@ public class Stores implements Serializable
      * Stores
      * <p>
      * An array of objects, each representing a store resource.
-     *
      */
     @JsonProperty("stores")
     public List<Store> getStores() {
@@ -93,7 +84,6 @@ public class Stores implements Serializable
      * Stores
      * <p>
      * An array of objects, each representing a store resource.
-     *
      */
     @JsonProperty("stores")
     public void setStores(List<Store> stores) {
@@ -109,7 +99,6 @@ public class Stores implements Serializable
      * Item Count
      * <p>
      * The total number of items matching the query, irrespective of pagination.
-     *
      */
     @JsonProperty("total_items")
     public Long getTotalItems() {
@@ -120,7 +109,6 @@ public class Stores implements Serializable
      * Item Count
      * <p>
      * The total number of items matching the query, irrespective of pagination.
-     *
      */
     @JsonProperty("total_items")
     public void setTotalItems(Long totalItems) {
@@ -135,8 +123,6 @@ public class Stores implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public List<Link> getLinks() {
@@ -146,8 +132,6 @@ public class Stores implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public void setLinks(List<Link> links) {

@@ -15,35 +15,32 @@ import java.util.Map;
  * Statistics
  * <p>
  * Various stats and counts for the list. Many of these are cached for at least five minutes.
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "member_count",
-    "unsubscribe_count",
-    "cleaned_count",
-    "member_count_since_send",
-    "unsubscribe_count_since_send",
-    "cleaned_count_since_send",
-    "campaign_count",
-    "campaign_last_sent",
-    "merge_field_count",
-    "avg_sub_rate",
-    "avg_unsub_rate",
-    "target_sub_rate",
-    "open_rate",
-    "click_rate",
-    "last_sub_date",
-    "last_unsub_date"
+        "member_count",
+        "unsubscribe_count",
+        "cleaned_count",
+        "member_count_since_send",
+        "unsubscribe_count_since_send",
+        "cleaned_count_since_send",
+        "campaign_count",
+        "campaign_last_sent",
+        "merge_field_count",
+        "avg_sub_rate",
+        "avg_unsub_rate",
+        "target_sub_rate",
+        "open_rate",
+        "click_rate",
+        "last_sub_date",
+        "last_unsub_date"
 })
-public class Stats implements Serializable
-{
+public class Stats implements Serializable {
 
     /**
      * Member Count
      * <p>
      * The number of active members in the given list.
-     *
      */
     @JsonProperty("member_count")
     @JsonPropertyDescription("The number of active members in the given list.")
@@ -52,7 +49,6 @@ public class Stats implements Serializable
      * Unsubscribe Count
      * <p>
      * The number of members who have unsubscribed from the given list.
-     *
      */
     @JsonProperty("unsubscribe_count")
     @JsonPropertyDescription("The number of members who have unsubscribed from the given list.")
@@ -61,7 +57,6 @@ public class Stats implements Serializable
      * Cleaned Count
      * <p>
      * The number of members cleaned from the given list.
-     *
      */
     @JsonProperty("cleaned_count")
     @JsonPropertyDescription("The number of members cleaned from the given list.")
@@ -70,7 +65,6 @@ public class Stats implements Serializable
      * Member Count Since Send
      * <p>
      * The number of active members in the given list since the last campaign was sent.
-     *
      */
     @JsonProperty("member_count_since_send")
     @JsonPropertyDescription("The number of active members in the given list since the last campaign was sent.")
@@ -79,7 +73,6 @@ public class Stats implements Serializable
      * Unsubscribe Count Since Send
      * <p>
      * The number of members who have unsubscribed since the last campaign was sent.
-     *
      */
     @JsonProperty("unsubscribe_count_since_send")
     @JsonPropertyDescription("The number of members who have unsubscribed since the last campaign was sent.")
@@ -88,7 +81,6 @@ public class Stats implements Serializable
      * Cleaned Count Since Send
      * <p>
      * The number of members cleaned from the given list since the last campaign was sent.
-     *
      */
     @JsonProperty("cleaned_count_since_send")
     @JsonPropertyDescription("The number of members cleaned from the given list since the last campaign was sent.")
@@ -97,7 +89,6 @@ public class Stats implements Serializable
      * Campaign Count
      * <p>
      * The number of campaigns in any status that use this list.
-     *
      */
     @JsonProperty("campaign_count")
     @JsonPropertyDescription("The number of campaigns in any status that use this list.")
@@ -106,7 +97,6 @@ public class Stats implements Serializable
      * Campaign Last Sent
      * <p>
      * The date and time the last campaign was sent to this list in ISO 8601 format.
-     *
      */
     @JsonProperty("campaign_last_sent")
     @JsonPropertyDescription("The date and time the last campaign was sent to this list in ISO 8601 format.")
@@ -115,7 +105,6 @@ public class Stats implements Serializable
      * Merge Var Count
      * <p>
      * The number of merge vars for this list (not including the required EMAIL one).
-     *
      */
     @JsonProperty("merge_field_count")
     @JsonPropertyDescription("The number of merge vars for this list (not including the required EMAIL one).")
@@ -124,7 +113,6 @@ public class Stats implements Serializable
      * Average Subscription Rate
      * <p>
      * The average number of subscriptions per month for the list (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("avg_sub_rate")
     @JsonPropertyDescription("The average number of subscriptions per month for the list (not returned if we haven't calculated it yet).")
@@ -133,7 +121,6 @@ public class Stats implements Serializable
      * Average Unsubscription Rate
      * <p>
      * The average number of unsubscriptions per month for the list (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("avg_unsub_rate")
     @JsonPropertyDescription("The average number of unsubscriptions per month for the list (not returned if we haven't calculated it yet).")
@@ -142,7 +129,6 @@ public class Stats implements Serializable
      * Average Subscription Rate
      * <p>
      * The target numberof subscriptions per month for the list to keep it growing (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("target_sub_rate")
     @JsonPropertyDescription("The target numberof subscriptions per month for the list to keep it growing (not returned if we haven't calculated it yet).")
@@ -151,7 +137,6 @@ public class Stats implements Serializable
      * Open Rate
      * <p>
      * The average open rate (a percentage represented as a number between 0 and 100) per campaign for the list (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("open_rate")
     @JsonPropertyDescription("The average open rate (a percentage represented as a number between 0 and 100) per campaign for the list (not returned if we haven't calculated it yet).")
@@ -160,7 +145,6 @@ public class Stats implements Serializable
      * Click Rate
      * <p>
      * The average click rate (a percentage represented as a number between 0 and 100) per campaign for the list (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("click_rate")
     @JsonPropertyDescription("The average click rate (a percentage represented as a number between 0 and 100) per campaign for the list (not returned if we haven't calculated it yet).")
@@ -169,7 +153,6 @@ public class Stats implements Serializable
      * Date of Last List Subscribe
      * <p>
      * The date and time of the last time someone subscribed to this list in ISO 8601 format.
-     *
      */
     @JsonProperty("last_sub_date")
     @JsonPropertyDescription("The date and time of the last time someone subscribed to this list in ISO 8601 format.")
@@ -178,7 +161,6 @@ public class Stats implements Serializable
      * Date of Last List Unsubscribe
      * <p>
      * The date and time of the last time someone unsubscribed from this list in ISO 8601 format.
-     *
      */
     @JsonProperty("last_unsub_date")
     @JsonPropertyDescription("The date and time of the last time someone unsubscribed from this list in ISO 8601 format.")
@@ -189,13 +171,11 @@ public class Stats implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Stats() {
     }
 
     /**
-     *
      * @param openRate
      * @param campaignLastSent
      * @param memberCount
@@ -237,7 +217,6 @@ public class Stats implements Serializable
      * Member Count
      * <p>
      * The number of active members in the given list.
-     *
      */
     @JsonProperty("member_count")
     public Long getMemberCount() {
@@ -248,7 +227,6 @@ public class Stats implements Serializable
      * Member Count
      * <p>
      * The number of active members in the given list.
-     *
      */
     @JsonProperty("member_count")
     public void setMemberCount(Long memberCount) {
@@ -264,7 +242,6 @@ public class Stats implements Serializable
      * Unsubscribe Count
      * <p>
      * The number of members who have unsubscribed from the given list.
-     *
      */
     @JsonProperty("unsubscribe_count")
     public Long getUnsubscribeCount() {
@@ -275,7 +252,6 @@ public class Stats implements Serializable
      * Unsubscribe Count
      * <p>
      * The number of members who have unsubscribed from the given list.
-     *
      */
     @JsonProperty("unsubscribe_count")
     public void setUnsubscribeCount(Long unsubscribeCount) {
@@ -291,7 +267,6 @@ public class Stats implements Serializable
      * Cleaned Count
      * <p>
      * The number of members cleaned from the given list.
-     *
      */
     @JsonProperty("cleaned_count")
     public Long getCleanedCount() {
@@ -302,7 +277,6 @@ public class Stats implements Serializable
      * Cleaned Count
      * <p>
      * The number of members cleaned from the given list.
-     *
      */
     @JsonProperty("cleaned_count")
     public void setCleanedCount(Long cleanedCount) {
@@ -318,7 +292,6 @@ public class Stats implements Serializable
      * Member Count Since Send
      * <p>
      * The number of active members in the given list since the last campaign was sent.
-     *
      */
     @JsonProperty("member_count_since_send")
     public Long getMemberCountSinceSend() {
@@ -329,7 +302,6 @@ public class Stats implements Serializable
      * Member Count Since Send
      * <p>
      * The number of active members in the given list since the last campaign was sent.
-     *
      */
     @JsonProperty("member_count_since_send")
     public void setMemberCountSinceSend(Long memberCountSinceSend) {
@@ -345,7 +317,6 @@ public class Stats implements Serializable
      * Unsubscribe Count Since Send
      * <p>
      * The number of members who have unsubscribed since the last campaign was sent.
-     *
      */
     @JsonProperty("unsubscribe_count_since_send")
     public Long getUnsubscribeCountSinceSend() {
@@ -356,7 +327,6 @@ public class Stats implements Serializable
      * Unsubscribe Count Since Send
      * <p>
      * The number of members who have unsubscribed since the last campaign was sent.
-     *
      */
     @JsonProperty("unsubscribe_count_since_send")
     public void setUnsubscribeCountSinceSend(Long unsubscribeCountSinceSend) {
@@ -372,7 +342,6 @@ public class Stats implements Serializable
      * Cleaned Count Since Send
      * <p>
      * The number of members cleaned from the given list since the last campaign was sent.
-     *
      */
     @JsonProperty("cleaned_count_since_send")
     public Long getCleanedCountSinceSend() {
@@ -383,7 +352,6 @@ public class Stats implements Serializable
      * Cleaned Count Since Send
      * <p>
      * The number of members cleaned from the given list since the last campaign was sent.
-     *
      */
     @JsonProperty("cleaned_count_since_send")
     public void setCleanedCountSinceSend(Long cleanedCountSinceSend) {
@@ -399,7 +367,6 @@ public class Stats implements Serializable
      * Campaign Count
      * <p>
      * The number of campaigns in any status that use this list.
-     *
      */
     @JsonProperty("campaign_count")
     public Long getCampaignCount() {
@@ -410,7 +377,6 @@ public class Stats implements Serializable
      * Campaign Count
      * <p>
      * The number of campaigns in any status that use this list.
-     *
      */
     @JsonProperty("campaign_count")
     public void setCampaignCount(Long campaignCount) {
@@ -426,7 +392,6 @@ public class Stats implements Serializable
      * Campaign Last Sent
      * <p>
      * The date and time the last campaign was sent to this list in ISO 8601 format.
-     *
      */
     @JsonProperty("campaign_last_sent")
     public Date getCampaignLastSent() {
@@ -437,7 +402,6 @@ public class Stats implements Serializable
      * Campaign Last Sent
      * <p>
      * The date and time the last campaign was sent to this list in ISO 8601 format.
-     *
      */
     @JsonProperty("campaign_last_sent")
     public void setCampaignLastSent(Date campaignLastSent) {
@@ -453,7 +417,6 @@ public class Stats implements Serializable
      * Merge Var Count
      * <p>
      * The number of merge vars for this list (not including the required EMAIL one).
-     *
      */
     @JsonProperty("merge_field_count")
     public Long getMergeFieldCount() {
@@ -464,7 +427,6 @@ public class Stats implements Serializable
      * Merge Var Count
      * <p>
      * The number of merge vars for this list (not including the required EMAIL one).
-     *
      */
     @JsonProperty("merge_field_count")
     public void setMergeFieldCount(Long mergeFieldCount) {
@@ -480,7 +442,6 @@ public class Stats implements Serializable
      * Average Subscription Rate
      * <p>
      * The average number of subscriptions per month for the list (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("avg_sub_rate")
     public Double getAvgSubRate() {
@@ -491,7 +452,6 @@ public class Stats implements Serializable
      * Average Subscription Rate
      * <p>
      * The average number of subscriptions per month for the list (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("avg_sub_rate")
     public void setAvgSubRate(Double avgSubRate) {
@@ -507,7 +467,6 @@ public class Stats implements Serializable
      * Average Unsubscription Rate
      * <p>
      * The average number of unsubscriptions per month for the list (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("avg_unsub_rate")
     public Double getAvgUnsubRate() {
@@ -518,7 +477,6 @@ public class Stats implements Serializable
      * Average Unsubscription Rate
      * <p>
      * The average number of unsubscriptions per month for the list (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("avg_unsub_rate")
     public void setAvgUnsubRate(Double avgUnsubRate) {
@@ -534,7 +492,6 @@ public class Stats implements Serializable
      * Average Subscription Rate
      * <p>
      * The target numberof subscriptions per month for the list to keep it growing (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("target_sub_rate")
     public Double getTargetSubRate() {
@@ -545,7 +502,6 @@ public class Stats implements Serializable
      * Average Subscription Rate
      * <p>
      * The target numberof subscriptions per month for the list to keep it growing (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("target_sub_rate")
     public void setTargetSubRate(Double targetSubRate) {
@@ -561,7 +517,6 @@ public class Stats implements Serializable
      * Open Rate
      * <p>
      * The average open rate (a percentage represented as a number between 0 and 100) per campaign for the list (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("open_rate")
     public Double getOpenRate() {
@@ -572,7 +527,6 @@ public class Stats implements Serializable
      * Open Rate
      * <p>
      * The average open rate (a percentage represented as a number between 0 and 100) per campaign for the list (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("open_rate")
     public void setOpenRate(Double openRate) {
@@ -588,7 +542,6 @@ public class Stats implements Serializable
      * Click Rate
      * <p>
      * The average click rate (a percentage represented as a number between 0 and 100) per campaign for the list (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("click_rate")
     public Double getClickRate() {
@@ -599,7 +552,6 @@ public class Stats implements Serializable
      * Click Rate
      * <p>
      * The average click rate (a percentage represented as a number between 0 and 100) per campaign for the list (not returned if we haven't calculated it yet).
-     *
      */
     @JsonProperty("click_rate")
     public void setClickRate(Double clickRate) {
@@ -615,7 +567,6 @@ public class Stats implements Serializable
      * Date of Last List Subscribe
      * <p>
      * The date and time of the last time someone subscribed to this list in ISO 8601 format.
-     *
      */
     @JsonProperty("last_sub_date")
     public Date getLastSubDate() {
@@ -626,7 +577,6 @@ public class Stats implements Serializable
      * Date of Last List Subscribe
      * <p>
      * The date and time of the last time someone subscribed to this list in ISO 8601 format.
-     *
      */
     @JsonProperty("last_sub_date")
     public void setLastSubDate(Date lastSubDate) {
@@ -642,7 +592,6 @@ public class Stats implements Serializable
      * Date of Last List Unsubscribe
      * <p>
      * The date and time of the last time someone unsubscribed from this list in ISO 8601 format.
-     *
      */
     @JsonProperty("last_unsub_date")
     public Date getLastUnsubDate() {
@@ -653,7 +602,6 @@ public class Stats implements Serializable
      * Date of Last List Unsubscribe
      * <p>
      * The date and time of the last time someone unsubscribed from this list in ISO 8601 format.
-     *
      */
     @JsonProperty("last_unsub_date")
     public void setLastUnsubDate(Date lastUnsubDate) {

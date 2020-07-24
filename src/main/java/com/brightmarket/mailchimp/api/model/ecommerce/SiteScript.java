@@ -14,21 +14,18 @@ import java.util.Map;
  * Script
  * <p>
  * The script used to connect your site with Mailchimp.
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "url",
-    "fragment"
+        "url",
+        "fragment"
 })
-public class SiteScript implements Serializable
-{
+public class SiteScript implements Serializable {
 
     /**
      * Script URL
      * <p>
      * The URL used for any integrations that offer built-in support for connected sites.
-     *
      */
     @JsonProperty("url")
     @JsonPropertyDescription("The URL used for any integrations that offer built-in support for connected sites.")
@@ -37,7 +34,6 @@ public class SiteScript implements Serializable
      * Script Fragment
      * <p>
      * A pre-built script that you can copy-and-paste into your site to integrate it with Mailchimp.
-     *
      */
     @JsonProperty("fragment")
     @JsonPropertyDescription("A pre-built script that you can copy-and-paste into your site to integrate it with Mailchimp.")
@@ -48,13 +44,11 @@ public class SiteScript implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public SiteScript() {
     }
 
     /**
-     *
      * @param fragment
      * @param url
      */
@@ -68,7 +62,6 @@ public class SiteScript implements Serializable
      * Script URL
      * <p>
      * The URL used for any integrations that offer built-in support for connected sites.
-     *
      */
     @JsonProperty("url")
     public String getUrl() {
@@ -79,7 +72,6 @@ public class SiteScript implements Serializable
      * Script URL
      * <p>
      * The URL used for any integrations that offer built-in support for connected sites.
-     *
      */
     @JsonProperty("url")
     public void setUrl(String url) {
@@ -95,7 +87,6 @@ public class SiteScript implements Serializable
      * Script Fragment
      * <p>
      * A pre-built script that you can copy-and-paste into your site to integrate it with Mailchimp.
-     *
      */
     @JsonProperty("fragment")
     public String getFragment() {
@@ -106,7 +97,6 @@ public class SiteScript implements Serializable
      * Script Fragment
      * <p>
      * A pre-built script that you can copy-and-paste into your site to integrate it with Mailchimp.
-     *
      */
     @JsonProperty("fragment")
     public void setFragment(String fragment) {

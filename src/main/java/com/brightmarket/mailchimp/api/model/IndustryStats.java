@@ -13,23 +13,19 @@ import java.util.Map;
 /**
  * Industry Stats
  * <p>
- *
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "open_rate",
-    "bounce_rate",
-    "click_rate"
+        "open_rate",
+        "bounce_rate",
+        "click_rate"
 })
-public class IndustryStats implements Serializable
-{
+public class IndustryStats implements Serializable {
 
     /**
      * Open Rate
      * <p>
      * Percentage of successfully delivered campaigns that registered as an open group by users's Industry.
-     *
      */
     @JsonProperty("open_rate")
     @JsonPropertyDescription("Percentage of successfully delivered campaigns that registered as an open group by users's Industry.")
@@ -38,7 +34,6 @@ public class IndustryStats implements Serializable
      * Bounce Rate
      * <p>
      * Percentage of number of recipients that registered as a hard or soft bounce group by users's Industry.
-     *
      */
     @JsonProperty("bounce_rate")
     @JsonPropertyDescription("Percentage of number of recipients that registered as a hard or soft bounce group by users's Industry.")
@@ -47,7 +42,6 @@ public class IndustryStats implements Serializable
      * Click Rate
      * <p>
      * Percentage of successfully delivered campaigns that registered a click group by users's Industry.
-     *
      */
     @JsonProperty("click_rate")
     @JsonPropertyDescription("Percentage of successfully delivered campaigns that registered a click group by users's Industry.")
@@ -58,13 +52,11 @@ public class IndustryStats implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public IndustryStats() {
     }
 
     /**
-     *
      * @param openRate
      * @param clickRate
      * @param bounceRate
@@ -80,7 +72,6 @@ public class IndustryStats implements Serializable
      * Open Rate
      * <p>
      * Percentage of successfully delivered campaigns that registered as an open group by users's Industry.
-     *
      */
     @JsonProperty("open_rate")
     public Double getOpenRate() {
@@ -91,7 +82,6 @@ public class IndustryStats implements Serializable
      * Open Rate
      * <p>
      * Percentage of successfully delivered campaigns that registered as an open group by users's Industry.
-     *
      */
     @JsonProperty("open_rate")
     public void setOpenRate(Double openRate) {
@@ -107,7 +97,6 @@ public class IndustryStats implements Serializable
      * Bounce Rate
      * <p>
      * Percentage of number of recipients that registered as a hard or soft bounce group by users's Industry.
-     *
      */
     @JsonProperty("bounce_rate")
     public Double getBounceRate() {
@@ -118,7 +107,6 @@ public class IndustryStats implements Serializable
      * Bounce Rate
      * <p>
      * Percentage of number of recipients that registered as a hard or soft bounce group by users's Industry.
-     *
      */
     @JsonProperty("bounce_rate")
     public void setBounceRate(Double bounceRate) {
@@ -134,7 +122,6 @@ public class IndustryStats implements Serializable
      * Click Rate
      * <p>
      * Percentage of successfully delivered campaigns that registered a click group by users's Industry.
-     *
      */
     @JsonProperty("click_rate")
     public Double getClickRate() {
@@ -145,7 +132,6 @@ public class IndustryStats implements Serializable
      * Click Rate
      * <p>
      * Percentage of successfully delivered campaigns that registered a click group by users's Industry.
-     *
      */
     @JsonProperty("click_rate")
     public void setClickRate(Double clickRate) {

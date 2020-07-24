@@ -11,19 +11,17 @@ import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "code",
-    "amount_discounted",
-    "type"
+        "code",
+        "amount_discounted",
+        "type"
 })
-public class Promo implements Serializable
-{
+public class Promo implements Serializable {
 
     /**
      * Code
      * <p>
      * The Promo Code
      * (Required)
-     *
      */
     @JsonProperty("code")
     @JsonPropertyDescription("The Promo Code")
@@ -33,7 +31,6 @@ public class Promo implements Serializable
      * <p>
      * The amount of discount applied on the total price. For example if the total cost was $100 and the customer paid $95.5, amount_discounted will be 4.5 For free shipping set amount_discounted to 0
      * (Required)
-     *
      */
     @JsonProperty("amount_discounted")
     @JsonPropertyDescription("The amount of discount applied on the total price. For example if the total cost was $100 and the customer paid $95.5, amount_discounted will be 4.5 For free shipping set amount_discounted to 0")
@@ -43,7 +40,6 @@ public class Promo implements Serializable
      * <p>
      * Type of discount. For free shipping set type to fixed
      * (Required)
-     *
      */
     @JsonProperty("type")
     @JsonPropertyDescription("Type of discount. For free shipping set type to fixed")
@@ -54,13 +50,11 @@ public class Promo implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Promo() {
     }
 
     /**
-     *
      * @param code
      * @param type
      * @param amountDiscounted
@@ -77,7 +71,6 @@ public class Promo implements Serializable
      * <p>
      * The Promo Code
      * (Required)
-     *
      */
     @JsonProperty("code")
     public String getCode() {
@@ -89,7 +82,6 @@ public class Promo implements Serializable
      * <p>
      * The Promo Code
      * (Required)
-     *
      */
     @JsonProperty("code")
     public void setCode(String code) {
@@ -106,7 +98,6 @@ public class Promo implements Serializable
      * <p>
      * The amount of discount applied on the total price. For example if the total cost was $100 and the customer paid $95.5, amount_discounted will be 4.5 For free shipping set amount_discounted to 0
      * (Required)
-     *
      */
     @JsonProperty("amount_discounted")
     public Double getAmountDiscounted() {
@@ -118,7 +109,6 @@ public class Promo implements Serializable
      * <p>
      * The amount of discount applied on the total price. For example if the total cost was $100 and the customer paid $95.5, amount_discounted will be 4.5 For free shipping set amount_discounted to 0
      * (Required)
-     *
      */
     @JsonProperty("amount_discounted")
     public void setAmountDiscounted(Double amountDiscounted) {
@@ -135,7 +125,6 @@ public class Promo implements Serializable
      * <p>
      * Type of discount. For free shipping set type to fixed
      * (Required)
-     *
      */
     @JsonProperty("type")
     public Promo.Type getType() {
@@ -147,7 +136,6 @@ public class Promo implements Serializable
      * <p>
      * Type of discount. For free shipping set type to fixed
      * (Required)
-     *
      */
     @JsonProperty("type")
     public void setType(Promo.Type type) {
@@ -199,7 +187,7 @@ public class Promo implements Serializable
         private final static Map<String, Promo.Type> CONSTANTS = new HashMap<String, Promo.Type>();
 
         static {
-            for (Promo.Type c: values()) {
+            for (Promo.Type c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

@@ -15,23 +15,20 @@ import java.util.Map;
  * Subscriber Lists
  * <p>
  * A collection of subscriber lists associated with this account. Lists contain subscribers who have opted-in to receive correspondence from you or your organization.
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "lists",
-    "total_items",
-    "constraints",
-    "_links"
+        "lists",
+        "total_items",
+        "constraints",
+        "_links"
 })
-public class Lists implements Serializable
-{
+public class Lists implements Serializable {
 
     /**
      * Lists
      * <p>
      * An array of objects, each representing a list resource.
-     *
      */
     @JsonProperty("lists")
     @JsonPropertyDescription("An array of objects, each representing a list resource.")
@@ -40,7 +37,6 @@ public class Lists implements Serializable
      * Item Count
      * <p>
      * The total number of items matching the query, irrespective of pagination.
-     *
      */
     @JsonProperty("total_items")
     @JsonPropertyDescription("The total number of items matching the query, irrespective of pagination.")
@@ -49,7 +45,6 @@ public class Lists implements Serializable
      * Collection Authorization
      * <p>
      * Do particular authorization constraints around this collection limit creation of new instances?
-     *
      */
     @JsonProperty("constraints")
     @JsonPropertyDescription("Do particular authorization constraints around this collection limit creation of new instances?")
@@ -57,8 +52,6 @@ public class Lists implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     @JsonPropertyDescription("")
@@ -69,13 +62,11 @@ public class Lists implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Lists() {
     }
 
     /**
-     *
      * @param totalItems
      * @param lists
      * @param links
@@ -93,7 +84,6 @@ public class Lists implements Serializable
      * Lists
      * <p>
      * An array of objects, each representing a list resource.
-     *
      */
     @JsonProperty("lists")
     public java.util.List<List> getLists() {
@@ -104,7 +94,6 @@ public class Lists implements Serializable
      * Lists
      * <p>
      * An array of objects, each representing a list resource.
-     *
      */
     @JsonProperty("lists")
     public void setLists(java.util.List<List> lists) {
@@ -120,7 +109,6 @@ public class Lists implements Serializable
      * Item Count
      * <p>
      * The total number of items matching the query, irrespective of pagination.
-     *
      */
     @JsonProperty("total_items")
     public Long getTotalItems() {
@@ -131,7 +119,6 @@ public class Lists implements Serializable
      * Item Count
      * <p>
      * The total number of items matching the query, irrespective of pagination.
-     *
      */
     @JsonProperty("total_items")
     public void setTotalItems(Long totalItems) {
@@ -147,7 +134,6 @@ public class Lists implements Serializable
      * Collection Authorization
      * <p>
      * Do particular authorization constraints around this collection limit creation of new instances?
-     *
      */
     @JsonProperty("constraints")
     public Constraints getConstraints() {
@@ -158,7 +144,6 @@ public class Lists implements Serializable
      * Collection Authorization
      * <p>
      * Do particular authorization constraints around this collection limit creation of new instances?
-     *
      */
     @JsonProperty("constraints")
     public void setConstraints(Constraints constraints) {
@@ -173,8 +158,6 @@ public class Lists implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public java.util.List<Link> getLinks() {
@@ -184,8 +167,6 @@ public class Lists implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public void setLinks(java.util.List<Link> links) {

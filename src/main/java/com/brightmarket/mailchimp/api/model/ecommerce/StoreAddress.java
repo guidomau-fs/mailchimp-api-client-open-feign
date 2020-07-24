@@ -14,29 +14,26 @@ import java.util.Map;
  * Address
  * <p>
  * The store address.
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "address1",
-    "address2",
-    "city",
-    "province",
-    "province_code",
-    "postal_code",
-    "country",
-    "country_code",
-    "longitude",
-    "latitude"
+        "address1",
+        "address2",
+        "city",
+        "province",
+        "province_code",
+        "postal_code",
+        "country",
+        "country_code",
+        "longitude",
+        "latitude"
 })
-public class StoreAddress implements Serializable
-{
+public class StoreAddress implements Serializable {
 
     /**
      * Address Field 1
      * <p>
      * The store's mailing address.
-     *
      */
     @JsonProperty("address1")
     @JsonPropertyDescription("The store's mailing address.")
@@ -45,7 +42,6 @@ public class StoreAddress implements Serializable
      * Address Field 2
      * <p>
      * An additional field for the store's mailing address.
-     *
      */
     @JsonProperty("address2")
     @JsonPropertyDescription("An additional field for the store's mailing address.")
@@ -54,7 +50,6 @@ public class StoreAddress implements Serializable
      * City
      * <p>
      * The city the store is located in.
-     *
      */
     @JsonProperty("city")
     @JsonPropertyDescription("The city the store is located in.")
@@ -63,7 +58,6 @@ public class StoreAddress implements Serializable
      * Province
      * <p>
      * The store's state name or normalized province.
-     *
      */
     @JsonProperty("province")
     @JsonPropertyDescription("The store's state name or normalized province.")
@@ -72,7 +66,6 @@ public class StoreAddress implements Serializable
      * Province Code
      * <p>
      * The two-letter code for the store's province or state.
-     *
      */
     @JsonProperty("province_code")
     @JsonPropertyDescription("The two-letter code for the store's province or state.")
@@ -81,7 +74,6 @@ public class StoreAddress implements Serializable
      * Postal Code
      * <p>
      * The store's postal or zip code.
-     *
      */
     @JsonProperty("postal_code")
     @JsonPropertyDescription("The store's postal or zip code.")
@@ -90,7 +82,6 @@ public class StoreAddress implements Serializable
      * Country Code
      * <p>
      * The store's country.
-     *
      */
     @JsonProperty("country")
     @JsonPropertyDescription("The store's country.")
@@ -99,7 +90,6 @@ public class StoreAddress implements Serializable
      * Country Code
      * <p>
      * The two-letter code for to the store's country.
-     *
      */
     @JsonProperty("country_code")
     @JsonPropertyDescription("The two-letter code for to the store's country.")
@@ -108,7 +98,6 @@ public class StoreAddress implements Serializable
      * Longitude
      * <p>
      * The longitude of the store location.
-     *
      */
     @JsonProperty("longitude")
     @JsonPropertyDescription("The longitude of the store location.")
@@ -117,7 +106,6 @@ public class StoreAddress implements Serializable
      * Latitude
      * <p>
      * The latitude of the store location.
-     *
      */
     @JsonProperty("latitude")
     @JsonPropertyDescription("The latitude of the store location.")
@@ -128,13 +116,11 @@ public class StoreAddress implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public StoreAddress() {
     }
 
     /**
-     *
      * @param country
      * @param province
      * @param address2
@@ -164,7 +150,6 @@ public class StoreAddress implements Serializable
      * Address Field 1
      * <p>
      * The store's mailing address.
-     *
      */
     @JsonProperty("address1")
     public String getAddress1() {
@@ -175,7 +160,6 @@ public class StoreAddress implements Serializable
      * Address Field 1
      * <p>
      * The store's mailing address.
-     *
      */
     @JsonProperty("address1")
     public void setAddress1(String address1) {
@@ -191,7 +175,6 @@ public class StoreAddress implements Serializable
      * Address Field 2
      * <p>
      * An additional field for the store's mailing address.
-     *
      */
     @JsonProperty("address2")
     public String getAddress2() {
@@ -202,7 +185,6 @@ public class StoreAddress implements Serializable
      * Address Field 2
      * <p>
      * An additional field for the store's mailing address.
-     *
      */
     @JsonProperty("address2")
     public void setAddress2(String address2) {
@@ -218,7 +200,6 @@ public class StoreAddress implements Serializable
      * City
      * <p>
      * The city the store is located in.
-     *
      */
     @JsonProperty("city")
     public String getCity() {
@@ -229,7 +210,6 @@ public class StoreAddress implements Serializable
      * City
      * <p>
      * The city the store is located in.
-     *
      */
     @JsonProperty("city")
     public void setCity(String city) {
@@ -245,7 +225,6 @@ public class StoreAddress implements Serializable
      * Province
      * <p>
      * The store's state name or normalized province.
-     *
      */
     @JsonProperty("province")
     public String getProvince() {
@@ -256,7 +235,6 @@ public class StoreAddress implements Serializable
      * Province
      * <p>
      * The store's state name or normalized province.
-     *
      */
     @JsonProperty("province")
     public void setProvince(String province) {
@@ -272,7 +250,6 @@ public class StoreAddress implements Serializable
      * Province Code
      * <p>
      * The two-letter code for the store's province or state.
-     *
      */
     @JsonProperty("province_code")
     public String getProvinceCode() {
@@ -283,7 +260,6 @@ public class StoreAddress implements Serializable
      * Province Code
      * <p>
      * The two-letter code for the store's province or state.
-     *
      */
     @JsonProperty("province_code")
     public void setProvinceCode(String provinceCode) {
@@ -299,7 +275,6 @@ public class StoreAddress implements Serializable
      * Postal Code
      * <p>
      * The store's postal or zip code.
-     *
      */
     @JsonProperty("postal_code")
     public String getPostalCode() {
@@ -310,7 +285,6 @@ public class StoreAddress implements Serializable
      * Postal Code
      * <p>
      * The store's postal or zip code.
-     *
      */
     @JsonProperty("postal_code")
     public void setPostalCode(String postalCode) {
@@ -326,7 +300,6 @@ public class StoreAddress implements Serializable
      * Country Code
      * <p>
      * The store's country.
-     *
      */
     @JsonProperty("country")
     public String getCountry() {
@@ -337,7 +310,6 @@ public class StoreAddress implements Serializable
      * Country Code
      * <p>
      * The store's country.
-     *
      */
     @JsonProperty("country")
     public void setCountry(String country) {
@@ -353,7 +325,6 @@ public class StoreAddress implements Serializable
      * Country Code
      * <p>
      * The two-letter code for to the store's country.
-     *
      */
     @JsonProperty("country_code")
     public String getCountryCode() {
@@ -364,7 +335,6 @@ public class StoreAddress implements Serializable
      * Country Code
      * <p>
      * The two-letter code for to the store's country.
-     *
      */
     @JsonProperty("country_code")
     public void setCountryCode(String countryCode) {
@@ -380,7 +350,6 @@ public class StoreAddress implements Serializable
      * Longitude
      * <p>
      * The longitude of the store location.
-     *
      */
     @JsonProperty("longitude")
     public Double getLongitude() {
@@ -391,7 +360,6 @@ public class StoreAddress implements Serializable
      * Longitude
      * <p>
      * The longitude of the store location.
-     *
      */
     @JsonProperty("longitude")
     public void setLongitude(Double longitude) {
@@ -407,7 +375,6 @@ public class StoreAddress implements Serializable
      * Latitude
      * <p>
      * The latitude of the store location.
-     *
      */
     @JsonProperty("latitude")
     public Double getLatitude() {
@@ -418,7 +385,6 @@ public class StoreAddress implements Serializable
      * Latitude
      * <p>
      * The latitude of the store location.
-     *
      */
     @JsonProperty("latitude")
     public void setLatitude(Double latitude) {

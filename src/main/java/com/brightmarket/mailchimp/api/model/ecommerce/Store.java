@@ -17,39 +17,36 @@ import java.util.Map;
  * Ecommerce Store
  * <p>
  * Information about a specific ecommerce store.
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "id",
-    "list_id",
-    "name",
-    "platform",
-    "domain",
-    "is_syncing",
-    "email_address",
-    "currency_code",
-    "money_format",
-    "primary_locale",
-    "timezone",
-    "phone",
-    "address",
-    "connected_site",
-    "automations",
-    "list_is_active",
-    "created_at",
-    "updated_at",
-    "_links"
+        "id",
+        "list_id",
+        "name",
+        "platform",
+        "domain",
+        "is_syncing",
+        "email_address",
+        "currency_code",
+        "money_format",
+        "primary_locale",
+        "timezone",
+        "phone",
+        "address",
+        "connected_site",
+        "automations",
+        "list_is_active",
+        "created_at",
+        "updated_at",
+        "_links"
 })
-public class Store implements Serializable
-{
+public class Store implements Serializable {
 
     /**
      * Store Foreign ID
      * <p>
      * The unique identifier for the store.
      * (Required)
-     *
      */
     @JsonProperty("id")
     @JsonPropertyDescription("The unique identifier for the store.")
@@ -59,7 +56,6 @@ public class Store implements Serializable
      * <p>
      * The unique identifier for the Mailchimp list that's associated with the store. The list_id for a specific store can't change.
      * (Required)
-     *
      */
     @JsonProperty("list_id")
     @JsonPropertyDescription("The unique identifier for the Mailchimp list that's associated with the store. The list_id for a specific store can't change.")
@@ -69,7 +65,6 @@ public class Store implements Serializable
      * <p>
      * The name of the store.
      * (Required)
-     *
      */
     @JsonProperty("name")
     @JsonPropertyDescription("The name of the store.")
@@ -78,7 +73,6 @@ public class Store implements Serializable
      * Store Platform
      * <p>
      * The ecommerce platform of the store.
-     *
      */
     @JsonProperty("platform")
     @JsonPropertyDescription("The ecommerce platform of the store.")
@@ -87,7 +81,6 @@ public class Store implements Serializable
      * Domain
      * <p>
      * The store domain.  The store domain must be unique within a user account.
-     *
      */
     @JsonProperty("domain")
     @JsonPropertyDescription("The store domain.  The store domain must be unique within a user account.")
@@ -96,7 +89,6 @@ public class Store implements Serializable
      * Is Syncing
      * <p>
      * Whether the Ecommerce Store is currently syncing.
-     *
      */
     @JsonProperty("is_syncing")
     @JsonPropertyDescription("Whether the Ecommerce Store is currently syncing.")
@@ -105,7 +97,6 @@ public class Store implements Serializable
      * Email Address
      * <p>
      * The email address for the store.
-     *
      */
     @JsonProperty("email_address")
     @JsonPropertyDescription("The email address for the store.")
@@ -115,7 +106,6 @@ public class Store implements Serializable
      * <p>
      * The three-letter ISO 4217 code for the currency that the store accepts.
      * (Required)
-     *
      */
     @JsonProperty("currency_code")
     @JsonPropertyDescription("The three-letter ISO 4217 code for the currency that the store accepts.")
@@ -124,7 +114,6 @@ public class Store implements Serializable
      * Money Format
      * <p>
      * The currency format for the store. For example: `$`, `£`, etc.
-     *
      */
     @JsonProperty("money_format")
     @JsonPropertyDescription("The currency format for the store. For example: `$`, `\u00a3`, etc.")
@@ -133,7 +122,6 @@ public class Store implements Serializable
      * Primary Locale
      * <p>
      * The primary locale for the store. For example: `en`, `de`, etc.
-     *
      */
     @JsonProperty("primary_locale")
     @JsonPropertyDescription("The primary locale for the store. For example: `en`, `de`, etc.")
@@ -142,7 +130,6 @@ public class Store implements Serializable
      * Timezone
      * <p>
      * The timezone for the store.
-     *
      */
     @JsonProperty("timezone")
     @JsonPropertyDescription("The timezone for the store.")
@@ -151,7 +138,6 @@ public class Store implements Serializable
      * Phone
      * <p>
      * The store phone number.
-     *
      */
     @JsonProperty("phone")
     @JsonPropertyDescription("The store phone number.")
@@ -160,7 +146,6 @@ public class Store implements Serializable
      * Address
      * <p>
      * The store address.
-     *
      */
     @JsonProperty("address")
     @JsonPropertyDescription("The store address.")
@@ -169,7 +154,6 @@ public class Store implements Serializable
      * Connected Site
      * <p>
      * The Connected Site associated with the store.
-     *
      */
     @JsonProperty("connected_site")
     @JsonPropertyDescription("The Connected Site associated with the store.")
@@ -178,7 +162,6 @@ public class Store implements Serializable
      * Automations
      * <p>
      * Details for the automations attached to this store.
-     *
      */
     @JsonProperty("automations")
     @JsonPropertyDescription("Details for the automations attached to this store.")
@@ -187,7 +170,6 @@ public class Store implements Serializable
      * List Status
      * <p>
      * The status of the list connected to the store, namely if it's deleted or disabled.
-     *
      */
     @JsonProperty("list_is_active")
     @JsonPropertyDescription("The status of the list connected to the store, namely if it's deleted or disabled.")
@@ -196,7 +178,6 @@ public class Store implements Serializable
      * Creation Time
      * <p>
      * The date and time the store was created in ISO 8601 format.
-     *
      */
     @JsonProperty("created_at")
     @JsonPropertyDescription("The date and time the store was created in ISO 8601 format.")
@@ -205,7 +186,6 @@ public class Store implements Serializable
      * Update Time
      * <p>
      * The date and time the store was last updated in ISO 8601 format.
-     *
      */
     @JsonProperty("updated_at")
     @JsonPropertyDescription("The date and time the store was last updated in ISO 8601 format.")
@@ -213,8 +193,6 @@ public class Store implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     @JsonPropertyDescription("")
@@ -225,13 +203,11 @@ public class Store implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Store() {
     }
 
     /**
-     *
      * @param automations
      * @param address
      * @param timezone
@@ -280,7 +256,6 @@ public class Store implements Serializable
      * <p>
      * The unique identifier for the store.
      * (Required)
-     *
      */
     @JsonProperty("id")
     public String getId() {
@@ -292,7 +267,6 @@ public class Store implements Serializable
      * <p>
      * The unique identifier for the store.
      * (Required)
-     *
      */
     @JsonProperty("id")
     public void setId(String id) {
@@ -309,7 +283,6 @@ public class Store implements Serializable
      * <p>
      * The unique identifier for the Mailchimp list that's associated with the store. The list_id for a specific store can't change.
      * (Required)
-     *
      */
     @JsonProperty("list_id")
     public String getListId() {
@@ -321,7 +294,6 @@ public class Store implements Serializable
      * <p>
      * The unique identifier for the Mailchimp list that's associated with the store. The list_id for a specific store can't change.
      * (Required)
-     *
      */
     @JsonProperty("list_id")
     public void setListId(String listId) {
@@ -338,7 +310,6 @@ public class Store implements Serializable
      * <p>
      * The name of the store.
      * (Required)
-     *
      */
     @JsonProperty("name")
     public String getName() {
@@ -350,7 +321,6 @@ public class Store implements Serializable
      * <p>
      * The name of the store.
      * (Required)
-     *
      */
     @JsonProperty("name")
     public void setName(String name) {
@@ -366,7 +336,6 @@ public class Store implements Serializable
      * Store Platform
      * <p>
      * The ecommerce platform of the store.
-     *
      */
     @JsonProperty("platform")
     public String getPlatform() {
@@ -377,7 +346,6 @@ public class Store implements Serializable
      * Store Platform
      * <p>
      * The ecommerce platform of the store.
-     *
      */
     @JsonProperty("platform")
     public void setPlatform(String platform) {
@@ -393,7 +361,6 @@ public class Store implements Serializable
      * Domain
      * <p>
      * The store domain.  The store domain must be unique within a user account.
-     *
      */
     @JsonProperty("domain")
     public String getDomain() {
@@ -404,7 +371,6 @@ public class Store implements Serializable
      * Domain
      * <p>
      * The store domain.  The store domain must be unique within a user account.
-     *
      */
     @JsonProperty("domain")
     public void setDomain(String domain) {
@@ -420,7 +386,6 @@ public class Store implements Serializable
      * Is Syncing
      * <p>
      * Whether the Ecommerce Store is currently syncing.
-     *
      */
     @JsonProperty("is_syncing")
     public Boolean getIsSyncing() {
@@ -431,7 +396,6 @@ public class Store implements Serializable
      * Is Syncing
      * <p>
      * Whether the Ecommerce Store is currently syncing.
-     *
      */
     @JsonProperty("is_syncing")
     public void setIsSyncing(Boolean isSyncing) {
@@ -447,7 +411,6 @@ public class Store implements Serializable
      * Email Address
      * <p>
      * The email address for the store.
-     *
      */
     @JsonProperty("email_address")
     public String getEmailAddress() {
@@ -458,7 +421,6 @@ public class Store implements Serializable
      * Email Address
      * <p>
      * The email address for the store.
-     *
      */
     @JsonProperty("email_address")
     public void setEmailAddress(String emailAddress) {
@@ -475,7 +437,6 @@ public class Store implements Serializable
      * <p>
      * The three-letter ISO 4217 code for the currency that the store accepts.
      * (Required)
-     *
      */
     @JsonProperty("currency_code")
     public String getCurrencyCode() {
@@ -487,7 +448,6 @@ public class Store implements Serializable
      * <p>
      * The three-letter ISO 4217 code for the currency that the store accepts.
      * (Required)
-     *
      */
     @JsonProperty("currency_code")
     public void setCurrencyCode(String currencyCode) {
@@ -503,7 +463,6 @@ public class Store implements Serializable
      * Money Format
      * <p>
      * The currency format for the store. For example: `$`, `£`, etc.
-     *
      */
     @JsonProperty("money_format")
     public String getMoneyFormat() {
@@ -514,7 +473,6 @@ public class Store implements Serializable
      * Money Format
      * <p>
      * The currency format for the store. For example: `$`, `£`, etc.
-     *
      */
     @JsonProperty("money_format")
     public void setMoneyFormat(String moneyFormat) {
@@ -530,7 +488,6 @@ public class Store implements Serializable
      * Primary Locale
      * <p>
      * The primary locale for the store. For example: `en`, `de`, etc.
-     *
      */
     @JsonProperty("primary_locale")
     public String getPrimaryLocale() {
@@ -541,7 +498,6 @@ public class Store implements Serializable
      * Primary Locale
      * <p>
      * The primary locale for the store. For example: `en`, `de`, etc.
-     *
      */
     @JsonProperty("primary_locale")
     public void setPrimaryLocale(String primaryLocale) {
@@ -557,7 +513,6 @@ public class Store implements Serializable
      * Timezone
      * <p>
      * The timezone for the store.
-     *
      */
     @JsonProperty("timezone")
     public String getTimezone() {
@@ -568,7 +523,6 @@ public class Store implements Serializable
      * Timezone
      * <p>
      * The timezone for the store.
-     *
      */
     @JsonProperty("timezone")
     public void setTimezone(String timezone) {
@@ -584,7 +538,6 @@ public class Store implements Serializable
      * Phone
      * <p>
      * The store phone number.
-     *
      */
     @JsonProperty("phone")
     public String getPhone() {
@@ -595,7 +548,6 @@ public class Store implements Serializable
      * Phone
      * <p>
      * The store phone number.
-     *
      */
     @JsonProperty("phone")
     public void setPhone(String phone) {
@@ -611,7 +563,6 @@ public class Store implements Serializable
      * Address
      * <p>
      * The store address.
-     *
      */
     @JsonProperty("address")
     public StoreAddress getAddress() {
@@ -622,7 +573,6 @@ public class Store implements Serializable
      * Address
      * <p>
      * The store address.
-     *
      */
     @JsonProperty("address")
     public void setAddress(StoreAddress address) {
@@ -638,7 +588,6 @@ public class Store implements Serializable
      * Connected Site
      * <p>
      * The Connected Site associated with the store.
-     *
      */
     @JsonProperty("connected_site")
     public ConnectedSite getConnectedSite() {
@@ -649,7 +598,6 @@ public class Store implements Serializable
      * Connected Site
      * <p>
      * The Connected Site associated with the store.
-     *
      */
     @JsonProperty("connected_site")
     public void setConnectedSite(ConnectedSite connectedSite) {
@@ -665,7 +613,6 @@ public class Store implements Serializable
      * Automations
      * <p>
      * Details for the automations attached to this store.
-     *
      */
     @JsonProperty("automations")
     public Automations getAutomations() {
@@ -676,7 +623,6 @@ public class Store implements Serializable
      * Automations
      * <p>
      * Details for the automations attached to this store.
-     *
      */
     @JsonProperty("automations")
     public void setAutomations(Automations automations) {
@@ -692,7 +638,6 @@ public class Store implements Serializable
      * List Status
      * <p>
      * The status of the list connected to the store, namely if it's deleted or disabled.
-     *
      */
     @JsonProperty("list_is_active")
     public Boolean getListIsActive() {
@@ -703,7 +648,6 @@ public class Store implements Serializable
      * List Status
      * <p>
      * The status of the list connected to the store, namely if it's deleted or disabled.
-     *
      */
     @JsonProperty("list_is_active")
     public void setListIsActive(Boolean listIsActive) {
@@ -719,7 +663,6 @@ public class Store implements Serializable
      * Creation Time
      * <p>
      * The date and time the store was created in ISO 8601 format.
-     *
      */
     @JsonProperty("created_at")
     public Date getCreatedAt() {
@@ -730,7 +673,6 @@ public class Store implements Serializable
      * Creation Time
      * <p>
      * The date and time the store was created in ISO 8601 format.
-     *
      */
     @JsonProperty("created_at")
     public void setCreatedAt(Date createdAt) {
@@ -746,7 +688,6 @@ public class Store implements Serializable
      * Update Time
      * <p>
      * The date and time the store was last updated in ISO 8601 format.
-     *
      */
     @JsonProperty("updated_at")
     public Date getUpdatedAt() {
@@ -757,7 +698,6 @@ public class Store implements Serializable
      * Update Time
      * <p>
      * The date and time the store was last updated in ISO 8601 format.
-     *
      */
     @JsonProperty("updated_at")
     public void setUpdatedAt(Date updatedAt) {
@@ -772,8 +712,6 @@ public class Store implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public List<Link> getLinks() {
@@ -783,8 +721,6 @@ public class Store implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public void setLinks(List<Link> links) {

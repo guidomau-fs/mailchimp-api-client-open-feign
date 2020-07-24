@@ -15,34 +15,31 @@ import java.util.Map;
  * API Root
  * <p>
  * This resource is nothing more than links to other resources available through the API.
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "account_id",
-    "login_id",
-    "account_name",
-    "email",
-    "first_name",
-    "last_name",
-    "username",
-    "avatar_url",
-    "role",
-    "contact",
-    "pro_enabled",
-    "last_login",
-    "total_subscribers",
-    "industry_stats",
-    "_links"
+        "account_id",
+        "login_id",
+        "account_name",
+        "email",
+        "first_name",
+        "last_name",
+        "username",
+        "avatar_url",
+        "role",
+        "contact",
+        "pro_enabled",
+        "last_login",
+        "total_subscribers",
+        "industry_stats",
+        "_links"
 })
-public class Root implements Serializable
-{
+public class Root implements Serializable {
 
     /**
      * Account ID
      * <p>
      * The ID associated with this account. Used for things like subscribe forms.
-     *
      */
     @JsonProperty("account_id")
     @JsonPropertyDescription("The ID associated with this account. Used for things like subscribe forms.")
@@ -51,7 +48,6 @@ public class Root implements Serializable
      * Login ID
      * <p>
      * The ID associated with the user who owns this API key. If you can login to multiple accounts, this ID will be the same for each account.
-     *
      */
     @JsonProperty("login_id")
     @JsonPropertyDescription("The ID associated with the user who owns this API key. If you can login to multiple accounts, this ID will be the same for each account.")
@@ -60,7 +56,6 @@ public class Root implements Serializable
      * Account Name
      * <p>
      * The name of the account.
-     *
      */
     @JsonProperty("account_name")
     @JsonPropertyDescription("The name of the account.")
@@ -69,7 +64,6 @@ public class Root implements Serializable
      * Email
      * <p>
      * The email address tied to the account
-     *
      */
     @JsonProperty("email")
     @JsonPropertyDescription("The email address tied to the account")
@@ -78,7 +72,6 @@ public class Root implements Serializable
      * First Name
      * <p>
      * The first name tied to the account.
-     *
      */
     @JsonProperty("first_name")
     @JsonPropertyDescription("The first name tied to the account.")
@@ -87,7 +80,6 @@ public class Root implements Serializable
      * Last Name
      * <p>
      * The last name tied to the account.
-     *
      */
     @JsonProperty("last_name")
     @JsonPropertyDescription("The last name tied to the account.")
@@ -96,7 +88,6 @@ public class Root implements Serializable
      * User Name
      * <p>
      * The username tied to the account.
-     *
      */
     @JsonProperty("username")
     @JsonPropertyDescription("The username tied to the account.")
@@ -105,7 +96,6 @@ public class Root implements Serializable
      * Avatar URL
      * <p>
      * URL of the avatar for the user.
-     *
      */
     @JsonProperty("avatar_url")
     @JsonPropertyDescription("URL of the avatar for the user.")
@@ -114,7 +104,6 @@ public class Root implements Serializable
      * Role
      * <p>
      * the role assigned to the account
-     *
      */
     @JsonProperty("role")
     @JsonPropertyDescription("the role assigned to the account")
@@ -122,16 +111,11 @@ public class Root implements Serializable
     /**
      * Account Contact
      * <p>
-     *
-     *
      */
     @JsonProperty("contact")
     private AccountContact contact;
     /**
-     *
      * <p>
-     *
-     *
      */
     @JsonProperty("pro_enabled")
     @JsonPropertyDescription("")
@@ -140,7 +124,6 @@ public class Root implements Serializable
      * Last Login Date
      * <p>
      * The date and time of the last login for this account in ISO 8601 format.
-     *
      */
     @JsonProperty("last_login")
     @JsonPropertyDescription("The date and time of the last login for this account in ISO 8601 format.")
@@ -149,7 +132,6 @@ public class Root implements Serializable
      * Total Subscribers
      * <p>
      * The total number of subscribers across all lists in the account.
-     *
      */
     @JsonProperty("total_subscribers")
     @JsonPropertyDescription("The total number of subscribers across all lists in the account.")
@@ -157,16 +139,12 @@ public class Root implements Serializable
     /**
      * Industry Stats
      * <p>
-     *
-     *
      */
     @JsonProperty("industry_stats")
     private IndustryStats industryStats;
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     @JsonPropertyDescription("")
@@ -177,13 +155,11 @@ public class Root implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Root() {
     }
 
     /**
-     *
      * @param lastName
      * @param lastLogin
      * @param loginId
@@ -223,7 +199,6 @@ public class Root implements Serializable
      * Account ID
      * <p>
      * The ID associated with this account. Used for things like subscribe forms.
-     *
      */
     @JsonProperty("account_id")
     public String getAccountId() {
@@ -234,7 +209,6 @@ public class Root implements Serializable
      * Account ID
      * <p>
      * The ID associated with this account. Used for things like subscribe forms.
-     *
      */
     @JsonProperty("account_id")
     public void setAccountId(String accountId) {
@@ -250,7 +224,6 @@ public class Root implements Serializable
      * Login ID
      * <p>
      * The ID associated with the user who owns this API key. If you can login to multiple accounts, this ID will be the same for each account.
-     *
      */
     @JsonProperty("login_id")
     public String getLoginId() {
@@ -261,7 +234,6 @@ public class Root implements Serializable
      * Login ID
      * <p>
      * The ID associated with the user who owns this API key. If you can login to multiple accounts, this ID will be the same for each account.
-     *
      */
     @JsonProperty("login_id")
     public void setLoginId(String loginId) {
@@ -277,7 +249,6 @@ public class Root implements Serializable
      * Account Name
      * <p>
      * The name of the account.
-     *
      */
     @JsonProperty("account_name")
     public String getAccountName() {
@@ -288,7 +259,6 @@ public class Root implements Serializable
      * Account Name
      * <p>
      * The name of the account.
-     *
      */
     @JsonProperty("account_name")
     public void setAccountName(String accountName) {
@@ -304,7 +274,6 @@ public class Root implements Serializable
      * Email
      * <p>
      * The email address tied to the account
-     *
      */
     @JsonProperty("email")
     public String getEmail() {
@@ -315,7 +284,6 @@ public class Root implements Serializable
      * Email
      * <p>
      * The email address tied to the account
-     *
      */
     @JsonProperty("email")
     public void setEmail(String email) {
@@ -331,7 +299,6 @@ public class Root implements Serializable
      * First Name
      * <p>
      * The first name tied to the account.
-     *
      */
     @JsonProperty("first_name")
     public String getFirstName() {
@@ -342,7 +309,6 @@ public class Root implements Serializable
      * First Name
      * <p>
      * The first name tied to the account.
-     *
      */
     @JsonProperty("first_name")
     public void setFirstName(String firstName) {
@@ -358,7 +324,6 @@ public class Root implements Serializable
      * Last Name
      * <p>
      * The last name tied to the account.
-     *
      */
     @JsonProperty("last_name")
     public String getLastName() {
@@ -369,7 +334,6 @@ public class Root implements Serializable
      * Last Name
      * <p>
      * The last name tied to the account.
-     *
      */
     @JsonProperty("last_name")
     public void setLastName(String lastName) {
@@ -385,7 +349,6 @@ public class Root implements Serializable
      * User Name
      * <p>
      * The username tied to the account.
-     *
      */
     @JsonProperty("username")
     public String getUsername() {
@@ -396,7 +359,6 @@ public class Root implements Serializable
      * User Name
      * <p>
      * The username tied to the account.
-     *
      */
     @JsonProperty("username")
     public void setUsername(String username) {
@@ -412,7 +374,6 @@ public class Root implements Serializable
      * Avatar URL
      * <p>
      * URL of the avatar for the user.
-     *
      */
     @JsonProperty("avatar_url")
     public String getAvatarUrl() {
@@ -423,7 +384,6 @@ public class Root implements Serializable
      * Avatar URL
      * <p>
      * URL of the avatar for the user.
-     *
      */
     @JsonProperty("avatar_url")
     public void setAvatarUrl(String avatarUrl) {
@@ -439,7 +399,6 @@ public class Root implements Serializable
      * Role
      * <p>
      * the role assigned to the account
-     *
      */
     @JsonProperty("role")
     public String getRole() {
@@ -450,7 +409,6 @@ public class Root implements Serializable
      * Role
      * <p>
      * the role assigned to the account
-     *
      */
     @JsonProperty("role")
     public void setRole(String role) {
@@ -465,8 +423,6 @@ public class Root implements Serializable
     /**
      * Account Contact
      * <p>
-     *
-     *
      */
     @JsonProperty("contact")
     public AccountContact getContact() {
@@ -476,8 +432,6 @@ public class Root implements Serializable
     /**
      * Account Contact
      * <p>
-     *
-     *
      */
     @JsonProperty("contact")
     public void setContact(AccountContact contact) {
@@ -490,10 +444,7 @@ public class Root implements Serializable
     }
 
     /**
-     *
      * <p>
-     *
-     *
      */
     @JsonProperty("pro_enabled")
     public Boolean getProEnabled() {
@@ -501,10 +452,7 @@ public class Root implements Serializable
     }
 
     /**
-     *
      * <p>
-     *
-     *
      */
     @JsonProperty("pro_enabled")
     public void setProEnabled(Boolean proEnabled) {
@@ -520,7 +468,6 @@ public class Root implements Serializable
      * Last Login Date
      * <p>
      * The date and time of the last login for this account in ISO 8601 format.
-     *
      */
     @JsonProperty("last_login")
     public Date getLastLogin() {
@@ -531,7 +478,6 @@ public class Root implements Serializable
      * Last Login Date
      * <p>
      * The date and time of the last login for this account in ISO 8601 format.
-     *
      */
     @JsonProperty("last_login")
     public void setLastLogin(Date lastLogin) {
@@ -547,7 +493,6 @@ public class Root implements Serializable
      * Total Subscribers
      * <p>
      * The total number of subscribers across all lists in the account.
-     *
      */
     @JsonProperty("total_subscribers")
     public Long getTotalSubscribers() {
@@ -558,7 +503,6 @@ public class Root implements Serializable
      * Total Subscribers
      * <p>
      * The total number of subscribers across all lists in the account.
-     *
      */
     @JsonProperty("total_subscribers")
     public void setTotalSubscribers(Long totalSubscribers) {
@@ -573,8 +517,6 @@ public class Root implements Serializable
     /**
      * Industry Stats
      * <p>
-     *
-     *
      */
     @JsonProperty("industry_stats")
     public IndustryStats getIndustryStats() {
@@ -584,8 +526,6 @@ public class Root implements Serializable
     /**
      * Industry Stats
      * <p>
-     *
-     *
      */
     @JsonProperty("industry_stats")
     public void setIndustryStats(IndustryStats industryStats) {
@@ -600,8 +540,6 @@ public class Root implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public List<Link> getLinks() {
@@ -611,8 +549,6 @@ public class Root implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public void setLinks(List<Link> links) {

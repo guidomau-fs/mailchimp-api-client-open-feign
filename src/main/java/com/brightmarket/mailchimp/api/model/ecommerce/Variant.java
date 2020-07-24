@@ -17,34 +17,31 @@ import java.util.Map;
  * Ecommerce Product Variants
  * <p>
  * Information about a specific product variant.
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "id",
-    "title",
-    "url",
-    "sku",
-    "price",
-    "pricing",
-    "shipping_dimensions",
-    "inventory_quantity",
-    "image_url",
-    "backorders",
-    "visibility",
-    "created_at",
-    "updated_at",
-    "_links"
+        "id",
+        "title",
+        "url",
+        "sku",
+        "price",
+        "pricing",
+        "shipping_dimensions",
+        "inventory_quantity",
+        "image_url",
+        "backorders",
+        "visibility",
+        "created_at",
+        "updated_at",
+        "_links"
 })
-public class Variant implements Serializable
-{
+public class Variant implements Serializable {
 
     /**
      * Product Variant Foreign ID
      * <p>
      * A unique identifier for the product variant.
      * (Required)
-     *
      */
     @JsonProperty("id")
     @JsonPropertyDescription("A unique identifier for the product variant.")
@@ -54,7 +51,6 @@ public class Variant implements Serializable
      * <p>
      * The title of a product variant.
      * (Required)
-     *
      */
     @JsonProperty("title")
     @JsonPropertyDescription("The title of a product variant.")
@@ -63,7 +59,6 @@ public class Variant implements Serializable
      * URL
      * <p>
      * The URL of a product variant.
-     *
      */
     @JsonProperty("url")
     @JsonPropertyDescription("The URL of a product variant.")
@@ -72,7 +67,6 @@ public class Variant implements Serializable
      * SKU
      * <p>
      * The stock keeping unit (SKU) of a product variant.
-     *
      */
     @JsonProperty("sku")
     @JsonPropertyDescription("The stock keeping unit (SKU) of a product variant.")
@@ -81,7 +75,6 @@ public class Variant implements Serializable
      * Price
      * <p>
      * The price of a product variant.
-     *
      */
     @JsonProperty("price")
     @JsonPropertyDescription("The price of a product variant.")
@@ -90,7 +83,6 @@ public class Variant implements Serializable
      * Product Pricing
      * <p>
      * An internal field that returns data on the formatting of a products' price based on currency.
-     *
      */
     @JsonProperty("pricing")
     @JsonPropertyDescription("An internal field that returns data on the formatting of a products' price based on currency.")
@@ -99,7 +91,6 @@ public class Variant implements Serializable
      * E-commerce Product Shipping Dimensions
      * <p>
      * Shipping dimension information about a specific product.
-     *
      */
     @JsonProperty("shipping_dimensions")
     @JsonPropertyDescription("Shipping dimension information about a specific product.")
@@ -108,7 +99,6 @@ public class Variant implements Serializable
      * Inventory Quantity
      * <p>
      * The inventory quantity of a product variant.
-     *
      */
     @JsonProperty("inventory_quantity")
     @JsonPropertyDescription("The inventory quantity of a product variant.")
@@ -117,7 +107,6 @@ public class Variant implements Serializable
      * Image URL
      * <p>
      * The image URL for a product variant.
-     *
      */
     @JsonProperty("image_url")
     @JsonPropertyDescription("The image URL for a product variant.")
@@ -126,7 +115,6 @@ public class Variant implements Serializable
      * Backorders
      * <p>
      * The backorders of a product variant.
-     *
      */
     @JsonProperty("backorders")
     @JsonPropertyDescription("The backorders of a product variant.")
@@ -135,7 +123,6 @@ public class Variant implements Serializable
      * Visibility
      * <p>
      * The visibility of a product variant.
-     *
      */
     @JsonProperty("visibility")
     @JsonPropertyDescription("The visibility of a product variant.")
@@ -144,7 +131,6 @@ public class Variant implements Serializable
      * Creation Time
      * <p>
      * The date and time when the product was created in ISO 8601 format.
-     *
      */
     @JsonProperty("created_at")
     @JsonPropertyDescription("The date and time when the product was created in ISO 8601 format.")
@@ -153,7 +139,6 @@ public class Variant implements Serializable
      * Update Time
      * <p>
      * The date and time the product was last updated in ISO 8601 format.
-     *
      */
     @JsonProperty("updated_at")
     @JsonPropertyDescription("The date and time the product was last updated in ISO 8601 format.")
@@ -161,8 +146,6 @@ public class Variant implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     @JsonPropertyDescription("")
@@ -173,13 +156,11 @@ public class Variant implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Variant() {
     }
 
     /**
-     *
      * @param visibility
      * @param inventoryQuantity
      * @param title
@@ -218,7 +199,6 @@ public class Variant implements Serializable
      * <p>
      * A unique identifier for the product variant.
      * (Required)
-     *
      */
     @JsonProperty("id")
     public String getId() {
@@ -230,7 +210,6 @@ public class Variant implements Serializable
      * <p>
      * A unique identifier for the product variant.
      * (Required)
-     *
      */
     @JsonProperty("id")
     public void setId(String id) {
@@ -247,7 +226,6 @@ public class Variant implements Serializable
      * <p>
      * The title of a product variant.
      * (Required)
-     *
      */
     @JsonProperty("title")
     public String getTitle() {
@@ -259,7 +237,6 @@ public class Variant implements Serializable
      * <p>
      * The title of a product variant.
      * (Required)
-     *
      */
     @JsonProperty("title")
     public void setTitle(String title) {
@@ -275,7 +252,6 @@ public class Variant implements Serializable
      * URL
      * <p>
      * The URL of a product variant.
-     *
      */
     @JsonProperty("url")
     public String getUrl() {
@@ -286,7 +262,6 @@ public class Variant implements Serializable
      * URL
      * <p>
      * The URL of a product variant.
-     *
      */
     @JsonProperty("url")
     public void setUrl(String url) {
@@ -302,7 +277,6 @@ public class Variant implements Serializable
      * SKU
      * <p>
      * The stock keeping unit (SKU) of a product variant.
-     *
      */
     @JsonProperty("sku")
     public String getSku() {
@@ -313,7 +287,6 @@ public class Variant implements Serializable
      * SKU
      * <p>
      * The stock keeping unit (SKU) of a product variant.
-     *
      */
     @JsonProperty("sku")
     public void setSku(String sku) {
@@ -329,7 +302,6 @@ public class Variant implements Serializable
      * Price
      * <p>
      * The price of a product variant.
-     *
      */
     @JsonProperty("price")
     public Double getPrice() {
@@ -340,7 +312,6 @@ public class Variant implements Serializable
      * Price
      * <p>
      * The price of a product variant.
-     *
      */
     @JsonProperty("price")
     public void setPrice(Double price) {
@@ -356,7 +327,6 @@ public class Variant implements Serializable
      * Product Pricing
      * <p>
      * An internal field that returns data on the formatting of a products' price based on currency.
-     *
      */
     @JsonProperty("pricing")
     public Pricing getPricing() {
@@ -367,7 +337,6 @@ public class Variant implements Serializable
      * Product Pricing
      * <p>
      * An internal field that returns data on the formatting of a products' price based on currency.
-     *
      */
     @JsonProperty("pricing")
     public void setPricing(Pricing pricing) {
@@ -383,7 +352,6 @@ public class Variant implements Serializable
      * E-commerce Product Shipping Dimensions
      * <p>
      * Shipping dimension information about a specific product.
-     *
      */
     @JsonProperty("shipping_dimensions")
     public ShippingDimensions getShippingDimensions() {
@@ -394,7 +362,6 @@ public class Variant implements Serializable
      * E-commerce Product Shipping Dimensions
      * <p>
      * Shipping dimension information about a specific product.
-     *
      */
     @JsonProperty("shipping_dimensions")
     public void setShippingDimensions(ShippingDimensions shippingDimensions) {
@@ -410,7 +377,6 @@ public class Variant implements Serializable
      * Inventory Quantity
      * <p>
      * The inventory quantity of a product variant.
-     *
      */
     @JsonProperty("inventory_quantity")
     public Long getInventoryQuantity() {
@@ -421,7 +387,6 @@ public class Variant implements Serializable
      * Inventory Quantity
      * <p>
      * The inventory quantity of a product variant.
-     *
      */
     @JsonProperty("inventory_quantity")
     public void setInventoryQuantity(Long inventoryQuantity) {
@@ -437,7 +402,6 @@ public class Variant implements Serializable
      * Image URL
      * <p>
      * The image URL for a product variant.
-     *
      */
     @JsonProperty("image_url")
     public String getImageUrl() {
@@ -448,7 +412,6 @@ public class Variant implements Serializable
      * Image URL
      * <p>
      * The image URL for a product variant.
-     *
      */
     @JsonProperty("image_url")
     public void setImageUrl(String imageUrl) {
@@ -464,7 +427,6 @@ public class Variant implements Serializable
      * Backorders
      * <p>
      * The backorders of a product variant.
-     *
      */
     @JsonProperty("backorders")
     public String getBackorders() {
@@ -475,7 +437,6 @@ public class Variant implements Serializable
      * Backorders
      * <p>
      * The backorders of a product variant.
-     *
      */
     @JsonProperty("backorders")
     public void setBackorders(String backorders) {
@@ -491,7 +452,6 @@ public class Variant implements Serializable
      * Visibility
      * <p>
      * The visibility of a product variant.
-     *
      */
     @JsonProperty("visibility")
     public String getVisibility() {
@@ -502,7 +462,6 @@ public class Variant implements Serializable
      * Visibility
      * <p>
      * The visibility of a product variant.
-     *
      */
     @JsonProperty("visibility")
     public void setVisibility(String visibility) {
@@ -518,7 +477,6 @@ public class Variant implements Serializable
      * Creation Time
      * <p>
      * The date and time when the product was created in ISO 8601 format.
-     *
      */
     @JsonProperty("created_at")
     public Date getCreatedAt() {
@@ -529,7 +487,6 @@ public class Variant implements Serializable
      * Creation Time
      * <p>
      * The date and time when the product was created in ISO 8601 format.
-     *
      */
     @JsonProperty("created_at")
     public void setCreatedAt(Date createdAt) {
@@ -545,7 +502,6 @@ public class Variant implements Serializable
      * Update Time
      * <p>
      * The date and time the product was last updated in ISO 8601 format.
-     *
      */
     @JsonProperty("updated_at")
     public Date getUpdatedAt() {
@@ -556,7 +512,6 @@ public class Variant implements Serializable
      * Update Time
      * <p>
      * The date and time the product was last updated in ISO 8601 format.
-     *
      */
     @JsonProperty("updated_at")
     public void setUpdatedAt(Date updatedAt) {
@@ -571,8 +526,6 @@ public class Variant implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public List<Link> getLinks() {
@@ -582,8 +535,6 @@ public class Variant implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public void setLinks(List<Link> links) {

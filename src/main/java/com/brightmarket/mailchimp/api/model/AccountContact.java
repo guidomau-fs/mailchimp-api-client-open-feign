@@ -12,27 +12,23 @@ import java.util.Map;
 /**
  * Account Contact
  * <p>
- *
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "company",
-    "addr1",
-    "addr2",
-    "city",
-    "state",
-    "zip",
-    "country"
+        "company",
+        "addr1",
+        "addr2",
+        "city",
+        "state",
+        "zip",
+        "country"
 })
-public class AccountContact implements Serializable
-{
+public class AccountContact implements Serializable {
 
     /**
      * Company
      * <p>
      * The company name associated with the account.
-     *
      */
     @JsonProperty("company")
     @JsonPropertyDescription("The company name associated with the account.")
@@ -41,7 +37,6 @@ public class AccountContact implements Serializable
      * Address Line 1
      * <p>
      * The street address for the account contact.
-     *
      */
     @JsonProperty("addr1")
     @JsonPropertyDescription("The street address for the account contact.")
@@ -50,7 +45,6 @@ public class AccountContact implements Serializable
      * Address Line 2
      * <p>
      * The street address for the account contact.
-     *
      */
     @JsonProperty("addr2")
     @JsonPropertyDescription("The street address for the account contact.")
@@ -59,7 +53,6 @@ public class AccountContact implements Serializable
      * City
      * <p>
      * The city for the account contact.
-     *
      */
     @JsonProperty("city")
     @JsonPropertyDescription("The city for the account contact.")
@@ -68,7 +61,6 @@ public class AccountContact implements Serializable
      * State
      * <p>
      * The state (if available) for the account contact.
-     *
      */
     @JsonProperty("state")
     @JsonPropertyDescription("The state (if available) for the account contact.")
@@ -77,7 +69,6 @@ public class AccountContact implements Serializable
      * Zip Code
      * <p>
      * The zip code (if available) for the account contact.
-     *
      */
     @JsonProperty("zip")
     @JsonPropertyDescription("The zip code (if available) for the account contact.")
@@ -86,7 +77,6 @@ public class AccountContact implements Serializable
      * Country
      * <p>
      * The country for the account contact.
-     *
      */
     @JsonProperty("country")
     @JsonPropertyDescription("The country for the account contact.")
@@ -97,13 +87,11 @@ public class AccountContact implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public AccountContact() {
     }
 
     /**
-     *
      * @param zip
      * @param country
      * @param addr2
@@ -127,7 +115,6 @@ public class AccountContact implements Serializable
      * Company
      * <p>
      * The company name associated with the account.
-     *
      */
     @JsonProperty("company")
     public String getCompany() {
@@ -138,7 +125,6 @@ public class AccountContact implements Serializable
      * Company
      * <p>
      * The company name associated with the account.
-     *
      */
     @JsonProperty("company")
     public void setCompany(String company) {
@@ -154,7 +140,6 @@ public class AccountContact implements Serializable
      * Address Line 1
      * <p>
      * The street address for the account contact.
-     *
      */
     @JsonProperty("addr1")
     public String getAddr1() {
@@ -165,7 +150,6 @@ public class AccountContact implements Serializable
      * Address Line 1
      * <p>
      * The street address for the account contact.
-     *
      */
     @JsonProperty("addr1")
     public void setAddr1(String addr1) {
@@ -181,7 +165,6 @@ public class AccountContact implements Serializable
      * Address Line 2
      * <p>
      * The street address for the account contact.
-     *
      */
     @JsonProperty("addr2")
     public String getAddr2() {
@@ -192,7 +175,6 @@ public class AccountContact implements Serializable
      * Address Line 2
      * <p>
      * The street address for the account contact.
-     *
      */
     @JsonProperty("addr2")
     public void setAddr2(String addr2) {
@@ -208,7 +190,6 @@ public class AccountContact implements Serializable
      * City
      * <p>
      * The city for the account contact.
-     *
      */
     @JsonProperty("city")
     public String getCity() {
@@ -219,7 +200,6 @@ public class AccountContact implements Serializable
      * City
      * <p>
      * The city for the account contact.
-     *
      */
     @JsonProperty("city")
     public void setCity(String city) {
@@ -235,7 +215,6 @@ public class AccountContact implements Serializable
      * State
      * <p>
      * The state (if available) for the account contact.
-     *
      */
     @JsonProperty("state")
     public String getState() {
@@ -246,7 +225,6 @@ public class AccountContact implements Serializable
      * State
      * <p>
      * The state (if available) for the account contact.
-     *
      */
     @JsonProperty("state")
     public void setState(String state) {
@@ -262,7 +240,6 @@ public class AccountContact implements Serializable
      * Zip Code
      * <p>
      * The zip code (if available) for the account contact.
-     *
      */
     @JsonProperty("zip")
     public String getZip() {
@@ -273,7 +250,6 @@ public class AccountContact implements Serializable
      * Zip Code
      * <p>
      * The zip code (if available) for the account contact.
-     *
      */
     @JsonProperty("zip")
     public void setZip(String zip) {
@@ -289,7 +265,6 @@ public class AccountContact implements Serializable
      * Country
      * <p>
      * The country for the account contact.
-     *
      */
     @JsonProperty("country")
     public String getCountry() {
@@ -300,7 +275,6 @@ public class AccountContact implements Serializable
      * Country
      * <p>
      * The country for the account contact.
-     *
      */
     @JsonProperty("country")
     public void setCountry(String country) {

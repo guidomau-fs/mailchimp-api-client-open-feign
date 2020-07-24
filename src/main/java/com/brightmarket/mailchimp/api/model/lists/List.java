@@ -16,41 +16,38 @@ import java.util.Map;
  * Subscriber List
  * <p>
  * Information about a specific list.
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "id",
-    "web_id",
-    "name",
-    "contact",
-    "permission_reminder",
-    "use_archive_bar",
-    "campaign_defaults",
-    "notify_on_subscribe",
-    "notify_on_unsubscribe",
-    "date_created",
-    "list_rating",
-    "email_type_option",
-    "subscribe_url_short",
-    "subscribe_url_long",
-    "beamer_address",
-    "visibility",
-    "double_optin",
-    "has_welcome",
-    "marketing_permissions",
-    "modules",
-    "stats",
-    "_links"
+        "id",
+        "web_id",
+        "name",
+        "contact",
+        "permission_reminder",
+        "use_archive_bar",
+        "campaign_defaults",
+        "notify_on_subscribe",
+        "notify_on_unsubscribe",
+        "date_created",
+        "list_rating",
+        "email_type_option",
+        "subscribe_url_short",
+        "subscribe_url_long",
+        "beamer_address",
+        "visibility",
+        "double_optin",
+        "has_welcome",
+        "marketing_permissions",
+        "modules",
+        "stats",
+        "_links"
 })
-public class List implements Serializable
-{
+public class List implements Serializable {
 
     /**
      * List ID
      * <p>
      * A string that uniquely identifies this list
-     *
      */
     @JsonProperty("id")
     @JsonPropertyDescription("A string that uniquely identifies this list")
@@ -59,7 +56,6 @@ public class List implements Serializable
      * List Web ID
      * <p>
      * The ID used in the Mailchimp web application. View this list in your Mailchimp account at `https://{dc}.admin.mailchimp.com/lists/members/?id={web_id}`.
-     *
      */
     @JsonProperty("web_id")
     @JsonPropertyDescription("The ID used in the Mailchimp web application. View this list in your Mailchimp account at `https://{dc}.admin.mailchimp.com/lists/members/?id={web_id}`.")
@@ -69,7 +65,6 @@ public class List implements Serializable
      * <p>
      * The name of the list.
      * (Required)
-     *
      */
     @JsonProperty("name")
     @JsonPropertyDescription("The name of the list.")
@@ -79,7 +74,6 @@ public class List implements Serializable
      * <p>
      * displayed in campaign footers to comply with international spam laws
      * (Required)
-     *
      */
     @JsonProperty("contact")
     @JsonPropertyDescription("displayed in campaign footers to comply with international spam laws")
@@ -89,7 +83,6 @@ public class List implements Serializable
      * <p>
      * The permission reminder for the list: a line of text that appears in the footer of each campaign that explains why subscribers are receiving the email campaign.
      * (Required)
-     *
      */
     @JsonProperty("permission_reminder")
     @JsonPropertyDescription("The permission reminder for the list: a line of text that appears in the footer of each campaign that explains why subscribers are receiving the email campaign.")
@@ -98,7 +91,6 @@ public class List implements Serializable
      * Use Archive Bar
      * <p>
      * Whether or not campaigns for this list use the Archive Bar in archives by default.
-     *
      */
     @JsonProperty("use_archive_bar")
     @JsonPropertyDescription("Whether or not campaigns for this list use the Archive Bar in archives by default.")
@@ -108,7 +100,6 @@ public class List implements Serializable
      * <p>
      * Default values for campaigns created for this list.
      * (Required)
-     *
      */
     @JsonProperty("campaign_defaults")
     @JsonPropertyDescription("Default values for campaigns created for this list.")
@@ -117,7 +108,6 @@ public class List implements Serializable
      * Notify on Subscribe
      * <p>
      * The email address to send subscribe notifications to, when enabled.
-     *
      */
     @JsonProperty("notify_on_subscribe")
     @JsonPropertyDescription("The email address to send subscribe notifications to, when enabled.")
@@ -126,7 +116,6 @@ public class List implements Serializable
      * Notify on Unsubscribe
      * <p>
      * The email address to send unsubscribe notifications to, when enabled.
-     *
      */
     @JsonProperty("notify_on_unsubscribe")
     @JsonPropertyDescription("The email address to send unsubscribe notifications to, when enabled.")
@@ -135,7 +124,6 @@ public class List implements Serializable
      * Creation Date
      * <p>
      * The date and time that this list was created in ISO 8601 format.
-     *
      */
     @JsonProperty("date_created")
     @JsonPropertyDescription("The date and time that this list was created in ISO 8601 format.")
@@ -144,7 +132,6 @@ public class List implements Serializable
      * List Rating
      * <p>
      * An auto-generated activity score for the list (0-5).
-     *
      */
     @JsonProperty("list_rating")
     @JsonPropertyDescription("An auto-generated activity score for the list (0-5).")
@@ -154,7 +141,6 @@ public class List implements Serializable
      * <p>
      * Whether or not the list supports multiple formats for emails.
      * (Required)
-     *
      */
     @JsonProperty("email_type_option")
     @JsonPropertyDescription("Whether or not the list supports multiple formats for emails.")
@@ -163,7 +149,6 @@ public class List implements Serializable
      * Subscribe URL Short
      * <p>
      * Our eepurl shortened version of this list's subscribe form.
-     *
      */
     @JsonProperty("subscribe_url_short")
     @JsonPropertyDescription("Our eepurl shortened version of this list's subscribe form.")
@@ -172,7 +157,6 @@ public class List implements Serializable
      * Subscribe URL Long
      * <p>
      * The full version of this list's subscribe form (host will vary).
-     *
      */
     @JsonProperty("subscribe_url_long")
     @JsonPropertyDescription("The full version of this list's subscribe form (host will vary).")
@@ -181,7 +165,6 @@ public class List implements Serializable
      * Beamer Address
      * <p>
      * The email address to use for this list's Email Beamer.
-     *
      */
     @JsonProperty("beamer_address")
     @JsonPropertyDescription("The email address to use for this list's Email Beamer.")
@@ -190,7 +173,6 @@ public class List implements Serializable
      * Visibility
      * <p>
      * Whether this list is public (pub) or private (prv). Used internally for projects like Wavelength.
-     *
      */
     @JsonProperty("visibility")
     @JsonPropertyDescription("Whether this list is public (pub) or private (prv). Used internally for projects like Wavelength.")
@@ -199,7 +181,6 @@ public class List implements Serializable
      * Double Opt In
      * <p>
      * Whether or not to require the subscriber to confirm subscription via email.
-     *
      */
     @JsonProperty("double_optin")
     @JsonPropertyDescription("Whether or not to require the subscriber to confirm subscription via email.")
@@ -208,7 +189,6 @@ public class List implements Serializable
      * Has Welcome
      * <p>
      * Whether or not this list has a welcome automation connected. Welcome Automations: welcomeSeries, singleWelcome, emailFollowup.
-     *
      */
     @JsonProperty("has_welcome")
     @JsonPropertyDescription("Whether or not this list has a welcome automation connected. Welcome Automations: welcomeSeries, singleWelcome, emailFollowup.")
@@ -217,7 +197,6 @@ public class List implements Serializable
      * Marketing Permissions
      * <p>
      * Whether or not the list has marketing permissions (eg. GDPR) enabled.
-     *
      */
     @JsonProperty("marketing_permissions")
     @JsonPropertyDescription("Whether or not the list has marketing permissions (eg. GDPR) enabled.")
@@ -226,7 +205,6 @@ public class List implements Serializable
      * Modules
      * <p>
      * Any list-specific modules installed for this list.
-     *
      */
     @JsonProperty("modules")
     @JsonPropertyDescription("Any list-specific modules installed for this list.")
@@ -235,7 +213,6 @@ public class List implements Serializable
      * Statistics
      * <p>
      * Various stats and counts for the list. Many of these are cached for at least five minutes.
-     *
      */
     @JsonProperty("stats")
     @JsonPropertyDescription("Various stats and counts for the list. Many of these are cached for at least five minutes.")
@@ -243,8 +220,6 @@ public class List implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     @JsonPropertyDescription("")
@@ -255,13 +230,11 @@ public class List implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public List() {
     }
 
     /**
-     *
      * @param campaignDefaults
      * @param visibility
      * @param useArchiveBar
@@ -315,7 +288,6 @@ public class List implements Serializable
      * List ID
      * <p>
      * A string that uniquely identifies this list
-     *
      */
     @JsonProperty("id")
     public String getId() {
@@ -326,7 +298,6 @@ public class List implements Serializable
      * List ID
      * <p>
      * A string that uniquely identifies this list
-     *
      */
     @JsonProperty("id")
     public void setId(String id) {
@@ -342,7 +313,6 @@ public class List implements Serializable
      * List Web ID
      * <p>
      * The ID used in the Mailchimp web application. View this list in your Mailchimp account at `https://{dc}.admin.mailchimp.com/lists/members/?id={web_id}`.
-     *
      */
     @JsonProperty("web_id")
     public Long getWebId() {
@@ -353,7 +323,6 @@ public class List implements Serializable
      * List Web ID
      * <p>
      * The ID used in the Mailchimp web application. View this list in your Mailchimp account at `https://{dc}.admin.mailchimp.com/lists/members/?id={web_id}`.
-     *
      */
     @JsonProperty("web_id")
     public void setWebId(Long webId) {
@@ -370,7 +339,6 @@ public class List implements Serializable
      * <p>
      * The name of the list.
      * (Required)
-     *
      */
     @JsonProperty("name")
     public String getName() {
@@ -382,7 +350,6 @@ public class List implements Serializable
      * <p>
      * The name of the list.
      * (Required)
-     *
      */
     @JsonProperty("name")
     public void setName(String name) {
@@ -399,7 +366,6 @@ public class List implements Serializable
      * <p>
      * displayed in campaign footers to comply with international spam laws
      * (Required)
-     *
      */
     @JsonProperty("contact")
     public Contact getContact() {
@@ -411,7 +377,6 @@ public class List implements Serializable
      * <p>
      * displayed in campaign footers to comply with international spam laws
      * (Required)
-     *
      */
     @JsonProperty("contact")
     public void setContact(Contact contact) {
@@ -428,7 +393,6 @@ public class List implements Serializable
      * <p>
      * The permission reminder for the list: a line of text that appears in the footer of each campaign that explains why subscribers are receiving the email campaign.
      * (Required)
-     *
      */
     @JsonProperty("permission_reminder")
     public String getPermissionReminder() {
@@ -440,7 +404,6 @@ public class List implements Serializable
      * <p>
      * The permission reminder for the list: a line of text that appears in the footer of each campaign that explains why subscribers are receiving the email campaign.
      * (Required)
-     *
      */
     @JsonProperty("permission_reminder")
     public void setPermissionReminder(String permissionReminder) {
@@ -456,7 +419,6 @@ public class List implements Serializable
      * Use Archive Bar
      * <p>
      * Whether or not campaigns for this list use the Archive Bar in archives by default.
-     *
      */
     @JsonProperty("use_archive_bar")
     public Boolean getUseArchiveBar() {
@@ -467,7 +429,6 @@ public class List implements Serializable
      * Use Archive Bar
      * <p>
      * Whether or not campaigns for this list use the Archive Bar in archives by default.
-     *
      */
     @JsonProperty("use_archive_bar")
     public void setUseArchiveBar(Boolean useArchiveBar) {
@@ -484,7 +445,6 @@ public class List implements Serializable
      * <p>
      * Default values for campaigns created for this list.
      * (Required)
-     *
      */
     @JsonProperty("campaign_defaults")
     public CampaignDefaults getCampaignDefaults() {
@@ -496,7 +456,6 @@ public class List implements Serializable
      * <p>
      * Default values for campaigns created for this list.
      * (Required)
-     *
      */
     @JsonProperty("campaign_defaults")
     public void setCampaignDefaults(CampaignDefaults campaignDefaults) {
@@ -512,7 +471,6 @@ public class List implements Serializable
      * Notify on Subscribe
      * <p>
      * The email address to send subscribe notifications to, when enabled.
-     *
      */
     @JsonProperty("notify_on_subscribe")
     public String getNotifyOnSubscribe() {
@@ -523,7 +481,6 @@ public class List implements Serializable
      * Notify on Subscribe
      * <p>
      * The email address to send subscribe notifications to, when enabled.
-     *
      */
     @JsonProperty("notify_on_subscribe")
     public void setNotifyOnSubscribe(String notifyOnSubscribe) {
@@ -539,7 +496,6 @@ public class List implements Serializable
      * Notify on Unsubscribe
      * <p>
      * The email address to send unsubscribe notifications to, when enabled.
-     *
      */
     @JsonProperty("notify_on_unsubscribe")
     public String getNotifyOnUnsubscribe() {
@@ -550,7 +506,6 @@ public class List implements Serializable
      * Notify on Unsubscribe
      * <p>
      * The email address to send unsubscribe notifications to, when enabled.
-     *
      */
     @JsonProperty("notify_on_unsubscribe")
     public void setNotifyOnUnsubscribe(String notifyOnUnsubscribe) {
@@ -566,7 +521,6 @@ public class List implements Serializable
      * Creation Date
      * <p>
      * The date and time that this list was created in ISO 8601 format.
-     *
      */
     @JsonProperty("date_created")
     public Date getDateCreated() {
@@ -577,7 +531,6 @@ public class List implements Serializable
      * Creation Date
      * <p>
      * The date and time that this list was created in ISO 8601 format.
-     *
      */
     @JsonProperty("date_created")
     public void setDateCreated(Date dateCreated) {
@@ -593,7 +546,6 @@ public class List implements Serializable
      * List Rating
      * <p>
      * An auto-generated activity score for the list (0-5).
-     *
      */
     @JsonProperty("list_rating")
     public Long getListRating() {
@@ -604,7 +556,6 @@ public class List implements Serializable
      * List Rating
      * <p>
      * An auto-generated activity score for the list (0-5).
-     *
      */
     @JsonProperty("list_rating")
     public void setListRating(Long listRating) {
@@ -621,7 +572,6 @@ public class List implements Serializable
      * <p>
      * Whether or not the list supports multiple formats for emails.
      * (Required)
-     *
      */
     @JsonProperty("email_type_option")
     public Boolean getEmailTypeOption() {
@@ -633,7 +583,6 @@ public class List implements Serializable
      * <p>
      * Whether or not the list supports multiple formats for emails.
      * (Required)
-     *
      */
     @JsonProperty("email_type_option")
     public void setEmailTypeOption(Boolean emailTypeOption) {
@@ -649,7 +598,6 @@ public class List implements Serializable
      * Subscribe URL Short
      * <p>
      * Our eepurl shortened version of this list's subscribe form.
-     *
      */
     @JsonProperty("subscribe_url_short")
     public String getSubscribeUrlShort() {
@@ -660,7 +608,6 @@ public class List implements Serializable
      * Subscribe URL Short
      * <p>
      * Our eepurl shortened version of this list's subscribe form.
-     *
      */
     @JsonProperty("subscribe_url_short")
     public void setSubscribeUrlShort(String subscribeUrlShort) {
@@ -676,7 +623,6 @@ public class List implements Serializable
      * Subscribe URL Long
      * <p>
      * The full version of this list's subscribe form (host will vary).
-     *
      */
     @JsonProperty("subscribe_url_long")
     public String getSubscribeUrlLong() {
@@ -687,7 +633,6 @@ public class List implements Serializable
      * Subscribe URL Long
      * <p>
      * The full version of this list's subscribe form (host will vary).
-     *
      */
     @JsonProperty("subscribe_url_long")
     public void setSubscribeUrlLong(String subscribeUrlLong) {
@@ -703,7 +648,6 @@ public class List implements Serializable
      * Beamer Address
      * <p>
      * The email address to use for this list's Email Beamer.
-     *
      */
     @JsonProperty("beamer_address")
     public String getBeamerAddress() {
@@ -714,7 +658,6 @@ public class List implements Serializable
      * Beamer Address
      * <p>
      * The email address to use for this list's Email Beamer.
-     *
      */
     @JsonProperty("beamer_address")
     public void setBeamerAddress(String beamerAddress) {
@@ -730,7 +673,6 @@ public class List implements Serializable
      * Visibility
      * <p>
      * Whether this list is public (pub) or private (prv). Used internally for projects like Wavelength.
-     *
      */
     @JsonProperty("visibility")
     public List.Visibility getVisibility() {
@@ -741,7 +683,6 @@ public class List implements Serializable
      * Visibility
      * <p>
      * Whether this list is public (pub) or private (prv). Used internally for projects like Wavelength.
-     *
      */
     @JsonProperty("visibility")
     public void setVisibility(List.Visibility visibility) {
@@ -757,7 +698,6 @@ public class List implements Serializable
      * Double Opt In
      * <p>
      * Whether or not to require the subscriber to confirm subscription via email.
-     *
      */
     @JsonProperty("double_optin")
     public Boolean getDoubleOptin() {
@@ -768,7 +708,6 @@ public class List implements Serializable
      * Double Opt In
      * <p>
      * Whether or not to require the subscriber to confirm subscription via email.
-     *
      */
     @JsonProperty("double_optin")
     public void setDoubleOptin(Boolean doubleOptin) {
@@ -784,7 +723,6 @@ public class List implements Serializable
      * Has Welcome
      * <p>
      * Whether or not this list has a welcome automation connected. Welcome Automations: welcomeSeries, singleWelcome, emailFollowup.
-     *
      */
     @JsonProperty("has_welcome")
     public Boolean getHasWelcome() {
@@ -795,7 +733,6 @@ public class List implements Serializable
      * Has Welcome
      * <p>
      * Whether or not this list has a welcome automation connected. Welcome Automations: welcomeSeries, singleWelcome, emailFollowup.
-     *
      */
     @JsonProperty("has_welcome")
     public void setHasWelcome(Boolean hasWelcome) {
@@ -811,7 +748,6 @@ public class List implements Serializable
      * Marketing Permissions
      * <p>
      * Whether or not the list has marketing permissions (eg. GDPR) enabled.
-     *
      */
     @JsonProperty("marketing_permissions")
     public Boolean getMarketingPermissions() {
@@ -822,7 +758,6 @@ public class List implements Serializable
      * Marketing Permissions
      * <p>
      * Whether or not the list has marketing permissions (eg. GDPR) enabled.
-     *
      */
     @JsonProperty("marketing_permissions")
     public void setMarketingPermissions(Boolean marketingPermissions) {
@@ -838,7 +773,6 @@ public class List implements Serializable
      * Modules
      * <p>
      * Any list-specific modules installed for this list.
-     *
      */
     @JsonProperty("modules")
     public java.util.List<Object> getModules() {
@@ -849,7 +783,6 @@ public class List implements Serializable
      * Modules
      * <p>
      * Any list-specific modules installed for this list.
-     *
      */
     @JsonProperty("modules")
     public void setModules(java.util.List<Object> modules) {
@@ -865,7 +798,6 @@ public class List implements Serializable
      * Statistics
      * <p>
      * Various stats and counts for the list. Many of these are cached for at least five minutes.
-     *
      */
     @JsonProperty("stats")
     public Stats getStats() {
@@ -876,7 +808,6 @@ public class List implements Serializable
      * Statistics
      * <p>
      * Various stats and counts for the list. Many of these are cached for at least five minutes.
-     *
      */
     @JsonProperty("stats")
     public void setStats(Stats stats) {
@@ -891,8 +822,6 @@ public class List implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public java.util.List<Link> getLinks() {
@@ -902,8 +831,6 @@ public class List implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public void setLinks(java.util.List<Link> links) {
@@ -955,7 +882,7 @@ public class List implements Serializable
         private final static Map<String, List.Visibility> CONSTANTS = new HashMap<String, List.Visibility>();
 
         static {
-            for (List.Visibility c: values()) {
+            for (List.Visibility c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

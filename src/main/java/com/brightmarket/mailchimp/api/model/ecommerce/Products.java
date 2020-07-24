@@ -16,23 +16,20 @@ import java.util.Map;
  * Ecommerce Products
  * <p>
  * A list of an account's ecommerce products.
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "store_id",
-    "products",
-    "total_items",
-    "_links"
+        "store_id",
+        "products",
+        "total_items",
+        "_links"
 })
-public class Products implements Serializable
-{
+public class Products implements Serializable {
 
     /**
      * Store Foreign ID
      * <p>
      * A unique identifier for the store.
-     *
      */
     @JsonProperty("store_id")
     @JsonPropertyDescription("A unique identifier for the store.")
@@ -41,7 +38,6 @@ public class Products implements Serializable
      * Products
      * <p>
      * An array of objects, each representing a product resource.
-     *
      */
     @JsonProperty("products")
     @JsonPropertyDescription("An array of objects, each representing a product resource.")
@@ -50,7 +46,6 @@ public class Products implements Serializable
      * Item Count
      * <p>
      * The total number of items matching the query, irrespective of pagination.
-     *
      */
     @JsonProperty("total_items")
     @JsonPropertyDescription("The total number of items matching the query, irrespective of pagination.")
@@ -58,8 +53,6 @@ public class Products implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     @JsonPropertyDescription("")
@@ -70,13 +63,11 @@ public class Products implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Products() {
     }
 
     /**
-     *
      * @param totalItems
      * @param links
      * @param storeId
@@ -94,7 +85,6 @@ public class Products implements Serializable
      * Store Foreign ID
      * <p>
      * A unique identifier for the store.
-     *
      */
     @JsonProperty("store_id")
     public String getStoreId() {
@@ -105,7 +95,6 @@ public class Products implements Serializable
      * Store Foreign ID
      * <p>
      * A unique identifier for the store.
-     *
      */
     @JsonProperty("store_id")
     public void setStoreId(String storeId) {
@@ -121,7 +110,6 @@ public class Products implements Serializable
      * Products
      * <p>
      * An array of objects, each representing a product resource.
-     *
      */
     @JsonProperty("products")
     public List<Product> getProducts() {
@@ -132,7 +120,6 @@ public class Products implements Serializable
      * Products
      * <p>
      * An array of objects, each representing a product resource.
-     *
      */
     @JsonProperty("products")
     public void setProducts(List<Product> products) {
@@ -148,7 +135,6 @@ public class Products implements Serializable
      * Item Count
      * <p>
      * The total number of items matching the query, irrespective of pagination.
-     *
      */
     @JsonProperty("total_items")
     public Long getTotalItems() {
@@ -159,7 +145,6 @@ public class Products implements Serializable
      * Item Count
      * <p>
      * The total number of items matching the query, irrespective of pagination.
-     *
      */
     @JsonProperty("total_items")
     public void setTotalItems(Long totalItems) {
@@ -174,8 +159,6 @@ public class Products implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public List<Link> getLinks() {
@@ -185,8 +168,6 @@ public class Products implements Serializable
     /**
      * Links
      * <p>
-     *
-     *
      */
     @JsonProperty("_links")
     public void setLinks(List<Link> links) {

@@ -43,7 +43,7 @@ public interface ProductsStub {
     })
     @RequestLine("PATCH /ecommerce/stores/{store_id}/products/{product_id}")
     Product updateProductToStore(@Param("token") String token,
-                                   @Param("store_id") String storeId, @Param("product_id") String productId, Product product);
+                                 @Param("store_id") String storeId, @Param("product_id") String productId, Product product);
 
 
     // ----- Product Variants ----- //
@@ -91,6 +91,6 @@ public interface ProductsStub {
     })
     @RequestLine("PATCH /ecommerce/stores/{store_id}/products/{product_id}/variants/{variant_id}")
     Variant updateProductVariantToStore(@Param("token") String token,
-                                             @Param("store_id") String storeId, @Param("product_id") String productId,
-                                             @Param("variant_id") String variantId, Variant variant);
+                                        @Param("store_id") String storeId, @Param("product_id") String productId,
+                                        @Param("variant_id") String variantId, Variant variant);
 }

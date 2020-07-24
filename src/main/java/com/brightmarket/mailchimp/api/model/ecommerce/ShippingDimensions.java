@@ -14,25 +14,22 @@ import java.util.Map;
  * E-commerce Product Shipping Dimensions
  * <p>
  * Shipping dimension information about a specific product.
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "width",
-    "height",
-    "length",
-    "weight",
-    "dimensions_unit",
-    "weight_unit"
+        "width",
+        "height",
+        "length",
+        "weight",
+        "dimensions_unit",
+        "weight_unit"
 })
-public class ShippingDimensions implements Serializable
-{
+public class ShippingDimensions implements Serializable {
 
     /**
      * Product Shipping Width
      * <p>
      * The width of the product.
-     *
      */
     @JsonProperty("width")
     @JsonPropertyDescription("The width of the product.")
@@ -41,7 +38,6 @@ public class ShippingDimensions implements Serializable
      * Product Shipping Height
      * <p>
      * The height of the product.
-     *
      */
     @JsonProperty("height")
     @JsonPropertyDescription("The height of the product.")
@@ -50,7 +46,6 @@ public class ShippingDimensions implements Serializable
      * Product Shipping Length
      * <p>
      * The length of the product.
-     *
      */
     @JsonProperty("length")
     @JsonPropertyDescription("The length of the product.")
@@ -59,7 +54,6 @@ public class ShippingDimensions implements Serializable
      * Product Shipping Weight
      * <p>
      * The weight of the product.
-     *
      */
     @JsonProperty("weight")
     @JsonPropertyDescription("The weight of the product.")
@@ -68,7 +62,6 @@ public class ShippingDimensions implements Serializable
      * Product Dimensions Unit
      * <p>
      * The unit of measurement for a products dimensions.
-     *
      */
     @JsonProperty("dimensions_unit")
     @JsonPropertyDescription("The unit of measurement for a products dimensions.")
@@ -77,7 +70,6 @@ public class ShippingDimensions implements Serializable
      * Description
      * <p>
      * The description of a product.
-     *
      */
     @JsonProperty("weight_unit")
     @JsonPropertyDescription("The description of a product.")
@@ -88,13 +80,11 @@ public class ShippingDimensions implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public ShippingDimensions() {
     }
 
     /**
-     *
      * @param width
      * @param length
      * @param weight
@@ -116,7 +106,6 @@ public class ShippingDimensions implements Serializable
      * Product Shipping Width
      * <p>
      * The width of the product.
-     *
      */
     @JsonProperty("width")
     public Double getWidth() {
@@ -127,7 +116,6 @@ public class ShippingDimensions implements Serializable
      * Product Shipping Width
      * <p>
      * The width of the product.
-     *
      */
     @JsonProperty("width")
     public void setWidth(Double width) {
@@ -143,7 +131,6 @@ public class ShippingDimensions implements Serializable
      * Product Shipping Height
      * <p>
      * The height of the product.
-     *
      */
     @JsonProperty("height")
     public Double getHeight() {
@@ -154,7 +141,6 @@ public class ShippingDimensions implements Serializable
      * Product Shipping Height
      * <p>
      * The height of the product.
-     *
      */
     @JsonProperty("height")
     public void setHeight(Double height) {
@@ -170,7 +156,6 @@ public class ShippingDimensions implements Serializable
      * Product Shipping Length
      * <p>
      * The length of the product.
-     *
      */
     @JsonProperty("length")
     public Double getLength() {
@@ -181,7 +166,6 @@ public class ShippingDimensions implements Serializable
      * Product Shipping Length
      * <p>
      * The length of the product.
-     *
      */
     @JsonProperty("length")
     public void setLength(Double length) {
@@ -197,7 +181,6 @@ public class ShippingDimensions implements Serializable
      * Product Shipping Weight
      * <p>
      * The weight of the product.
-     *
      */
     @JsonProperty("weight")
     public Double getWeight() {
@@ -208,7 +191,6 @@ public class ShippingDimensions implements Serializable
      * Product Shipping Weight
      * <p>
      * The weight of the product.
-     *
      */
     @JsonProperty("weight")
     public void setWeight(Double weight) {
@@ -224,7 +206,6 @@ public class ShippingDimensions implements Serializable
      * Product Dimensions Unit
      * <p>
      * The unit of measurement for a products dimensions.
-     *
      */
     @JsonProperty("dimensions_unit")
     public String getDimensionsUnit() {
@@ -235,7 +216,6 @@ public class ShippingDimensions implements Serializable
      * Product Dimensions Unit
      * <p>
      * The unit of measurement for a products dimensions.
-     *
      */
     @JsonProperty("dimensions_unit")
     public void setDimensionsUnit(String dimensionsUnit) {
@@ -251,7 +231,6 @@ public class ShippingDimensions implements Serializable
      * Description
      * <p>
      * The description of a product.
-     *
      */
     @JsonProperty("weight_unit")
     public String getWeightUnit() {
@@ -262,7 +241,6 @@ public class ShippingDimensions implements Serializable
      * Description
      * <p>
      * The description of a product.
-     *
      */
     @JsonProperty("weight_unit")
     public void setWeightUnit(String weightUnit) {

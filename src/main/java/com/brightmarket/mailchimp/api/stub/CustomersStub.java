@@ -41,13 +41,13 @@ public interface CustomersStub {
     })
     @RequestLine("PUT /ecommerce/stores/{store_id}/customers/{customer_id}")
     Customer addOrUpdateCustomerToStore(@Param("token") String token,
-                                          @Param("store_id") String storeId, @Param("customer_id") String customerId, Customer customer);
+                                        @Param("store_id") String storeId, @Param("customer_id") String customerId, Customer customer);
 
     @Headers({
             "Authorization: {token}"
     })
     @RequestLine("PATCH /ecommerce/stores/{store_id}/customers/{customer_id}")
     Customer updateCustomerToStore(@Param("token") String token,
-                                     @Param("store_id") String storeId, @Param("customer_id") String customerId, Customer customer);
+                                   @Param("store_id") String storeId, @Param("customer_id") String customerId, Customer customer);
 
 }

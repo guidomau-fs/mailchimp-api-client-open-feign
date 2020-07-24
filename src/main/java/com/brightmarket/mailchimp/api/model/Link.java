@@ -14,50 +14,43 @@ import java.util.Map;
  * Resource Link
  * <p>
  * This object represents a link from the resource where it is found to another resource or action that may be performed.
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "rel",
-    "href",
-    "method",
-    "targetSchema",
-    "schema"
+        "rel",
+        "href",
+        "method",
+        "targetSchema",
+        "schema"
 })
-public class Link implements Serializable
-{
+public class Link implements Serializable {
 
     /**
      * As with an HTML 'rel' attribute, this describes the type of link.
-     *
      */
     @JsonProperty("rel")
     @JsonPropertyDescription("As with an HTML 'rel' attribute, this describes the type of link.")
     private String rel;
     /**
      * This property contains a fully-qualified URL that can be called to retrieve the linked resource or perform the linked action.
-     *
      */
     @JsonProperty("href")
     @JsonPropertyDescription("This property contains a fully-qualified URL that can be called to retrieve the linked resource or perform the linked action.")
     private String href;
     /**
      * The HTTP method that should be used when accessing the URL defined in 'href'.
-     *
      */
     @JsonProperty("method")
     @JsonPropertyDescription("The HTTP method that should be used when accessing the URL defined in 'href'.")
     private Link.Method method;
     /**
      * For GETs, this is a URL representing the schema that the response should conform to.
-     *
      */
     @JsonProperty("targetSchema")
     @JsonPropertyDescription("For GETs, this is a URL representing the schema that the response should conform to.")
     private String targetSchema;
     /**
      * For HTTP methods that can receive bodies (POST and PUT), this is a URL representing the schema that the body should conform to.
-     *
      */
     @JsonProperty("schema")
     @JsonPropertyDescription("For HTTP methods that can receive bodies (POST and PUT), this is a URL representing the schema that the body should conform to.")
@@ -68,13 +61,11 @@ public class Link implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Link() {
     }
 
     /**
-     *
      * @param schema
      * @param targetSchema
      * @param method
@@ -92,7 +83,6 @@ public class Link implements Serializable
 
     /**
      * As with an HTML 'rel' attribute, this describes the type of link.
-     *
      */
     @JsonProperty("rel")
     public String getRel() {
@@ -101,7 +91,6 @@ public class Link implements Serializable
 
     /**
      * As with an HTML 'rel' attribute, this describes the type of link.
-     *
      */
     @JsonProperty("rel")
     public void setRel(String rel) {
@@ -115,7 +104,6 @@ public class Link implements Serializable
 
     /**
      * This property contains a fully-qualified URL that can be called to retrieve the linked resource or perform the linked action.
-     *
      */
     @JsonProperty("href")
     public String getHref() {
@@ -124,7 +112,6 @@ public class Link implements Serializable
 
     /**
      * This property contains a fully-qualified URL that can be called to retrieve the linked resource or perform the linked action.
-     *
      */
     @JsonProperty("href")
     public void setHref(String href) {
@@ -138,7 +125,6 @@ public class Link implements Serializable
 
     /**
      * The HTTP method that should be used when accessing the URL defined in 'href'.
-     *
      */
     @JsonProperty("method")
     public Link.Method getMethod() {
@@ -147,7 +133,6 @@ public class Link implements Serializable
 
     /**
      * The HTTP method that should be used when accessing the URL defined in 'href'.
-     *
      */
     @JsonProperty("method")
     public void setMethod(Link.Method method) {
@@ -161,7 +146,6 @@ public class Link implements Serializable
 
     /**
      * For GETs, this is a URL representing the schema that the response should conform to.
-     *
      */
     @JsonProperty("targetSchema")
     public String getTargetSchema() {
@@ -170,7 +154,6 @@ public class Link implements Serializable
 
     /**
      * For GETs, this is a URL representing the schema that the response should conform to.
-     *
      */
     @JsonProperty("targetSchema")
     public void setTargetSchema(String targetSchema) {
@@ -184,7 +167,6 @@ public class Link implements Serializable
 
     /**
      * For HTTP methods that can receive bodies (POST and PUT), this is a URL representing the schema that the body should conform to.
-     *
      */
     @JsonProperty("schema")
     public String getSchema() {
@@ -193,7 +175,6 @@ public class Link implements Serializable
 
     /**
      * For HTTP methods that can receive bodies (POST and PUT), this is a URL representing the schema that the body should conform to.
-     *
      */
     @JsonProperty("schema")
     public void setSchema(String schema) {
@@ -250,7 +231,7 @@ public class Link implements Serializable
         private final static Map<String, Link.Method> CONSTANTS = new HashMap<String, Link.Method>();
 
         static {
-            for (Link.Method c: values()) {
+            for (Link.Method c : values()) {
                 CONSTANTS.put(c.value, c);
             }
         }

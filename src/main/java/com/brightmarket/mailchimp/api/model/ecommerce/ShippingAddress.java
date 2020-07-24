@@ -14,32 +14,29 @@ import java.util.Map;
  * Shipping Address
  * <p>
  * The shipping address for the order.
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "name",
-    "address1",
-    "address2",
-    "city",
-    "province",
-    "province_code",
-    "postal_code",
-    "country",
-    "country_code",
-    "longitude",
-    "latitude",
-    "phone",
-    "company"
+        "name",
+        "address1",
+        "address2",
+        "city",
+        "province",
+        "province_code",
+        "postal_code",
+        "country",
+        "country_code",
+        "longitude",
+        "latitude",
+        "phone",
+        "company"
 })
-public class ShippingAddress implements Serializable
-{
+public class ShippingAddress implements Serializable {
 
     /**
      * Name
      * <p>
      * The name associated with an order's shipping address.
-     *
      */
     @JsonProperty("name")
     @JsonPropertyDescription("The name associated with an order's shipping address.")
@@ -48,7 +45,6 @@ public class ShippingAddress implements Serializable
      * Address Field 1
      * <p>
      * The shipping address for the order.
-     *
      */
     @JsonProperty("address1")
     @JsonPropertyDescription("The shipping address for the order.")
@@ -57,7 +53,6 @@ public class ShippingAddress implements Serializable
      * Address Field 2
      * <p>
      * An additional field for the shipping address.
-     *
      */
     @JsonProperty("address2")
     @JsonPropertyDescription("An additional field for the shipping address.")
@@ -66,7 +61,6 @@ public class ShippingAddress implements Serializable
      * City
      * <p>
      * The city in the order's shipping address.
-     *
      */
     @JsonProperty("city")
     @JsonPropertyDescription("The city in the order's shipping address.")
@@ -75,7 +69,6 @@ public class ShippingAddress implements Serializable
      * Province
      * <p>
      * The state or normalized province in the order's shipping address.
-     *
      */
     @JsonProperty("province")
     @JsonPropertyDescription("The state or normalized province in the order's shipping address.")
@@ -84,7 +77,6 @@ public class ShippingAddress implements Serializable
      * Province Code
      * <p>
      * The two-letter code for the province or state the order's shipping address is located in.
-     *
      */
     @JsonProperty("province_code")
     @JsonPropertyDescription("The two-letter code for the province or state the order's shipping address is located in.")
@@ -93,7 +85,6 @@ public class ShippingAddress implements Serializable
      * Postal Code
      * <p>
      * The postal or zip code in the order's shipping address.
-     *
      */
     @JsonProperty("postal_code")
     @JsonPropertyDescription("The postal or zip code in the order's shipping address.")
@@ -102,7 +93,6 @@ public class ShippingAddress implements Serializable
      * Country Code
      * <p>
      * The country in the order's shipping address.
-     *
      */
     @JsonProperty("country")
     @JsonPropertyDescription("The country in the order's shipping address.")
@@ -111,7 +101,6 @@ public class ShippingAddress implements Serializable
      * Country Code
      * <p>
      * The two-letter code for the country in the shipping address.
-     *
      */
     @JsonProperty("country_code")
     @JsonPropertyDescription("The two-letter code for the country in the shipping address.")
@@ -120,7 +109,6 @@ public class ShippingAddress implements Serializable
      * Longitude
      * <p>
      * The longitude for the shipping address location.
-     *
      */
     @JsonProperty("longitude")
     @JsonPropertyDescription("The longitude for the shipping address location.")
@@ -129,7 +117,6 @@ public class ShippingAddress implements Serializable
      * Latitude
      * <p>
      * The latitude for the shipping address location.
-     *
      */
     @JsonProperty("latitude")
     @JsonPropertyDescription("The latitude for the shipping address location.")
@@ -138,7 +125,6 @@ public class ShippingAddress implements Serializable
      * Phone Number
      * <p>
      * The phone number for the order's shipping address
-     *
      */
     @JsonProperty("phone")
     @JsonPropertyDescription("The phone number for the order's shipping address")
@@ -147,7 +133,6 @@ public class ShippingAddress implements Serializable
      * Company
      * <p>
      * The company associated with an order's shipping address.
-     *
      */
     @JsonProperty("company")
     @JsonPropertyDescription("The company associated with an order's shipping address.")
@@ -158,13 +143,11 @@ public class ShippingAddress implements Serializable
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public ShippingAddress() {
     }
 
     /**
-     *
      * @param country
      * @param address2
      * @param city
@@ -200,7 +183,6 @@ public class ShippingAddress implements Serializable
      * Name
      * <p>
      * The name associated with an order's shipping address.
-     *
      */
     @JsonProperty("name")
     public String getName() {
@@ -211,7 +193,6 @@ public class ShippingAddress implements Serializable
      * Name
      * <p>
      * The name associated with an order's shipping address.
-     *
      */
     @JsonProperty("name")
     public void setName(String name) {
@@ -227,7 +208,6 @@ public class ShippingAddress implements Serializable
      * Address Field 1
      * <p>
      * The shipping address for the order.
-     *
      */
     @JsonProperty("address1")
     public String getAddress1() {
@@ -238,7 +218,6 @@ public class ShippingAddress implements Serializable
      * Address Field 1
      * <p>
      * The shipping address for the order.
-     *
      */
     @JsonProperty("address1")
     public void setAddress1(String address1) {
@@ -254,7 +233,6 @@ public class ShippingAddress implements Serializable
      * Address Field 2
      * <p>
      * An additional field for the shipping address.
-     *
      */
     @JsonProperty("address2")
     public String getAddress2() {
@@ -265,7 +243,6 @@ public class ShippingAddress implements Serializable
      * Address Field 2
      * <p>
      * An additional field for the shipping address.
-     *
      */
     @JsonProperty("address2")
     public void setAddress2(String address2) {
@@ -281,7 +258,6 @@ public class ShippingAddress implements Serializable
      * City
      * <p>
      * The city in the order's shipping address.
-     *
      */
     @JsonProperty("city")
     public String getCity() {
@@ -292,7 +268,6 @@ public class ShippingAddress implements Serializable
      * City
      * <p>
      * The city in the order's shipping address.
-     *
      */
     @JsonProperty("city")
     public void setCity(String city) {
@@ -308,7 +283,6 @@ public class ShippingAddress implements Serializable
      * Province
      * <p>
      * The state or normalized province in the order's shipping address.
-     *
      */
     @JsonProperty("province")
     public String getProvince() {
@@ -319,7 +293,6 @@ public class ShippingAddress implements Serializable
      * Province
      * <p>
      * The state or normalized province in the order's shipping address.
-     *
      */
     @JsonProperty("province")
     public void setProvince(String province) {
@@ -335,7 +308,6 @@ public class ShippingAddress implements Serializable
      * Province Code
      * <p>
      * The two-letter code for the province or state the order's shipping address is located in.
-     *
      */
     @JsonProperty("province_code")
     public String getProvinceCode() {
@@ -346,7 +318,6 @@ public class ShippingAddress implements Serializable
      * Province Code
      * <p>
      * The two-letter code for the province or state the order's shipping address is located in.
-     *
      */
     @JsonProperty("province_code")
     public void setProvinceCode(String provinceCode) {
@@ -362,7 +333,6 @@ public class ShippingAddress implements Serializable
      * Postal Code
      * <p>
      * The postal or zip code in the order's shipping address.
-     *
      */
     @JsonProperty("postal_code")
     public String getPostalCode() {
@@ -373,7 +343,6 @@ public class ShippingAddress implements Serializable
      * Postal Code
      * <p>
      * The postal or zip code in the order's shipping address.
-     *
      */
     @JsonProperty("postal_code")
     public void setPostalCode(String postalCode) {
@@ -389,7 +358,6 @@ public class ShippingAddress implements Serializable
      * Country Code
      * <p>
      * The country in the order's shipping address.
-     *
      */
     @JsonProperty("country")
     public String getCountry() {
@@ -400,7 +368,6 @@ public class ShippingAddress implements Serializable
      * Country Code
      * <p>
      * The country in the order's shipping address.
-     *
      */
     @JsonProperty("country")
     public void setCountry(String country) {
@@ -416,7 +383,6 @@ public class ShippingAddress implements Serializable
      * Country Code
      * <p>
      * The two-letter code for the country in the shipping address.
-     *
      */
     @JsonProperty("country_code")
     public String getCountryCode() {
@@ -427,7 +393,6 @@ public class ShippingAddress implements Serializable
      * Country Code
      * <p>
      * The two-letter code for the country in the shipping address.
-     *
      */
     @JsonProperty("country_code")
     public void setCountryCode(String countryCode) {
@@ -443,7 +408,6 @@ public class ShippingAddress implements Serializable
      * Longitude
      * <p>
      * The longitude for the shipping address location.
-     *
      */
     @JsonProperty("longitude")
     public Double getLongitude() {
@@ -454,7 +418,6 @@ public class ShippingAddress implements Serializable
      * Longitude
      * <p>
      * The longitude for the shipping address location.
-     *
      */
     @JsonProperty("longitude")
     public void setLongitude(Double longitude) {
@@ -470,7 +433,6 @@ public class ShippingAddress implements Serializable
      * Latitude
      * <p>
      * The latitude for the shipping address location.
-     *
      */
     @JsonProperty("latitude")
     public Double getLatitude() {
@@ -481,7 +443,6 @@ public class ShippingAddress implements Serializable
      * Latitude
      * <p>
      * The latitude for the shipping address location.
-     *
      */
     @JsonProperty("latitude")
     public void setLatitude(Double latitude) {
@@ -497,7 +458,6 @@ public class ShippingAddress implements Serializable
      * Phone Number
      * <p>
      * The phone number for the order's shipping address
-     *
      */
     @JsonProperty("phone")
     public String getPhone() {
@@ -508,7 +468,6 @@ public class ShippingAddress implements Serializable
      * Phone Number
      * <p>
      * The phone number for the order's shipping address
-     *
      */
     @JsonProperty("phone")
     public void setPhone(String phone) {
@@ -524,7 +483,6 @@ public class ShippingAddress implements Serializable
      * Company
      * <p>
      * The company associated with an order's shipping address.
-     *
      */
     @JsonProperty("company")
     public String getCompany() {
@@ -535,7 +493,6 @@ public class ShippingAddress implements Serializable
      * Company
      * <p>
      * The company associated with an order's shipping address.
-     *
      */
     @JsonProperty("company")
     public void setCompany(String company) {
