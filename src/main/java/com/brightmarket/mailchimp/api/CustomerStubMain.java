@@ -38,7 +38,7 @@ public class CustomerStubMain {
             customerSaved.setFirstName(customerSaved.getFirstName() + " UPDATED");
             customerSaved.setCreatedAt(null);
             customerSaved.setUpdatedAt(null);
-            Customer customerUpdated = customersStub.addOrUpdateCustomerFromStore(apiKey, store.getId(), customerSaved.getId(), customerSaved);
+            Customer customerUpdated = customersStub.addOrUpdateCustomerToStore(apiKey, store.getId(), customerSaved.getId(), customerSaved);
             System.out.println(objectMapper.writeValueAsString(customerUpdated));
 
         } catch (MailChimpAPIException exception) {

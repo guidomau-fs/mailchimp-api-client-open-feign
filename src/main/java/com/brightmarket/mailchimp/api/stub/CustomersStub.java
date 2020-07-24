@@ -40,14 +40,14 @@ public interface CustomersStub {
             "Authorization: {token}"
     })
     @RequestLine("PUT /ecommerce/stores/{store_id}/customers/{customer_id}")
-    Customer addOrUpdateCustomerFromStore(@Param("token") String token,
+    Customer addOrUpdateCustomerToStore(@Param("token") String token,
                                           @Param("store_id") String storeId, @Param("customer_id") String customerId, Customer customer);
 
     @Headers({
             "Authorization: {token}"
     })
     @RequestLine("PATCH /ecommerce/stores/{store_id}/customers/{customer_id}")
-    Customer updateCustomerFromStore(@Param("token") String token,
+    Customer updateCustomerToStore(@Param("token") String token,
                                      @Param("store_id") String storeId, @Param("customer_id") String customerId, Customer customer);
 
 }

@@ -41,7 +41,7 @@ public interface CartsStub {
             "Authorization: {token}"
     })
     @RequestLine("PATCH /ecommerce/stores/{store_id}/carts/{cart_id}")
-    Cart updateCartFromStore(@Param("token") String token,
+    Cart updateCartToStore(@Param("token") String token,
                              @Param("store_id") String storeId, @Param("cart_id") String cartId, Cart cart);
 
 
@@ -81,7 +81,7 @@ public interface CartsStub {
             "Authorization: {token}"
     })
     @RequestLine("PATCH /ecommerce/stores/{store_id}/carts/{cart_id}/lines/{line_id}")
-    CartLine updateCartLineFromStore(@Param("token") String token,
+    CartLine updateCartLineToStore(@Param("token") String token,
                                      @Param("store_id") String storeId, @Param("cart_id") String cartId,
                                      @Param("line_id") String cartLineId, CartLine cartLine);
 

@@ -1,7 +1,6 @@
 package com.brightmarket.mailchimp.api.factory;
 
 import com.brightmarket.mailchimp.api.codec.MailChimpAPIErrorDecoder;
-import com.brightmarket.mailchimp.api.stub.*;
 import feign.Feign;
 import feign.Logger.Level;
 import feign.http2client.Http2Client;
