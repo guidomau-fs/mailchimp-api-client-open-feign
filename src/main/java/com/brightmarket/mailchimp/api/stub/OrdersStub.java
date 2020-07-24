@@ -2,6 +2,7 @@ package com.brightmarket.mailchimp.api.stub;
 
 import com.brightmarket.mailchimp.api.model.ecommerce.Order;
 import com.brightmarket.mailchimp.api.model.ecommerce.OrderLine;
+import com.brightmarket.mailchimp.api.model.ecommerce.OrderLines;
 import com.brightmarket.mailchimp.api.model.ecommerce.Orders;
 import feign.Headers;
 import feign.Param;

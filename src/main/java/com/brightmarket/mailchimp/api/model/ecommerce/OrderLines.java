@@ -20,12 +20,12 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
         "store_id",
-        "cart_id",
+        "order_id",
         "lines",
         "total_items",
         "_links"
 })
-public class CartLines implements Serializable {
+public class OrderLines implements Serializable {
 
     /**
      * Store Foreign ID
@@ -37,13 +37,13 @@ public class CartLines implements Serializable {
     private String storeId;
 
     /**
-     * Cart Foreign ID
+     * Order Foreign ID
      * <p>
-     * A unique identifier for the cart.
+     * A unique identifier for the order.
      */
-    @JsonProperty("cart_id")
-    @JsonPropertyDescription("A unique identifier for the cart.")
-    private String cartId;
+    @JsonProperty("order_id")
+    @JsonPropertyDescription("A unique identifier for the order.")
+    private String orderId;
 
     /**
      * Checkouts
@@ -51,8 +51,8 @@ public class CartLines implements Serializable {
      * An array of objects, each representing a cart resource.
      */
     @JsonProperty("lines")
-    @JsonPropertyDescription("An array of objects, each representing a cart line resource.")
-    private List<CartLine> lines = null;
+    @JsonPropertyDescription("An array of objects, each representing a order line resource.")
+    private List<OrderLine> lines = null;
     /**
      * Item Count
      * <p>
@@ -75,20 +75,20 @@ public class CartLines implements Serializable {
     /**
      * No args constructor for use in serialization
      */
-    public CartLines() {
+    public OrderLines() {
     }
 
     /**
      * @param storeId
-     * @param cartId
+     * @param orderId
      * @param lines
      * @param totalItems
      * @param links
      */
-    public CartLines(String storeId, String cartId, List<CartLine> lines, Long totalItems, List<Link> links) {
+    public OrderLines(String storeId, String orderId, List<OrderLine> lines, Long totalItems, List<Link> links) {
         super();
         this.storeId = storeId;
-        this.cartId = cartId;
+        this.orderId = orderId;
         this.lines = lines;
         this.totalItems = totalItems;
         this.links = links;
@@ -114,57 +114,57 @@ public class CartLines implements Serializable {
         this.storeId = storeId;
     }
 
-    public CartLines withStoreId(String storeId) {
+    public OrderLines withStoreId(String storeId) {
         this.storeId = storeId;
         return this;
     }
 
     /**
-     * Cart Foreign ID
+     * Order Foreign ID
      * <p>
-     * A unique identifier for the store.
+     * A unique identifier for the order.
      */
-    @JsonProperty("cart_id")
-    public String getCartId() {
-        return cartId;
+    @JsonProperty("order_id")
+    public String getOrderId() {
+        return orderId;
     }
 
     /**
-     * Cart Foreign ID
+     * Order Foreign ID
      * <p>
-     * A unique identifier for the cart.
+     * A unique identifier for the order.
      */
-    @JsonProperty("cart_id")
-    public void setCartId(String cartId) {
-        this.cartId = cartId;
+    @JsonProperty("order_id")
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
-    public CartLines withCartId(String cartId) {
-        this.cartId = cartId;
+    public OrderLines withOrderId(String orderId) {
+        this.orderId = orderId;
         return this;
     }
 
     /**
      * Checkouts
      * <p>
-     * An array of objects, each representing a cart line resource.
+     * An array of objects, each representing a order line resource.
      */
     @JsonProperty("lines")
-    public List<CartLine> getLines() {
+    public List<OrderLine> getLines() {
         return lines;
     }
 
     /**
      * Checkouts
      * <p>
-     * An array of objects, each representing a cart line resource.
+     * An array of objects, each representing a order line resource.
      */
     @JsonProperty("lines")
-    public void setLines(List<CartLine> lines) {
+    public void setLines(List<OrderLine> lines) {
         this.lines = lines;
     }
 
-    public CartLines withLines(List<CartLine> lines) {
+    public OrderLines withLines(List<OrderLine> lines) {
         this.lines = lines;
         return this;
     }
@@ -189,7 +189,7 @@ public class CartLines implements Serializable {
         this.totalItems = totalItems;
     }
 
-    public CartLines withTotalItems(Long totalItems) {
+    public OrderLines withTotalItems(Long totalItems) {
         this.totalItems = totalItems;
         return this;
     }
@@ -212,7 +212,7 @@ public class CartLines implements Serializable {
         this.links = links;
     }
 
-    public CartLines withLinks(List<Link> links) {
+    public OrderLines withLinks(List<Link> links) {
         this.links = links;
         return this;
     }
@@ -227,14 +227,15 @@ public class CartLines implements Serializable {
         this.additionalProperties.put(name, value);
     }
 
-    public CartLines withAdditionalProperty(String name, Object value) {
+    public OrderLines withAdditionalProperty(String name, Object value) {
         this.additionalProperties.put(name, value);
         return this;
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder().append(totalItems).append(links).append(lines).append(additionalProperties).append(storeId).append(cartId).toHashCode();
+        return new HashCodeBuilder().append(totalItems).append(links).append(lines).append(additionalProperties)
+                .append(storeId).append(orderId).toHashCode();
     }
 
     @Override
@@ -242,11 +243,12 @@ public class CartLines implements Serializable {
         if (other == this) {
             return true;
         }
-        if ((other instanceof CartLines) == false) {
+        if ((other instanceof OrderLines) == false) {
             return false;
         }
-        CartLines rhs = ((CartLines) other);
-        return new EqualsBuilder().append(totalItems, rhs.totalItems).append(links, rhs.links).append(lines, rhs.lines).append(additionalProperties, rhs.additionalProperties).append(storeId, rhs.storeId).append(cartId, rhs.cartId).isEquals();
+        OrderLines rhs = ((OrderLines) other);
+        return new EqualsBuilder().append(totalItems, rhs.totalItems).append(links, rhs.links).append(lines, rhs.lines)
+                .append(additionalProperties, rhs.additionalProperties).append(storeId, rhs.storeId).append(orderId, rhs.orderId).isEquals();
     }
 
 }
