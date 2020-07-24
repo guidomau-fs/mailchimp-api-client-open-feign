@@ -12,7 +12,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
-public class Workflow001Main {
+public class CreateListsWorkflowMain {
 
     public static void main(String[] args) throws JsonProcessingException {
 
