@@ -8,6 +8,8 @@ import feign.RequestLine;
 
 public interface ListsStub {
 
+    // ----- Lists ----- //
+
     @Headers({
             "Authorization: {token}"
     })
@@ -31,4 +33,13 @@ public interface ListsStub {
     })
     @RequestLine("DELETE /lists/{list_id}")
     void deleteList(@Param("token") String token, @Param("list_id") String listId);
+
+    @Headers({
+            "Authorization: {token}"
+    })
+    @RequestLine("PATCH /lists/{list_id}")
+    List updateList(@Param("token") String token, @Param("list_id") String listId, List list);
+
+
+    // ----- Members Lists ----- //
 }
